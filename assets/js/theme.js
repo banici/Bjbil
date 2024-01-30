@@ -19,6 +19,7 @@ var navigation = document.querySelector('.navigation');
 var superfishMenu = document.querySelector('ul.sf-menu');
 var priceSliderRange = document.querySelector('#slider-range');
 
+// Loads all the videos beforehand to reduce load time
 document.addEventListener('DOMContentLoaded', function () {
     var videos = document.querySelectorAll('.video-container video');
     videos.forEach(function (video) {
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Iterates between different videos to play on homepage
 document.addEventListener('DOMContentLoaded', function () {
     var videos = document.querySelectorAll('.video-container video');
     var currentVideoIndex = 0;
@@ -48,34 +50,22 @@ document.addEventListener('DOMContentLoaded', function () {
     videos[currentVideoIndex].play();
 });
 
+// Changes the last word in the sentence displayed on homepage
 document.addEventListener('DOMContentLoaded', function () {
-    var words = document.querySelectorAll('.word-container #car-make');
+    var words = ['BMW', 'AUDI', 'MINI', 'VW'];
     var currentIndex = 0;
-
-    function showNextWord() {
-        words.forEach(function (word, index) {
-            if (index === currentIndex) {
-                word.style.opacity = '1';
-            } else {
-                word.style.opacity = '0';
-            }
-        });
-
+    var lastWord = document.getElementById('last-word');
+    
+    function replaceLastWord() {
+        lastWord.textContent = words[currentIndex];
         currentIndex = (currentIndex + 1) % words.length;
-    }
-
-    // Hide all words except the first one
-    for (var i = 1; i < words.length; i++) {
-        words[i].style.opacity = '0';
-    }
-
-    // Start showing the first word
-    words[currentIndex].style.opacity = '1';
-
-    // Start showing the next word after a delay
-    setInterval(function () {
-        showNextWord();
-    }, 3500); // Change this to control the delay between words
+      }
+    
+    // Call the function to start the replacement
+    setInterval(replaceLastWord, 3000); // Change every 2 seconds (adjust as needed)
+    
+    // Initial replacement on page load
+    replaceLastWord();
 });
 
 // // Slide in/out with fade animation function

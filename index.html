@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="assets/css/fonts/fonts.css">
 
         <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+        <!-- <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet"> -->
         <link href="assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="assets/plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet">
         <link href="assets/plugins/owl-carousel2/assets/owl.carousel.min.css" rel="stylesheet">
@@ -44,91 +44,69 @@
 
 		
     </head>
-    <body id="home">
-       
+    <body id="home">      
         <div class="wrapper ">
+
 			<div class="top-bar">
                 <div class="top-bar-container">
                     <div class="top-bar-left">
                         <ul class="list-inline">
-                            <li><i class="fa fa-clock-o"></i> Måndag-Torsdag 07:00 - 17:00 | Fredag 07:00 - 12:00</li>
+                            <li><i class="fa fa-clock-o"></i> Måndag-Torsdag 07:00 - 17:00 <span id="day-divider">|</span> Fredag</span> 07:00 - 12:00</li>
                             <li><i class="fa fa-phone"></i> 031-84 75 29 </li>
                             <li><i class="fa fa-map-marker"></i> Aminogatan 15E, 431 53 Mölndal </a></li>
 						</ul>
                     </div>              
                 </div>
             </div>
-            
+
             <header class="header fixed">
                 <div class="header-wrapper">
-                    <div class="container">
-
-                        
+                    <div class="container">                 
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/bj-bil-loggan-skugga.png"  alt=""/></a>
+                            <a href="index.html"><img src="assets/img/bj-bil-loggan-skugga.png" alt=""/></a>
                         </div>
                         <div class="header-cart">
                             <div class="cart-wrapper">
                                <a href="#" class="menu-toggle btn btn-theme-dark"><i class="fa fa-bars"></i></a>
                             </div>
-                        </div>
-
-                        
-
+                        </div>                      
                     </div>
-					<!-- <div class="header-bottom"><div class="container"></div></div> -->
-					
+
                     <div class="navigation-wrapper">
-                    <div class="container">
-                        
-                        <nav class="navigation closed clearfix">
-                            <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
-                            <ul class="nav sf-menu">
-                                <li class="active"><a href="index.html">Hem</a><div id="under"></div></li>
-                                <li>
-                                    <a href="">Våra bilmärken</a>
-                                    <div id="under"></div>
-                                    <div class="dropdown">
-                                        <ul>
-                                            <li><a href="index_audi.html">AUDI</a></li>
-                                            <li><a href="index_bmw.html">BMW</a></li>
-                                            <li><a href="index_mini.html">MINI</a></li>
-                                            <li><a href="index_vw.html">VW</a></li>
-                                        </ul>
-                                      </div>
-                                </li>
-								<li><a href="dack.html">Våra tjänster</a><div id="under"></div></li>
-								<li><a href="foretag.html">Om oss</a><div id="under"></div></li>
-								<li><a href="kontakt.html">Kundservice</a><div id="under"></div></li>
-								<!-- <li><a href="tips.html">Råd & Tips</a></li> (flytta innehåll till egen sektion i instagram)--> 
-								<!-- <li><a href="garanti.html">Garanti</a></li> (flytta till våra tjänster om det behövs även att vara där?)-->
-								<!-- <li><a href="foton_audi.html">Galleri</a></li> (flytta till Om oss)-->
-								<!-- <li><a href="jobba.html">Arbeta hos oss</a></li> (flytta till kontakta oss)-->
-								
-							</ul>
-                        </nav>
-                        
+                        <div class="container">                       
+                            <nav class="navigation closed clearfix">
+                                <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
+                                <ul class="nav sf-menu">
+                                    <li class="active"><a href="index.html">Hem</a><div id="under"></div></li>
+                                    <li>
+                                        <a href="">Våra bilmärken</a>
+                                        <div id="under"></div>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li><a href="index_audi.html">AUDI</a></li>
+                                                <li><a href="index_bmw.html">BMW</a></li>
+                                                <li><a href="index_mini.html">MINI</a></li>
+                                                <li><a href="index_vw.html">VW</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+								    <li><a href="dack.html">Våra tjänster</a><div id="under"></div></li>
+								    <li><a href="foretag.html">Om oss</a><div id="under"></div></li>
+								    <li><a href="kontakt.html">Kundservice</a><div id="under"></div></li>								
+							    </ul>
+                            </nav>                       
+                        </div>
                     </div>
                 </div>
             </header>
-            
-            <div class="content-area">
 
-                
+            <div class="content-area">              
                 <section class="page-section no-padding slider ">
                     <div class="container full-width">
                         <div class="main-slider">
                             <div class="video-container">
                                 <div class="intro-box">
-                                    <div class="intro-title">
-                                        <span id="intro-prefix">Specialister på</span>
-                                    </div>
-                                    <div class="word-container">
-                                        <span id="car-make">BMW</span>
-                                        <span id="car-make">MINI</span>
-                                        <span id="car-make">VW</span>
-                                        <span id="car-make">AUDI</span>
-                                    </div>
+                                    <p id="dynamic-sentence">Specialister på <span id="last-word"></span></p>
                                 </div>
                                 <video id="video1" autoplay preload="auto" muted>
                                     <source src="assets/videos/Auri-r8.mp4" type="video/mp4">
@@ -149,43 +127,26 @@
                                 <video id="video2" autoplay preload="auto" muted>
                                     <source src="assets/videos/workshop.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
-                                </video>				
-                                <!-- <div class="item slide1 dark">
-                                    <img class="slide-img" src="assets/img/preview/slider/audiinterior.jpg" alt=""/>
-                                    <div class="caption">
-                                        <div class="container">
-                                            <div class="div-table">
-                                                <div class="div-cell">
-                                                    <div class="caption-content">
-                                                        <h2 class="caption-title">Välkommen till vår nya verkstad!</h2>
-                                                        <h3 class="caption-subtitle"><span>Aminogatan 15E, Mölndal</span></h3>
-                                                        <p class="caption-text">
-                                                            <a class="btn btn-theme" href="kontakt.html">Hitta oss</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->                           
-                        </div>
+                                </video>
+                            </div>
+                        </div>			                     
                     </div>
 					<hr class="transparent"/>
                 </section>
 				
                 <section class="page-section ">
                     <div class="container">
-						 <div class="row">
+						<div class="row">
                             <div class="col-md-12" >
                                 <div class="thumbnail no-border no-padding thumbnail-banner ">
-                                    <h2 class=" text-center">Välkomna till Bo & Jimmy Bilservice AB</h2>
-									
+                                    <h2 class=" text-center">Välkomna till Bo & Jimmy Bilservice AB</h2>									
                                 </div>
                             </div>
 						</div>
                     </div>
 					<hr class="transparent"/>
                 </section>
+
 				<section class="page-section" >
                     <div class="container" >
                         <div class="row" >
@@ -203,19 +164,17 @@
                             <div class="col-md-4 col-sm-6" style="background:#2b3442; height:380px;color:#fff;border-radius: 15">
 								<div class="thumbnail no-border no-padding thumbnail-banner">
 									<div class="media">
-                                          <a class="media-link" href="http://www.meca.se/Verkstad/Molndal/664_Bo_och_Jimmy_Bilservice_AB.aspx" target="_blank">
-                                            <img src="assets/img/MECA-logotyp150pxh.png" alt=""/>
-                                                    
-                                          </a>
-                                   </div>
+                                        <a class="media-link" href="http://www.meca.se/Verkstad/Molndal/664_Bo_och_Jimmy_Bilservice_AB.aspx" target="_blank">
+                                            <img src="assets/img/MECA-logotyp150pxh.png" alt=""/>                                                    
+                                        </a>
+                                    </div>
                                     <div class="post-body">
 										<div class="post-excerpt">
-													<p><br>2014 gick vi med i MECA Verkstadskedja. Denna nysatsning innebär att vi kan erbjuda er kunder mer fördelar genom att anlita oss som er verkstad.</p>
-													<p>Klicka på MECA loggan, för mer information.</p>
-
-												</div>
-											</div>
+											<p><br>2014 gick vi med i MECA Verkstadskedja. Denna nysatsning innebär att vi kan erbjuda er kunder mer fördelar genom att anlita oss som er verkstad.</p>
+											<p>Klicka på MECA loggan, för mer information.</p>
 										</div>
+									</div>
+								</div>
                             </div>
                             <div class="col-md-4 egenstyle" >
                                 <div class="thumbnail no-border no-padding thumbnail-banner" >
@@ -233,8 +192,7 @@
                 </section>
 
 				<section class="page-section " >
-                    <div class="container ">
-						
+                    <div class="container ">						
                         <h2 class="text-center">Vi är specialister på AUDI - BMW - MINI - VOLKSWAGEN</h2>
                         <div class="row " >
                             <div class="col-sm-6 col-md-3" >
@@ -247,13 +205,9 @@
 											</div>
                                         </a>
 									</div>
-								</div>
-								
+								</div>							
                             </div>
 							
-
-
-
                             <div class="col-sm-6 col-md-3">
                                 <div class="thumbnail no-border no-padding category">
                                     <div class="media">
@@ -264,9 +218,9 @@
 											</div>
                                         </a>
 									</div>
-								</div>
-								
+								</div>							
                             </div>
+
                             <div class="col-sm-6 col-md-3">
                                 <div class="thumbnail no-border no-padding category">
                                     <div class="media">
@@ -277,9 +231,9 @@
 											</div>
                                         </a>
 									</div>
-								</div>
-								
+								</div>								
                             </div>
+
                             <div class="col-sm-6 col-md-3">
                                 <div class="thumbnail no-border no-padding category">
                                     <div class="media">
@@ -290,14 +244,13 @@
 											</div>
                                         </a>
 									</div>
-								</div>
-								
+								</div>							
                             </div>
                         </div>
 						<hr class="transparent"/>
-                    </div>
-					
+                    </div>					
                 </section>
+
 				<section class="page-section" >
                     <div class="container" >
                         <div class="row" >
@@ -307,19 +260,15 @@
 									<div class="post-excerpt">
 										<p>Här på Bo & Jimmy Bilservice AB utförs ALLT som har med dessa bilmärken att göra.<p>
 										<p>Lång erfarenhet och kundnära relationer ger dig som konsument trygga reparationer. Och du får bra service till bra pris, Kom gärna och besök oss så berättar vi mer.</p>
-										<p>Genom åren har vi ständigt utökat vårat lager med reservdelar, så vi har det mesta. Dessutom har vi en hel del begagnade delar, framförallt till BMW.</p>
-									
-									
-                                    <h2 class="post-title"><strong><br>Kvalitets olja till din bil...</strong></h2>
-									
+										<p>Genom åren har vi ständigt utökat vårat lager med reservdelar, så vi har det mesta. Dessutom har vi en hel del begagnade delar, framförallt till BMW.</p>																
+                                        <h2 class="post-title"><strong><br>Kvalitets olja till din bil...</strong></h2>				
 										<p>Vi har MOTUL, MOBIL och CASTROL motorolja i vårt oljesortiment för din bil, även konsument förpackningar.</p>
 										<p>Behöver du service, reparation, reservdelar till din AUDI-BMW-MINI eller VOLKSWAGEN.</p>
 										<p>Vi finns i Göteborg, Mölndal.<br>Kontakta oss så hjälper vi dig</p>
 									</div>
 								</div>
 							</div>
-                         </div>
-						 
+                         </div>						 
                     </div>
                 </section>
 				
@@ -341,98 +290,90 @@
                         </div>
                     </div>
                 </section>
+               
+			    <footer class="footer">
+                    <div class="footer-banner">
+                        <span> Välkommen till Bo & Jimmy's bilservice!</span>
+                    </div>
+                    <div class="footer-widgets">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="widget">
+                                        <h4 class="widget-title">Bo & Jimmy Bilservice AB</h4>
+                                        <p>Aminogatan 15E<br>431 53 Mölndal</p>
 
-                
-
-			<footer class="footer">
-                <div class="footer-banner">
-                    <span> Välkommen till Bo & Jimmy's bilservice!</span>
-                </div>
-                <div class="footer-widgets">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-md-3">
-                                <div class="widget">
-                                    <h4 class="widget-title">Bo & Jimmy Bilservice AB</h4>
-                                    <p>Aminogatan 15E<br>431 53 Mölndal</p>
-                                    
+                                    </div>
                                 </div>
-                            </div>
-							<div class="col-md-3">
-                                <div class="widget widget-categories">
-                                    <h4 class="widget-title">Kontakt</h4>
-                                    <ul>
-                                        <li><a href="#">Tlf: 031-84 75 29 </a></li>
+							    <div class="col-md-3">
+                                    <div class="widget widget-categories">
+                                        <h4 class="widget-title">Kontakt</h4>
+                                        <ul>
+                                            <li><a href="#">Tlf: 031-84 75 29 </a></li>
+
+                                            <li><a href="mailto:bayerische@telia.com">Email: bayerische@telia.com</a></li>
+							    			<li><a href="http://bjbil.business.site/" target="_blank">Google bussines</a></li>
                                         
-                                        <li><a href="mailto:bayerische@telia.com">Email: bayerische@telia.com</a></li>
-										<li><a href="http://bjbil.business.site/" target="_blank">Google bussines</a></li>
-                                       
-                                    </ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="widget widget-categories">
+                                        <h4 class="widget-title">Våra öppettider</h4>
+                                        <ul>
+							    			<li><a href="#">Mån-Fre: 07:00 - 17:00</a></li>
+                                            <li><a href="#">Lunchstängt: 12:00 - 13:00</a></li>
+							    			<li><a href="#">Lör-Sön: Stängt</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="widget widget-tag-cloud">
+                                        <h4 class="widget-title">Vår specialitet</h4>
+                                        <ul>
+                                            <li><a href="index_audi.html">AUDI</a></li>
+                                            <li><a href="index_bmw.html">BMW</a></li>
+                                            <li><a href="index_mini.html">MINI</a></li>
+                                            <li><a href="index_vw.html">VOLKSWAGEN</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="widget widget-categories">
-                                    <h4 class="widget-title">Våra öppettider</h4>
-                                    <ul>
-										<li><a href="#">Mån-Fre: 07:00 - 17:00</a></li>
-                                        <li><a href="#">Lunchstängt: 12:00 - 13:00</a></li>
-										<li><a href="#">Lör-Sön: Stängt</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-3">
-                                <div class="widget widget-tag-cloud">
-                                    <h4 class="widget-title">Vår specialitet</h4>
-                                    <ul>
-                                        <li><a href="index_audi.html">AUDI</a></li>
-                                        <li><a href="index_bmw.html">BMW</a></li>
-                                        <li><a href="index_mini.html">MINI</a></li>
-                                        <li><a href="index_vw.html">VOLKSWAGEN</a></li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
-                </div>
-                <!-- <div class="footer-meta">
-                    <div class="container">
-                        <div class="row">
+                    <!-- <div class="footer-meta">
+                        <div class="container">
+                            <div class="row">
 
-                            <div class="col-sm-6">
-                                <div class="copyright">
-									<script src="http://stats.webstat.se/assets/stat_isp2.php"></script> 
-									<script type="text/javascript"> -->
-									<!--
-									// document.write("Antal besökare: <" + "script src=\"http://stats.webstat.se/statCounter.asp?id=38625&size=" + screen.width + "x" + screen.height + "&depth=" + screen.colorDepth + "&referer=" + escape(document.referrer) + "&isp=" + info2+ "\"></" + "script>"); 
-									// -->
-									<!-- </script>
-								</div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="payments">
-                                    <ul>
-                                        <li><img src="assets/img/preview/payments/visa.jpg" alt=""/></li>
-                                        <li><img src="assets/img/preview/payments/mastercard.jpg" alt=""/></li>
-                                        <li><img src="assets/img/preview/payments/american-express.jpg" alt=""/></li>
-                                        <li><img src="assets/img/preview/payments/visa-electron.jpg" alt=""/></li>
-                                        <li><img src="assets/img/preview/payments/maestro.jpg" alt=""/></li>
-                                    </ul>
+                                <div class="col-sm-6">
+                                    <div class="copyright">
+				    					<script src="http://stats.webstat.se/assets/stat_isp2.php"></script> 
+				    					<script type="text/javascript"> -->
+				    					<!--
+				    					// document.write("Antal besökare: <" + "script src=\"http://stats.webstat.se/statCounter.asp?id=38625&size=" + screen.width + "x" + screen.height + "&depth=" + screen.colorDepth + "&referer=" + escape(document.referrer) + "&isp=" + info2+ "\"></" + "script>"); 
+				    					// -->
+				    					<!-- </script>
+				    				</div>
                                 </div>
+                                <div class="col-sm-6">
+                                    <div class="payments">
+                                        <ul>
+                                            <li><img src="assets/img/preview/payments/visa.jpg" alt=""/></li>
+                                            <li><img src="assets/img/preview/payments/mastercard.jpg" alt=""/></li>
+                                            <li><img src="assets/img/preview/payments/american-express.jpg" alt=""/></li>
+                                            <li><img src="assets/img/preview/payments/visa-electron.jpg" alt=""/></li>
+                                            <li><img src="assets/img/preview/payments/maestro.jpg" alt=""/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
                             </div>
-
                         </div>
-                    </div>
-                </div> -->
-            </footer>
-            <!-- /FOOTER -->
-
-            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
-
-        </div>
+                    </div> -->
+                </footer>
+                <!-- /FOOTER -->
+                <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+            </div>
         <!--  
         <div class="modal fade zoom" id="modal1" data-pause='500'>
 			<div class="modal-dialog">
@@ -465,7 +406,7 @@
 	
         <script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script>
         <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <!-- <script src="assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script> -->
         <script src="assets/plugins/superfish/js/superfish.min.js"></script>
         <script src="assets/plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
         <script src="assets/plugins/owl-carousel2/owl.carousel.min.js"></script>
@@ -480,6 +421,4 @@
         <!--<![endif]-->
 
     </body>
-
-
 </html>
