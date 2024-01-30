@@ -12,11 +12,18 @@
 		<meta name="author" content="www.bjbil.se" />
 		<title>Bilverkstad service Audi, BMW, MINI och VW. Aminogatan 15. 431 53 Mölndal, Göteborg</title>
 
+        <!-- JS Page Level -->
+        <script async src="assets/js/theme.js"></script>
+
         <!-- Favicon -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
         <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
         <!-- CSS Global -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap" rel="stylesheet">
+
         <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
         <link href="assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet">
@@ -112,19 +119,47 @@
                 
                 <section class="page-section no-padding slider ">
                     <div class="container full-width">
-
                         <div class="main-slider">
-                            <div class="owl-carousel" id="main-slider">
-
-								
-                                <div class="item slide1 dark">
+                            <div class="video-container">
+                                <div class="intro-box">
+                                    <div class="intro-title">
+                                        <span id="intro-prefix">Specialister på</span>
+                                    </div>
+                                    <div class="word-container">
+                                        <span id="car-make">BMW</span>
+                                        <span id="car-make">MINI</span>
+                                        <span id="car-make">VW</span>
+                                        <span id="car-make">AUDI</span>
+                                    </div>
+                                </div>
+                                <video id="video1" autoplay preload="auto" muted>
+                                    <source src="assets/videos/Auri-r8.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <video id="video2" autoplay preload="auto" muted>
+                                    <source src="assets/videos/car-inside.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <video id="video2" autoplay preload="auto" muted>
+                                    <source src="assets/videos/shift-gaze.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <video id="video2" autoplay preload="auto" muted>
+                                    <source src="assets/videos/speed-test.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <video id="video2" autoplay preload="auto" muted>
+                                    <source src="assets/videos/workshop.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>				
+                                <!-- <div class="item slide1 dark">
                                     <img class="slide-img" src="assets/img/preview/slider/audiinterior.jpg" alt=""/>
                                     <div class="caption">
                                         <div class="container">
                                             <div class="div-table">
                                                 <div class="div-cell">
                                                     <div class="caption-content">
-                                                        <!-- <h2 class="caption-title">Välkommen tid!</h2> -->
+                                                        <h2 class="caption-title">Välkommen till vår nya verkstad!</h2>
                                                         <h3 class="caption-subtitle"><span>Aminogatan 15E, Mölndal</span></h3>
                                                         <p class="caption-text">
                                                             <a class="btn btn-theme" href="kontakt.html">Hitta oss</a>
@@ -134,23 +169,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
-                                <div class="item slide2 dark">
-                                    <img class="slide-img" src="assets/img/preview/slider/bmwinterior.jpg" alt=""/>
-                                    
-                                </div>
-                                
-                                <div class="item slide3 dark">
-                                    <img class="slide-img" src="assets/img/preview/slider/miniinterior.jpg" alt=""/>
-                                    
-                                </div>
-								<div class="item slide4 dark">
-                                    <img class="slide-img" src="assets/img/preview/slider/xw.jpg" alt=""/>
-                                    
-                            </div>
+                                </div> -->                           
                         </div>
-
                     </div>
 					<hr class="transparent"/>
                 </section>
@@ -455,9 +475,6 @@
         <script src="assets/plugins/jquery.easing.min.js"></script>
         <script src="assets/plugins/jquery.smoothscroll.min.js"></script>
         <script src="assets/plugins/smooth-scrollbar.min.js"></script>
-
-        <!-- JS Page Level -->
-        <script src="assets/js/theme.js"></script>´
 
         <!--[if (gte IE 9)|!(IE)]><!-->
         <script src="assets/plugins/jquery.cookie.js"></script>
