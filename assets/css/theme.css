@@ -1090,9 +1090,6 @@ input[type=checkbox] {
 .sticky-wrapper:not(.is-sticky) {
   height: auto !important;
 }
-.header {
-  border-bottom: solid 3px #ec005f;
-}
 .wide .sticky-wrapper .header {
   width: 100% !important;
 }

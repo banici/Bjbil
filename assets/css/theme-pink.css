@@ -68,9 +68,6 @@ a:hover .btn-play,
     color: #0D3880;  
 }
 
-.header {
-    border-bottom: solid 1px gray;
-}
 .coming-soon .header {  
     border-bottom-color: rgba(236, 0, 95, 0.5) !important;
 }
