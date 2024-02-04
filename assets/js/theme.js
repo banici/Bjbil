@@ -68,6 +68,19 @@ document.addEventListener('DOMContentLoaded', function () {
     replaceLastWord();
 });
 
+// Makes the navigation bar fixed and on top when scrolling down.
+document.addEventListener('DOMContentLoaded', function () {
+    window.onscroll = function() {scrollFunction()};
+    let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
+    function scrollFunction() {
+      if (document.body.scrollTop > 160 || document.documentElement.scrollTop > 160) {
+        navigationWrapper.style.position = "fixed";
+      } else {
+        navigationWrapper.style.position = "relative";
+      }
+    }
+});
+
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {
 //     return this.animate({opacity: 'toggle', height: 'toggle'}, speed, easing, callback);
