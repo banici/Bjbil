@@ -18,6 +18,7 @@ var hover = document.querySelectorAll('.thumbnail');
 var navigation = document.querySelector('.navigation');
 var superfishMenu = document.querySelector('ul.sf-menu');
 var priceSliderRange = document.querySelector('#slider-range');
+var letsMixIt = false;
 
 // Loads all the videos beforehand to reduce load time
 document.addEventListener('DOMContentLoaded', function () {
@@ -55,10 +56,18 @@ document.addEventListener('DOMContentLoaded', function () {
     var words = ['BMW', 'AUDI', 'MINI', 'VOLKSWAGEN'];
     var currentIndex = 0;
     var lastWord = document.getElementById('last-word');
-    
+
+    function getRandomIndex() {
+        return Math.floor(Math.random() * words.length);
+    }
+
     function replaceLastWord() {
+        if(letsMixIt === false){
+            currentIndex = getRandomIndex();
+            letsMixIt = true; // this happens only once so getRandomIndex fire once
+        } 
         lastWord.textContent = words[currentIndex];
-        currentIndex = (currentIndex + 1) % words.length;
+        currentIndex = (currentIndex + 1) % words.length;         
       }
     
     // Call the function to start the replacement
