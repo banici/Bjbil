@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Changes the last word in the sentence displayed on homepage
 document.addEventListener('DOMContentLoaded', function () {
-    var words = ['BMW', 'AUDI', 'MINI', 'VW'];
+    var words = ['BMW', 'AUDI', 'MINI', 'VOLKSWAGEN'];
     var currentIndex = 0;
     var lastWord = document.getElementById('last-word');
     

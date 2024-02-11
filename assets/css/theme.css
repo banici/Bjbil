@@ -1930,23 +1930,28 @@ li:hover .dropdown {
 }
 
 .intro-box {
+  top: 30%;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  text-align: center;
   height: 100vh;
   margin: 0;
 }
 
 #dynamic-sentence {
   color: white;
-  font-size: 70px;
-  font-family: 'Outfit', sans-serif;
+  font-size: 60px;
+  font-family: 'Bitter', serif;
   text-align: center;
+  margin-bottom: -20px;
+  letter-spacing: 0.02em;
 }
 
 #last-word {
+  color: white;
+  font-size: 90px;
   font-weight: bold; /* Optional: Make the last word bold */
+  font-family: 'Outfit', sans-serif;
 }
 
 /* .main-slider .owl-theme .owl-controls {
@@ -3326,6 +3331,11 @@ li:hover .dropdown {
 /* 5.8 */
 /* Blog / Post
 /* ========================================================================== */
+.text-center {
+  font-family: 'Bitter', serif;
+  font-size: 45px;
+  font-weight: 400;
+}
 .content .post-wrap {
   position: relative;
 }
@@ -6927,18 +6937,13 @@ li:hover .dropdown {
   width: 100%;
   height: 5px;
 }
-.sf-menu.nav > li:hover #under {
+.sf-menu.nav > li:hover > #under {
   display: block;
 }
 .sf-menu.nav > li.active #under {
   display: block;
 }
 
-.sf-menu.nav > li > a:hover,
-.sf-menu.nav > li > a:focus {
-  /* background-color: #0D3880; */
-  
-}
 .sf-menu li.megamenu > ul li ul li {
   display: inline-block;
   width: 85%;
