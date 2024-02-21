@@ -1785,10 +1785,47 @@ li:hover .dropdown {
 /* 3.0 */
 /* Footer
 /* ========================================================================== */
+.about-title {
+  margin: 0;
+}
+.footer-logo {
+  margin: 0;
+  max-width: 518px;
+  height: 150;
+}
+.footer-logo img {
+  max-width: 70%;
+}
 .footer {
   color: #FFFFFF;
   background-color: #323a45;
+  height: 400px;
+  overflow: hidden;
 }
+.footer-container {
+  display: block;
+}
+.footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+:is(.about-box, .contact-box, .hours-box) {
+  flex: 1;
+  width: 80px; /* Set the width of each child div */
+  height: 150px; /* Set the height of each child div */
+  margin: 10px; /* Add margin for spacing */
+  overflow: hidden; /* Ensure the image stays within its container */
+}
+
+@media (max-width: 768px) {
+  :is(.about-box, .contact-box, .hours-box) {
+    flex-basis: calc(100% - 40px); /* Make child divs take half of the container width */
+    width: auto; /* Allow child divs to resize based on content */
+    height: auto; /* Allow child divs to resize based on content */
+  }
+}
+
+
 /* 3.1 */
 /* Footer widgets
 /* ========================================================================== */
@@ -3439,7 +3476,7 @@ li:hover .dropdown {
   text-align: center;
 }
 .oil-wrapper {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 .oil-title-container {
   display: inline-block;
