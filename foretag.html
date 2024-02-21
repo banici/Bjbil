@@ -41,65 +41,61 @@
         
         <div class="wrapper ">
 			<div class="top-bar">
-                <div class="container">
+                <div class="top-bar-container">
                     <div class="top-bar-left">
                         <ul class="list-inline">
-                            <li><a href="mailto:bayerische@telia.com"><i class="fa fa-envelope"></i> bayerische@telia.com</a></li>
-						</ul>
+                            <li><i class="fa fa-clock-o"></i> Måndag-Torsdag 07:00 - 17:00 <span id="day-divider">|</span>
+                                Fredag</span> 07:00 - 12:00</li>
+                            <li><i class="fa fa-phone"></i> 031-84 75 29 </li>
+                            <li><i class="fa fa-map-marker"></i> Aminogatan 15E, 431 53 Mölndal </a></li>
+                        </ul>
                     </div>
-					<div class="top-bar-right">
-                        <ul class="list-inline">
-                            <li ><i class="fa fa-phone"></i> 031-84 75 29 </li>
-						</ul>
-                    </div>
-                    
                 </div>
             </div>
-            <header class="header">
+            <header class="header fixed">
                 <div class="header-wrapper">
                     <div class="container">
-
-                        <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/bj-bil-loggan-skugga.png"  alt=""/></a>
+                            <a href="index.html"><img src="assets/img/bj-bil-loggan-skugga.png" alt="" /></a>
                         </div>
                         <div class="header-cart">
                             <div class="cart-wrapper">
-                                
-								
-                                <!-- Mobile menu toggle button -->
                                 <a href="#" class="menu-toggle btn btn-theme-dark"><i class="fa fa-bars"></i></a>
-                                
                             </div>
                         </div>
-
-                        
-
                     </div>
-					<div class="header-bottom"><div class="container"></div></div>
-					
-                    <div class="navigation-wrapper">
-                    <div class="container">
-                        <!-- Navigation -->
-                        <nav class="navigation closed clearfix">
-                            <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
-                            <ul class="nav sf-menu">
-                                <li ><a href="index.html">Startsidan</a></li>
-                                <li><a href="index_audi.html">AUDI</a></li>
-								<li><a href="index_bmw.html">BMW</a></li>
-								<li><a href="index_mini.html">MINI</a>
-								<li><a href="index_vw.html">VW</a></li>
-								<li><a href="dack.html">Däck</a></li>
-								<li><a href="tips.html">Tips & Trix</a></li>
-								<li class="active"><a href="foretag.html">Om oss</a></li>
-								<li><a href="garanti.html">Garanti</a></li>
-								<li><a href="foton_audi.html">Galleri</a></li>
-								<li><a href="kontakt.html">Kontakta- & Hitta oss</a></li>
-								<li><a href="jobba.html">Arbeta hos oss</a></li>
-								
-							</ul>
-                        </nav>
-                        
+                    <div class="navigation-wrapper" id="navigation-wrapper">
+                        <div class="container">
+                            <nav class="navigation closed clearfix">
+                                <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
+                                <ul class="nav sf-menu">
+                                    <li><a href="index.html">Hem</a>
+                                        <div id="under"></div>
+                                    </li>
+                                    <li>
+                                        <a href="">Våra bilmärken</a>
+                                        <div id="under"></div>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li><a href="index_audi.html">AUDI</a></li>
+                                                <li><a href="index_bmw.html">BMW</a></li>
+                                                <li><a href="index_mini.html">MINI</a></li>
+                                                <li><a href="index_vw.html">VW</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="dack.html">Våra tjänster</a>
+                                        <div id="under"></div>
+                                    </li>
+                                    <li class="active"><a href="foretag.html">Om oss</a>
+                                        <div id="under"></div>
+                                    </li>
+                                    <li><a href="kontakt.html">Kundservice</a>
+                                        <div id="under"></div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -192,82 +188,36 @@
 						<hr class="transparent"/>
 					</div>
 				</section>
-			<footer class="footer">
-                <div class="footer-widgets">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-md-3">
-                                <div class="widget">
-                                    <h4 class="widget-title">Bo & Jimmy Bilservice AB</h4>
-                                    <p>Aminogatan 15E<br>431 53 Mölndal</p>
-                                    
-                                </div>
+                <footer class="footer">
+                    <div class="footer-container">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="assets/img/bj-bil-loggan-skugga.png" alt="" /></a>
+                        </div>
+                        <div class="footer-wrapper">
+                            <div class="about-box">
+                                <h4 class="about-title">Bo & Jimmy Bilservice AB</h4>
+                                <p id="footer-text">Aminogatan 15E<br>431 53 Mölndal</p>
                             </div>
-							<div class="col-md-3">
-                                <div class="widget widget-categories">
-                                    <h4 class="widget-title">Kontakt</h4>
-                                    <ul>
-                                        <li><a href="#">Tlf: 031-84 75 29 </a></li>
-                                        
-                                        <li><a href="mailto:bayerische@telia.com">Email: bayerische@telia.com</a></li>
-										<li><a href="http://bjbil.business.site/" target="_blank">Google bussines</a></li>
-                                       
-                                    </ul>
-                                </div>
+                            <div class="hours-box">
+                                <h4 class="hours-title">Våra öppettider</h4>
+                                <ul id="footer-text">
+                                    <li>Måndag-Torsdag: 07:00 - 17:00</li>
+                                    <li>Fredag: 07:00 - 12:00</li>
+                                    <li>Lunchstängt: 12:00 - 13:00</li>
+                                    <li>Lör-Sön: Stängt</li>
+                                </ul>
                             </div>
-                            <div class="col-md-3">
-                                <div class="widget widget-categories">
-                                    <h4 class="widget-title">Våra öppettider</h4>
-                                    <ul>
-										<li><a href="#">Mån-Fre: 07:00 - 17:00</a></li>
-                                        <li><a href="#">Lunchstängt: 12:00 - 13:00</a></li>
-										<li><a href="#">Lör-Sön: Stängt</a></li>
-                                    </ul>
-                                </div>
+                            <div class="contact-box">
+                                <h4 class="contact-title">Kontakt</h4>
+                                <ul id="footer-text">
+                                    <li><a href="tel:031847529">Ring oss</a></li>
+                                    <li><a href="mailto:bayerische@telia.com">Maila oss</a></li>
+                                    <li><a href="http://bjbil.business.site/" target="_blank">Google bussines</a></li>
+                                </ul>
                             </div>
-                            
-                            <div class="col-md-3">
-                                <div class="widget widget-tag-cloud">
-                                    <h4 class="widget-title">Vår specialitet</h4>
-                                    <ul>
-                                        <li><a href="index_audi.html">AUDI</a></li>
-                                        <li><a href="index_bmw.html">BMW</a></li>
-                                        <li><a href="index_mini.html">MINI</a></li>
-                                        <li><a href="index_vw.html">VOLKSWAGEN</a></li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
-                </div>
-                <div class="footer-meta">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-sm-6">
-                                <div class="copyright">
-									Garantier och reklamationsrätt är en trygghet för dig som kund!
-								</div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="payments">
-                                    <ul>
-                                        <li><img src="assets/img/preview/payments/visa.jpg" alt=""/></li>
-                                        <li><img src="assets/img/preview/payments/mastercard.jpg" alt=""/></li>
-                                        <li><img src="assets/img/preview/payments/american-express.jpg" alt=""/></li>
-                                        <li><img src="assets/img/preview/payments/visa-electron.jpg" alt=""/></li>
-                                        <li><img src="assets/img/preview/payments/maestro.jpg" alt=""/></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </footer>
+                </footer>
             <!-- /FOOTER -->
 
             <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>

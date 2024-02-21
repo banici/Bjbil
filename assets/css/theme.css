@@ -1852,6 +1852,10 @@ li:hover .dropdown {
   color: rgb(167, 167, 167);
 }
 
+#footer-text a:hover {
+  color: white;
+}
+
 @media (max-width: 768px) {
   :is(.about-box, .contact-box, .hours-box) {
     flex-basis: calc(100% - 40px); 
