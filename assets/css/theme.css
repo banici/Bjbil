@@ -1785,13 +1785,12 @@ li:hover .dropdown {
 /* 3.0 */
 /* Footer
 /* ========================================================================== */
-.about-title {
-  margin: 0;
-}
 .footer-logo {
-  margin: 0;
-  max-width: 518px;
+  flex: 1;
+  margin-top: 15px;
+  max-width: 470px;
   height: 150;
+  text-align: center;
 }
 .footer-logo img {
   max-width: 70%;
@@ -1799,29 +1798,92 @@ li:hover .dropdown {
 .footer {
   color: #FFFFFF;
   background-color: #323a45;
-  height: 400px;
+  height: 380px;
   overflow: hidden;
 }
 .footer-container {
-  display: block;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .footer-wrapper {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
 }
 :is(.about-box, .contact-box, .hours-box) {
-  flex: 1;
-  width: 80px; /* Set the width of each child div */
-  height: 150px; /* Set the height of each child div */
-  margin: 10px; /* Add margin for spacing */
-  overflow: hidden; /* Ensure the image stays within its container */
+  flex: .35;
+  width: 150px; 
+  height: 250px; 
+  margin: 10px;
+  overflow: hidden; 
+}
+
+:is(.about-box, .contact-box, .hours-box) li, p {
+  font-size: 19px;
+  letter-spacing: .07em;
+  line-height: 1.9em;
+}
+
+:is(.about-title, .contact-title, .hours-title) {
+  color: white;
+  font-size: 28px;
+  padding-bottom: 10px;
+}
+
+:is(.about-title, .contact-title, .hours-title):before {
+  content: '';
+  display: block;
+  margin-top: 33px;
+  position: absolute;
+  width: 80px;
+  height: 2.5px;
+  background-color: #ec960d;
+}
+.contact-title:before {
+  width: 50px;
+}
+
+.hours-title:before {
+  width: 70px;
+}
+
+#footer-text, #footer-text a {
+  color: rgb(167, 167, 167);
 }
 
 @media (max-width: 768px) {
   :is(.about-box, .contact-box, .hours-box) {
-    flex-basis: calc(100% - 40px); /* Make child divs take half of the container width */
-    width: auto; /* Allow child divs to resize based on content */
-    height: auto; /* Allow child divs to resize based on content */
+    flex-basis: calc(100% - 40px); 
+    width: auto; 
+    height: auto;
+  }
+  .footer-container {
+    flex-direction: column-reverse;
+  }
+  .footer {
+    height: 680px;
+  }
+  .footer-logo {
+  }
+  :is(.about-box, .contact-box, .hours-box) li, p {
+    font-size: 16px;
+    letter-spacing: .07em;
+    line-height: 1.9em;
+  }
+  
+  :is(.about-title, .contact-title, .hours-title) {
+    color: white;
+    font-size: 20px;
+    padding-bottom: 6px;
+  }
+
+  .footer-wrapper {
+    text-align: center;
+  }
+
+  :is(.about-title, .contact-title, .hours-title):before {
+    display: none;
   }
 }
 
