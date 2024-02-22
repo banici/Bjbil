@@ -1016,13 +1016,50 @@ input[type=checkbox] {
   padding-left: 5px;
   padding-right: 5px;
 }
-.top-bar {
+.top-bar { /* This element is also styled in theme.js*/
   padding: 10px 0;
   height: 50px;
   font-size: 16px;
 	background-color: #232323;
   color: rgb(168, 168, 168);
+  transition: height 0.3s ease;
+  overflow: hidden;
 }
+
+.extend-top-bar {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .header {
+    height: 130px;
+  }
+  .header-wrapper .container {
+    padding-top: 20px;
+  }
+  .top-bar-container {
+    display: none;
+  }
+  .extend-top-bar {
+    display: block;
+  }
+  .chevron-box {
+    width: 100%;
+    text-align: center;
+  }
+  .chevron-box i {
+    padding-top: 5px;
+  }
+  .top-bar-container-mobile[id*="closed"] {
+    display: none;
+  }
+  
+  .top-bar-container-mobile[id*="open"] {
+    display: block;
+    text-align: center;
+  }
+}
+
 .top-bar ul {
   margin-bottom: 0;
 }

@@ -90,6 +90,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Shows the extension of contact info for top bar on mobile view.
+document.addEventListener('DOMContentLoaded', function () {
+    var extendBoxes = document.querySelectorAll('.extend-top-bar');
+    extendBoxes.forEach(function(extendBox) {
+        extendBox.addEventListener('click', function() {
+            var topBar = document.querySelectorAll('.top-bar');
+            var toggle = this.querySelector('.top-bar-container-mobile');
+            var arrow = this.querySelectorAll('.chevron-box i');
+
+            if (toggle.id === 'open') {
+                toggle.id = 'closed';
+                arrow[0].classList.remove('fa-chevron-up');
+                arrow[0].classList.add('fa-chevron-down');
+                topBar[0].style.height = "50px";
+            } else {
+                toggle.id = 'open';
+                arrow[0].classList.remove('fa-chevron-down');
+                arrow[0].classList.add('fa-chevron-up');
+                topBar[0].style.height = "165px";
+                toggle.style.paddingBottom = "10px";
+            }
+        });
+    });
+});
+
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {
 //     return this.animate({opacity: 'toggle', height: 'toggle'}, speed, easing, callback);
