@@ -18,7 +18,7 @@
 
         <!-- CSS Global -->
         <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+        <!-- <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet"> -->
         <link href="assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="assets/plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet">
         <link href="assets/plugins/owl-carousel2/assets/owl.carousel.min.css" rel="stylesheet">
@@ -39,70 +39,80 @@
     </head>
 
 	<body id="home" class="wide">
-			<div class="wrapper ">
-
-            
-
-            <!-- Header top bar -->
-            <div class="top-bar">
-				<div class="top-bar-container">
-					<div class="top-bar-left">
-						<ul class="list-inline">
-							<li><i class="fa fa-clock-o"></i> Måndag-Torsdag 07:00 - 17:00 <span id="day-divider">|</span>
-								Fredag</span> 07:00 - 12:00</li>
-							<li><i class="fa fa-phone"></i> 031-84 75 29 </li>
-							<li><i class="fa fa-map-marker"></i> Aminogatan 15E, 431 53 Mölndal </a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+		<div class="wrapper ">
+			<div class="top-bar">
+                <div class="extend-top-bar">
+                    <div class="top-bar-container-mobile" id="closed">
+                        <div class="top-bar-left">
+                            <ul class="list-inline">
+                                <li><i class="fa fa-clock-o"></i>Måndag-Torsdag 07:00 - 17:00</li>
+                                <li><i class="fa fa-clock-o"></i>Fredag 07:00 - 12:00</li>
+                                <br>
+                                <li><i class="fa fa-phone"></i>031-84 75 29</li>
+                                <li><i class="fa fa-map-marker"></i>Aminogatan 15E, 431 53 Mölndal</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chevron-box"><i class="fa fa-chevron-down"></i></div>
+                </div>
+                <div class="top-bar-container">
+                    <div class="top-bar-left">
+                        <ul class="list-inline">
+                            <li><i class="fa fa-clock-o"></i> Måndag-Torsdag 07:00 - 17:00 <span id="day-divider">|</span>
+                                Fredag</span> 07:00 - 12:00</li>
+                            <li><i class="fa fa-phone"></i> 031-84 75 29 </li>
+                            <li><i class="fa fa-map-marker"></i> Aminogatan 15E, 431 53 Mölndal </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <header class="header fixed">
-				<div class="header-wrapper">
-					<div class="container">
-						<div class="logo">
-							<a href="index.html"><img src="assets/img/bj-bil-loggan-skugga.png" alt="" /></a>
-						</div>
-						<div class="header-cart">
-							<div class="cart-wrapper">
-								<a href="#" class="menu-toggle btn btn-theme-dark"><i class="fa fa-bars"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="navigation-wrapper" id="navigation-wrapper">
-						<div class="container">
-							<nav class="navigation closed clearfix">
-								<a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
-								<ul class="nav sf-menu">
-									<li><a href="index.html">Hem</a>
-										<div id="under"></div>
-									</li>
-									<li>
-										<a href="">Våra bilmärken</a>
-										<div id="under"></div>
-										<div class="dropdown">
-											<ul>
-												<li><a href="index_audi.html">AUDI</a></li>
-												<li><a href="index_bmw.html">BMW</a></li>
-												<li><a href="index_mini.html">MINI</a></li>
-												<li><a href="index_vw.html">VW</a></li>
-											</ul>
-										</div>
-									</li>
-									<li><a href="dack.html">Våra tjänster</a>
-										<div id="under"></div>
-									</li>
-									<li><a href="foretag.html">Om oss</a>
-										<div id="under"></div>
-									</li>
-									<li class="active"><a href="kontakt.html">Kundservice</a>
-										<div id="under"></div>
-									</li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</header>
+                <div class="header-wrapper">
+                    <div class="container">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/img/bj-bil-loggan-skugga.png" alt="" /></a>
+                        </div>
+                        <!-- <div class="header-cart">
+                            <div class="cart-wrapper">
+                                <a href="#" class="menu-toggle btn btn-theme-dark"><i class="fa fa-bars"></i></a>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="navigation-wrapper" id="navigation-wrapper">
+                        <div class="container">
+                            <nav class="navigation closed clearfix">
+                                <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
+                                <ul class="nav sf-menu">
+                                    <li><a href="index.html">Hem</a>
+                                        <div id="under"></div>
+                                    </li>
+                                    <li>
+                                        <a href="">Våra bilmärken</a>
+                                        <div id="under"></div>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li><a href="index_audi.html">AUDI</a></li>
+                                                <li><a href="index_bmw.html">BMW</a></li>
+                                                <li><a href="index_mini.html">MINI</a></li>
+                                                <li><a href="index_vw.html">VW</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="dack.html">Våra tjänster</a>
+                                        <div id="under"></div>
+                                    </li>
+                                    <li><a href="foretag.html">Om oss</a>
+                                        <div id="under"></div>
+                                    </li>
+                                    <li class="active"><a href="kontakt.html">Kundservice</a>
+                                        <div id="under"></div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
 			
 			 <div class="content-area ">
 				
@@ -172,8 +182,8 @@
 											<h1 class="title">Kontakta oss via vårt formulär</h1>
 											Kontakta oss gärna med din bokningsförfrågan, eller för att få mer information, genom att fylla i formuläret nedan. Naturligtvis går det även ringa eller e-posta vid frågor eller bokning
 											<hr>
-											<link href="http://bjbil.se/email/core/framework/libs/pj/css/pj.bootstrap.min.css" type="text/css" rel="stylesheet" />
-											<link href="http://bjbil.se/email/index.php?controller=pjFront&action=pjActionLoadCss&fid=1" type="text/css" rel="stylesheet" />
+											<link href="https://bjbil.se/email/core/framework/libs/pj/css/pj.bootstrap.min.css" type="text/css" rel="stylesheet" />
+											<link href="https://bjbil.se/email/index.php?controller=pjFront&action=pjActionLoadCss&fid=1" type="text/css" rel="stylesheet" />
 											<script type="text/javascript" src="http://bjbil.se/email/index.php?controller=pjFront&action=pjActionLoad&fid=1"></script>
 									</div>
 								</div>
@@ -227,7 +237,7 @@
         <!-- JS Global -->
         <script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script>
         <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+        <!-- <script src="assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script> -->
         <script src="assets/plugins/superfish/js/superfish.min.js"></script>
         <script src="assets/plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
         <script src="assets/plugins/owl-carousel2/owl.carousel.min.js"></script>

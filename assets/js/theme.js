@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     var videos = document.querySelectorAll('.video-container video');
     var currentVideoIndex = 0;
-
+    
     function playNextVideo() {
         videos[currentVideoIndex].classList.remove('active');
         currentVideoIndex = (currentVideoIndex + 1) % videos.length;
