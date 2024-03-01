@@ -1809,35 +1809,6 @@ input[type=checkbox] {
   }
 }
 
-.dropdown {
-  display: none;
-  position: absolute;
-  left: 0;
-  padding: 5px;
-  z-index: 2;
-}
-
-.dropdown ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown li {
-  position: relative;
-}
-
-li:hover .dropdown {
-  display: flex;
-}
-
-.dropdown a {
-  display: block;
-  margin: 8px 0;
-}
-
 /* 3.0 */
 /* Footer
 /* ========================================================================== */
@@ -1868,7 +1839,7 @@ li:hover .dropdown {
   flex-wrap: wrap;
 }
 :is(.about-box, .contact-box, .hours-box) {
-  flex: .35;
+  flex: .3;
   width: 150px; 
   height: 250px; 
   margin: 10px;
@@ -1876,14 +1847,14 @@ li:hover .dropdown {
 }
 
 :is(.about-box, .contact-box, .hours-box) li, p {
-  font-size: 19px;
+  font-size: 17px;
   letter-spacing: .07em;
   line-height: 1.9em;
 }
 
 :is(.about-title, .contact-title, .hours-title) {
   color: white;
-  font-size: 28px;
+  font-size: 22px;
   padding-bottom: 10px;
 }
 
@@ -1912,6 +1883,21 @@ li:hover .dropdown {
   color: white;
 }
 
+.social-media-box {
+  display: flex;
+}
+
+.social-media-box > a > div {
+  margin-right: 20px;
+  font-size: 30px;
+  color: white;
+}
+
+.social-media-box > a > div :hover {
+  color: rgba(255, 255, 255, 0.384);
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   :is(.about-box, .contact-box, .hours-box) {
     flex-basis: calc(100% - 40px); 
@@ -1922,9 +1908,10 @@ li:hover .dropdown {
     flex-direction: column-reverse;
   }
   .footer {
-    height: 680px;
+    height: 750px;
   }
   .footer-logo {
+    margin-right: 0;
   }
   :is(.about-box, .contact-box, .hours-box) li, p {
     font-size: 16px;
@@ -1938,13 +1925,33 @@ li:hover .dropdown {
     padding-bottom: 6px;
   }
 
+  :is(.about-title, .contact-title, .hours-title)::after {
+    height: 10px;
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ec960d;
+  }
+
   .footer-wrapper {
+    justify-content: center;
     text-align: center;
   }
 
   :is(.about-title, .contact-title, .hours-title):before {
     display: none;
   }
+  .social-media-box {
+    justify-content: center;
+  }
+
+  .social-media-box > a > div {
+    margin-right: 5px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+
 }
 
 
@@ -3175,7 +3182,7 @@ li:hover .dropdown {
   background: url('../img/overlay-banner.png') repeat center center;
 }
 .message-box .message-box-inner {
-  border: solid 1px #E0E0E0;
+  border-right: solid 1px #E0E0E0;
   padding: 20px 15px;
   position: relative;
   z-index: 1;

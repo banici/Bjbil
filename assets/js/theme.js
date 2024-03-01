@@ -23,9 +23,11 @@ var letsMixIt = false;
 // Loads all the videos beforehand to reduce load time
 document.addEventListener('DOMContentLoaded', function () {
     var videos = document.querySelectorAll('.video-container video');
-    videos.forEach(function (video) {
-        video.load();
-    });
+    if (videos.length > 0) {
+        videos.forEach(function (video) {
+            video.load();
+        });
+    }
 });
 
 // Iterates between different videos to play on homepage
@@ -33,22 +35,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var videos = document.querySelectorAll('.video-container video');
     var currentVideoIndex = 0;
     
-    function playNextVideo() {
-        videos[currentVideoIndex].classList.remove('active');
-        currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+    if (videos.length > 0) {
+        function playNextVideo() {
+            videos[currentVideoIndex].classList.remove('active');
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            videos[currentVideoIndex].classList.add('active');
+            videos[currentVideoIndex].play();
+        }
+    
+        videos.forEach(function (video, index) {
+            video.addEventListener('ended', function () {
+                playNextVideo();
+            });
+        });
+    
+        // Display the first video
         videos[currentVideoIndex].classList.add('active');
         videos[currentVideoIndex].play();
     }
 
-    videos.forEach(function (video, index) {
-        video.addEventListener('ended', function () {
-            playNextVideo();
-        });
-    });
-
-    // Display the first video
-    videos[currentVideoIndex].classList.add('active');
-    videos[currentVideoIndex].play();
 });
 
 // Changes the last word in the sentence displayed on homepage
@@ -62,13 +67,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function replaceLastWord() {
-        if(letsMixIt === false){
-            currentIndex = getRandomIndex();
-            letsMixIt = true; // this happens only once so getRandomIndex fire once
-        } 
-        lastWord.textContent = words[currentIndex];
-        currentIndex = (currentIndex + 1) % words.length;         
-      }
+        if (lastWord) {
+            if (letsMixIt === false){
+                currentIndex = getRandomIndex();
+                letsMixIt = true; // this happens only once so getRandomIndex fire once
+            } 
+            lastWord.textContent = words[currentIndex];
+            currentIndex = (currentIndex + 1) % words.length;         
+          }
+        }
+
     
     // Call the function to start the replacement
     setInterval(replaceLastWord, 3000); // Change every 2 seconds (adjust as needed)
