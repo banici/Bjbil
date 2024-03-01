@@ -3624,7 +3624,6 @@ input[type=checkbox] {
 }
 .oil-title-container {
   display: inline-block;
-  width: 450px;
 }
 #oil-title-line {
   width: 120px;
@@ -3676,6 +3675,9 @@ input[type=checkbox] {
 @media (max-width: 639px) {
   .post-wrap .owl-theme .owl-controls {
     display: none;
+  }
+  #oil-title-line {
+    margin-left: 30px;
   }
 }
 .post-wrap .owl-theme .owl-controls .owl-nav [class*=owl-] {
