@@ -91,7 +91,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
     function scrollFunction() {
       if (document.body.scrollTop > 160 || document.documentElement.scrollTop > 160) {
+        if (window.innerWidth > 768) {
         navigationWrapper.style.position = "fixed";
+        }
       } else {
         navigationWrapper.style.position = "relative";
       }
