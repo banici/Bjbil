@@ -1899,6 +1899,14 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
+#footer-meca {
+  margin-top: 40px;
+  border-radius: 3%;
+  width: 50%;
+  height: 50%;
+  image-rendering: optimizeQuality;
+}
+
 @media (max-width: 768px) {
   :is(.about-box, .contact-box, .hours-box) {
     flex-basis: calc(100% - 40px); 
@@ -1909,7 +1917,7 @@ input[type=checkbox] {
     flex-direction: column-reverse;
   }
   .footer {
-    height: 750px;
+    height: 900px;
   }
   .footer-logo {
     margin-right: 0;
