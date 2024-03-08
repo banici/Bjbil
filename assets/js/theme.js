@@ -19,6 +19,11 @@ var navigation = document.querySelector('.navigation');
 var superfishMenu = document.querySelector('ul.sf-menu');
 var priceSliderRange = document.querySelector('#slider-range');
 var letsMixIt = false;
+var selectedCustomerBox;
+var selectedContainer;
+var selectedParent;
+var isMobileView;
+var containerContent;
 
 // Loads all the videos beforehand to reduce load time
 document.addEventListener('DOMContentLoaded', function () {
@@ -124,6 +129,80 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+// Toggle the customer service info on-click
+document.addEventListener("click", function(e) {
+    const boxes = ['help-box', 'warranty-box', 'faq-box', 'form-box'];
+    const target = e.target.classList;
+    if(boxes.includes(target[0])) {
+        // Checks if clicked object has not been clicked on before
+        if (selectedCustomerBox && target[0] !== selectedCustomerBox[0]) {
+            selectedCustomerBox.remove("active");
+            if(selectedContainer) {
+                selectedContainer.remove("active");
+            }
+          }
+        target.add("active");
+        selectedCustomerBox = target;
+        selectedParent = e.target.parentElement;
+
+        switch(target[0]) {
+            case "help-box":
+                containerContent = document.getElementsByClassName("help-container")[0];
+                selectedContainer = document.getElementsByClassName("help-container")[0].classList;
+                selectedContainer.add("active");
+                break;
+            case "warranty-box":
+                selectedContainer = document.getElementsByClassName("warranty-container")[0].classList;
+                selectedContainer.add("active");
+                break;
+            case "faq-box":
+                selectedContainer = document.getElementsByClassName("faq-container")[0].classList;
+                selectedContainer.add("active");
+                break;
+            case "form-box":
+                selectedContainer = document.getElementsByClassName("form-container")[0].classList;
+                selectedContainer.add("active");
+                break;
+            default:
+            console.error('no target was found!');
+        }  
+    }
+    forceContentIntoDivForMobileView(e.target.parentElement);
+});
+
+
+function checkScreenSize() {
+    isMobileView = window.innerWidth <= 990;
+  }
+  
+  // Call the function on initial load
+  checkScreenSize();
+  
+  // Add an event listener for resize events
+  window.addEventListener("resize", checkScreenSize);
+
+// This is for Customer Service
+// When screen size is mobile then we want to have different behavior than desktop view
+// and force content inside selected customer information
+function forceContentIntoDivForMobileView(parent) {
+    if(isMobileView) {
+//isOk should be replaced, should add active to parent when selected in fucntion above, then
+// check if parent is not active then we do the code inside.
+        if(isOk) {
+            const newDiv = document.createElement('div');
+            newDiv.innerHTML = containerContent.innerHTML;
+            newDiv.children[0].classList.remove("help-info");
+            newDiv.children[0].style.padding = "15px 10px 15px 20px"
+            newDiv.children[0].style.borderBottom = "1px solid black";
+            newDiv.children[0].style.fontSize = "17px";
+    
+            parent.appendChild(newDiv);
+        }
+    }
+}
+
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {

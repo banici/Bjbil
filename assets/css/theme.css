@@ -1564,6 +1564,115 @@ input[type=checkbox] {
   color: #232323;
   background-color: #e9e9e9;
 }
+/*Customer CSS*/
+.customer-page-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.customer-service-container {
+  background-color: #fff;
+  height: 800px;
+  padding-top: 1px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.customer-service-wrapper {
+  border-right: 1px solid black;
+  width: 350px;
+}
+
+:is(.help-container, .warranty-container, .faq-container, .form-container) {
+  display: none;
+}
+
+:is(.help-container, .warranty-container, .faq-container, .form-container).active {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+:is(.help-info, .warranty-info, .faq-info, .form-info) {
+  padding-top: 50px;
+  width: 60%;
+}
+
+.warranty-info span {
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.customer-chevron {
+  margin-left: auto;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  height: 60px;
+}
+
+:is(.customer-help, .customer-warranty, .customer-faq, .customer-form,):hover {
+  cursor: pointer;
+}
+
+:is(.customer-help, .customer-warranty, .customer-faq, .customer-form,):hover .customer-chevron {
+  background-color: #ec960d;
+  cursor: pointer;
+}
+
+:is(.help-box, .warranty-box, .faq-box, .form-box) {
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  border-bottom: 1px solid black;
+  align-items: center;
+}
+
+:is(.help-box, .warranty-box, .faq-box, .form-box).active > .customer-chevron {
+  background-color: #ec960d;
+}
+
+.customer-title {
+  margin-left: 20px;
+}
+.customer-title-box {
+  border-bottom: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+@media (max-width: 991px) {
+  .customer-service-container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .customer-service-wrapper {
+    width: 100%;
+  }
+  :is(.help-container, .warranty-container, .faq-container, .form-container).active {
+    width: 100%;
+  }
+  :is(.help-info, .warranty-info, .faq-info, .form-info) {
+    display: none;
+  }
+  #customer-help-title {
+    display: none;
+  }
+  :is(.help-box, .warranty-box, .faq-box, .form-box).active {
+    background-color: #ec960d;
+    border-bottom: none;
+  }
+
+}
+
 /* ARROW DOWN */
 .sf-menu.nav > li > a.sf-with-ul,
 .sf-arrows .sf-with-ul {
