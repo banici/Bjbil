@@ -25,6 +25,18 @@ var selectedParent;
 var isMobileView;
 var containerContent;
 
+
+function checkScreenSize() {
+    isMobileView = window.innerWidth <= 990;
+  }
+  
+// Call the function on initial load
+checkScreenSize();
+
+// Add an event listener for resize events
+window.addEventListener("resize", checkScreenSize);
+
+
 // Loads all the videos beforehand to reduce load time
 document.addEventListener('DOMContentLoaded', function () {
     var videos = document.querySelectorAll('.video-container video');
@@ -96,9 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
     function scrollFunction() {
       if (document.body.scrollTop > 160 || document.documentElement.scrollTop > 160) {
-        if (window.innerWidth > 768) {
         navigationWrapper.style.position = "fixed";
-        }
       } else {
         navigationWrapper.style.position = "relative";
       }
@@ -154,52 +164,51 @@ document.addEventListener("click", function(e) {
                 selectedContainer.add("active");
                 break;
             case "warranty-box":
+                containerContent = document.getElementsByClassName("warranty-container")[0];
                 selectedContainer = document.getElementsByClassName("warranty-container")[0].classList;
                 selectedContainer.add("active");
                 break;
             case "faq-box":
+                containerContent = document.getElementsByClassName("faq-container")[0];
                 selectedContainer = document.getElementsByClassName("faq-container")[0].classList;
                 selectedContainer.add("active");
                 break;
             case "form-box":
+                containerContent = document.getElementsByClassName("form-container")[0];
                 selectedContainer = document.getElementsByClassName("form-container")[0].classList;
                 selectedContainer.add("active");
                 break;
             default:
             console.error('no target was found!');
         }  
+        forceContentIntoDivForMobileView(e.target.parentElement);
     }
-    forceContentIntoDivForMobileView(e.target.parentElement);
 });
 
-
-function checkScreenSize() {
-    isMobileView = window.innerWidth <= 990;
-  }
-  
-  // Call the function on initial load
-  checkScreenSize();
-  
-  // Add an event listener for resize events
-  window.addEventListener("resize", checkScreenSize);
 
 // This is for Customer Service
 // When screen size is mobile then we want to have different behavior than desktop view
 // and force content inside selected customer information
 function forceContentIntoDivForMobileView(parent) {
     if(isMobileView) {
-//isOk should be replaced, should add active to parent when selected in fucntion above, then
-// check if parent is not active then we do the code inside.
-        if(isOk) {
+        const childClassName = (containerContent.children[0].className);
+        if(!parent.classList.contains("active")){
+            parent.classList.add("active");
             const newDiv = document.createElement('div');
             newDiv.innerHTML = containerContent.innerHTML;
-            newDiv.children[0].classList.remove("help-info");
+            newDiv.children[0].classList.remove(childClassName);
+            newDiv.children[0].classList.add("customer-mobile-info");
             newDiv.children[0].style.padding = "15px 10px 15px 20px"
             newDiv.children[0].style.borderBottom = "1px solid black";
             newDiv.children[0].style.fontSize = "17px";
-    
             parent.appendChild(newDiv);
-        }
+        } else {
+            const appendedChild = parent.children[1];
+            if(appendedChild) {
+                parent.removeChild(appendedChild);
+            }
+            parent.classList.remove("active");
+        } 
     }
 }
 

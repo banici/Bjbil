@@ -1049,12 +1049,16 @@ input[type=checkbox] {
   display: none;
 }
 
-@media (max-width: 991px) {
+.header-wrapper .container {
+  padding-top: 30px;
+}
+
+@media (max-width: 990px) {
   .header {
     height: 130px;
   }
   .header-wrapper .container {
-    padding-top: 30px;
+    padding-top: 0;
   }
   .top-bar-container {
     display: none;
@@ -1435,10 +1439,6 @@ input[type=checkbox] {
   
 }
 @media (max-width: 480px) {
-  .logo {
-    padding-top: 0;
-    margin-bottom: 5px;
-  }
   .header-logo-left .logo {
     margin-left: auto;
   }
@@ -1663,7 +1663,7 @@ input[type=checkbox] {
   :is(.help-info, .warranty-info, .faq-info, .form-info) {
     display: none;
   }
-  #customer-help-title {
+  :is(#customer-help-title, #customer-warranty-title, #customer-faq-title, #customer-form-title) {
     display: none;
   }
   :is(.help-box, .warranty-box, .faq-box, .form-box).active {
