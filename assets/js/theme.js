@@ -144,8 +144,10 @@ document.addEventListener('DOMContentLoaded', function () {
 // Toggle the customer service info on-click
 document.addEventListener("click", function(e) {
     const boxes = ['help-box', 'warranty-box', 'faq-box', 'form-box'];
-    const target = e.target.classList;
-    if(boxes.includes(target[0])) {
+    const BoxChildren = ['customer-chevron', 'fa'];
+    let target = e.target.classList;
+    console.log(e.target);
+    if(boxes.includes(target[0]) || BoxChildren.includes(target[0])) {
         // Checks if clicked object has not been clicked on before
         if (selectedCustomerBox && target[0] !== selectedCustomerBox[0]) {
             selectedCustomerBox.remove("active");
@@ -153,6 +155,9 @@ document.addEventListener("click", function(e) {
                 selectedContainer.remove("active");
             }
           }
+        if(BoxChildren.includes(target[0])) {
+            target = e.target.parentElement.classList;
+        }
         target.add("active");
         selectedCustomerBox = target;
         selectedParent = e.target.parentElement;
@@ -207,6 +212,7 @@ function forceContentIntoDivForMobileView(parent) {
             if(appendedChild) {
                 parent.removeChild(appendedChild);
             }
+            selectedCustomerBox.remove("active");
             parent.classList.remove("active");
         } 
     }
