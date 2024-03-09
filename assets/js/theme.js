@@ -140,13 +140,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
+/*This code block listens for click events on the customer service page to determine if the target is the expected element. If the target matches, the code adds the "active" class to its className. If **the click event occurs on a child element, the code updates the target variable to refer to the parentElement. The switch case then sets the content of the related element to be displayed. Finally, **the forceContentIntoDivForMobileView function is called, passing the parentElement as an argument.
+*/
 // Toggle the customer service info on-click
 document.addEventListener("click", function(e) {
     const boxes = ['help-box', 'warranty-box', 'faq-box', 'form-box'];
     const BoxChildren = ['customer-chevron', 'fa'];
     let target = e.target.classList;
-    console.log(e.target);
     if(boxes.includes(target[0]) || BoxChildren.includes(target[0])) {
         // Checks if clicked object has not been clicked on before
         if (selectedCustomerBox && target[0] !== selectedCustomerBox[0]) {
