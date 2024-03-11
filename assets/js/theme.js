@@ -119,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
             if (document.body.scrollTop > 210 || document.documentElement.scrollTop > 210) {
-              console.log('dawd');
               navigationWrapper.style.position = "fixed";
             } else {
               navigationWrapper.style.position = "relative";
