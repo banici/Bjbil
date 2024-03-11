@@ -1052,10 +1052,16 @@ input[type=checkbox] {
 .header-wrapper .container {
   padding-top: 30px;
 }
+.nav-sidebar {
+  display: none;
+}
+.navigator-menu {
+  display: none;
+}
 
 @media (max-width: 990px) {
   .header {
-    height: 130px;
+    height: 100px;
   }
   .header-wrapper .container {
     padding-top: 0;
@@ -1081,6 +1087,109 @@ input[type=checkbox] {
     display: block;
     text-align: center;
   }
+  .mobile-navigator {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+  }
+
+  .nav-sidebar {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.995);
+    position: absolute;
+    z-index: 9;
+    height: 100%;
+    color: white;
+    width: 200px;
+    transition: translate var(--animation-timing);
+    translate: -100%;
+  }
+  .nav-wrapper {
+    background-color: rgba(0, 0, 0, 0.815);
+    height: 100vh;
+    padding-top: 20px;
+  }
+  .nav-list li {
+    border-bottom: 1px solid rgb(85, 85, 85);
+    height: 50px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-list li:first-child {
+    border-top: 1px solid rgb(85, 85, 85);
+  }
+  .nav-list li a {
+    color: white;
+    padding-left: 10px;
+  }
+  .nav-list li i {
+    padding-left: 10px;
+  }
+  .navigator-menu:has(input:checked) + .nav-sidebar {
+    translate: 0;
+  }
+  .nav-sidebar nav {
+    margin-top: 100px;
+    width: 100%;
+  }
+  .navigator-menu {
+    --x-width: calc(var(--bar-height) * 7.7);
+    display: flex;
+    flex-direction: column;
+    gap: var(--bar-gap);
+    width: max-content;
+    position: absolute;
+    top: 54px;
+    left: 10px;
+    z-index: 10;
+  }
+
+  .navigator-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+  }
+
+  .navigator-menu::before,
+  .navigator-menu::after,
+  .navigator-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: white;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing), rotate
+     var(--animation-timing), translate var(--animation-timing);
+  }
+
+  .navigator-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+  }
+  .navigator-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+
+  }
+
+  .navigator-menu input:checked {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+:root {
+    --bar-width: 40px;
+    --bar-height: 5px;
+    --bar-gap: 6px;
+    --bjbil-blue: #2b3442;
+    --bjbil-orange: #ec960d;
+    --animation-timing: 200ms ease-in-out;
+    --navigation-height: calc(var(--navigation-height) * 3 + var(--bar-gap) * 2);
 }
 
 .top-bar ul {
@@ -1158,7 +1267,7 @@ input[type=checkbox] {
 /* Header
 /* ========================================================================== */
 .header {
-  background-color: #2b3442;
+  background-color: var(--bjbil-blue);
   text-align: center;
 }
 .header-wrapper {
@@ -1436,12 +1545,14 @@ input[type=checkbox] {
 }
 .header-logo-left .logo {
   margin-left: 0;
-  
 }
-@media (max-width: 480px) {
-  .header-logo-left .logo {
-    margin-left: auto;
+@media (max-width: 900px) {
+  #header-logo img {
+    float: right;
+    width: fit-content;
+    max-width: 250px;
   }
+
 }
 /* 2.2 */
 /* Navigation / superfish skin
@@ -1450,7 +1561,7 @@ input[type=checkbox] {
   position: relative;
   text-align: center;
   line-height: 0;
-  background:#2b3442;
+  background: var(--bjbil-blue);
 }
 .navigation .nav.sf-menu {
   line-height: 1.72;
@@ -1534,7 +1645,7 @@ input[type=checkbox] {
 .sf-menu li.sfHover,
 .sf-menu li.sfHover > a,
 .sf-menu li.active {
-  background-color: #2b3442;
+  background-color: var(--bjbil-blue);
 	color: #fff;
 }
 .sf-menu li.active > a {
@@ -1621,7 +1732,7 @@ input[type=checkbox] {
 }
 
 :is(.customer-help, .customer-warranty, .customer-faq, .customer-form,):hover .customer-chevron {
-  background-color: #ec960d;
+  background-color: var(--bjbil-orange);
   cursor: pointer;
 }
 
@@ -1636,7 +1747,7 @@ input[type=checkbox] {
 }
 
 :is(.help-box, .warranty-box, .faq-box, .form-box).active > .customer-chevron {
-  background-color: #ec960d;
+  background-color: var(--bjbil-orange);
 }
 
 .customer-title {
@@ -1668,7 +1779,7 @@ input[type=checkbox] {
   }
   
   :is(.help-box, .warranty-box, .faq-box, .form-box).active {
-    background-color: #ec960d;
+    background-color: var(--bjbil-orange);
     border-bottom: none;
   }
 
@@ -1989,7 +2100,7 @@ input[type=checkbox] {
   position: absolute;
   width: 80px;
   height: 2.5px;
-  background-color: #ec960d;
+  background-color: var(--bjbil-orange);
 }
 .contact-title:before {
   width: 50px;
@@ -2124,7 +2235,7 @@ input[type=checkbox] {
   left: 0;
   width: 50px;
   height: 2px;
-  background-color: #ec960d;
+  background-color: var(--bjbil-orange);
 }
 
 /* 3.2 */
@@ -3675,7 +3786,7 @@ input[type=checkbox] {
 #title-line {
   width: 70px;
   height: 5px;
-  background-color: #ec960d;
+  background-color: var(--bjbil-orange);
   margin-bottom: 20px;
 }
 .post-title a {
@@ -3760,7 +3871,7 @@ input[type=checkbox] {
 #oil-title-line {
   width: 120px;
   height: 4px;
-  background-color: #ec960d;
+  background-color: var(--bjbil-orange);
 }
 .post-title {
   font-family: 'Bitter', serif;
@@ -7309,7 +7420,7 @@ input[type=checkbox] {
 /* ========================================================================== */
 #under {
   display: none;
-  background-color: #ec960d;
+  background-color: var(--bjbil-orange);
   width: 100%;
   height: 5px;
 }

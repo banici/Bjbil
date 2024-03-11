@@ -102,16 +102,29 @@ document.addEventListener('DOMContentLoaded', function () {
     replaceLastWord();
 });
 
-// Makes the navigation bar fixed and on top when scrolling down.
+// // Makes the navigation bar fixed and on top when scrolling down.
 document.addEventListener('DOMContentLoaded', function () {
     window.onscroll = function() {scrollFunction()};
-    let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
+    let mobileNav = document.getElementsByClassName("header")[0];
     function scrollFunction() {
-      if (document.body.scrollTop > 160 || document.documentElement.scrollTop > 160) {
-        navigationWrapper.style.position = "fixed";
-      } else {
-        navigationWrapper.style.position = "relative";
-      }
+        if (window.innerWidth < 900) {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+              mobileNav.style.position = "fixed";
+              mobileNav.style.zIndex = "10";
+              mobileNav.style.top = "0";
+              mobileNav.style.width = "100%";
+            } else {
+              mobileNav.style.position = "static";
+            }
+        } else {
+            let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
+            if (document.body.scrollTop > 210 || document.documentElement.scrollTop > 210) {
+              console.log('dawd');
+              navigationWrapper.style.position = "fixed";
+            } else {
+              navigationWrapper.style.position = "relative";
+            }         
+        }
     }
 });
 
