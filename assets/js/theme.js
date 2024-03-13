@@ -18,7 +18,8 @@ var hover = document.querySelectorAll('.thumbnail');
 var navigation = document.querySelector('.navigation');
 var superfishMenu = document.querySelector('ul.sf-menu');
 var priceSliderRange = document.querySelector('#slider-range');
-var letsMixIt = false;
+var mixCarmakeName = false;
+var mixVideoOrder = false;
 var selectedCustomerBox;
 var selectedContainer;
 var selectedParent;
@@ -51,8 +52,16 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     var videos = document.querySelectorAll('.video-container video');
     var currentVideoIndex = 0;
+
+    function getRandomIndex() {
+        return Math.floor(Math.random() * videos.length);
+    }
     
     if (videos.length > 0) {
+        if (mixVideoOrder === false) { // if blocket ser till att slumpmässig video startar varje besök.
+            currentVideoIndex = getRandomIndex();
+            mixVideoOrder = true;
+        }
         function playNextVideo() {
             videos[currentVideoIndex].classList.remove('active');
             currentVideoIndex = (currentVideoIndex + 1) % videos.length;
@@ -85,9 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function replaceLastWord() {
         if (lastWord) {
-            if (letsMixIt === false){
+            if (mixCarmakeName === false){
                 currentIndex = getRandomIndex();
-                letsMixIt = true; // this happens only once so getRandomIndex fire once
+                mixCarmakeName = true; // this happens only once so getRandomIndex fire once
             } 
             lastWord.textContent = words[currentIndex];
             currentIndex = (currentIndex + 1) % words.length;         
