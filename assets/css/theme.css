@@ -2076,7 +2076,7 @@ input[type=checkbox] {
 :is(.about-box, .contact-box, .hours-box) {
   flex: .3;
   width: 150px; 
-  height: 250px; 
+  height: 300px; 
   margin: 10px;
   overflow: hidden; 
 }
@@ -2104,6 +2104,40 @@ input[type=checkbox] {
 }
 .contact-title:before {
   width: 50px;
+}
+
+.newsmail-title {
+  color: white;
+}
+#your-email-text {
+  font-size: 16px;
+  letter-spacing: 0.04em;
+}
+#your-email-text::after {
+  content: "*";
+  font-size: 20px;
+  color: var(--bjbil-orange);
+}
+:is(#mail-input, #subscribe-btn) {
+  width: 250px;
+  margin-top: 4px;
+  height: 35px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+#mail-input {
+  color: #636363;
+  font-size: 18px;
+  padding-left: 7px;
+}
+#subscribe-btn {
+  color:white;
+  background-color: #b6b6b6;
+  font-size: 18px;
+}
+#subscribe-btn:hover {
+  background-color: #858585;
 }
 
 .hours-title:before {
