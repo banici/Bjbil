@@ -230,6 +230,33 @@ function forceContentIntoDivForMobileView(parent) {
     }
 }
 
+const emailInput = document.getElementById("mail-input");
+const submitButton = document.getElementById("subscribe-btn");
+
+// Email validation function (replace with your preferred method)
+function validateEmail(email) {
+  // You can use a regular expression or a library for validation
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email) && email.slice(-3) !== ".co";
+  // we dont expect anyone from colombia (.co) to subscribe.
+  // this way user wont accedentally press subscribe before the whole email ".com" has been typed.
+}
+
+// Event listener for input changes
+emailInput.addEventListener("input", function() {
+  const email = this.value;
+  submitButton.disabled = !validateEmail(email); // Disable button if invalid
+  console.log(submitButton);
+});
+
+// Event listener for button click (optional)
+submitButton.addEventListener("click", function() {
+// add logic here to pass the email to the "Bjbil nyhetsbrev mail".
+// Maybe double check if user already exist and handle that in a certain way.
+
+  emailInput.value = "";
+  submitButton.disabled = true; // Disable button again after reset
+});
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {

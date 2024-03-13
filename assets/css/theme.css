@@ -2133,11 +2133,16 @@ input[type=checkbox] {
 }
 #subscribe-btn {
   color:white;
-  background-color: #b6b6b6;
+  background-color: #929292;
   font-size: 18px;
 }
 #subscribe-btn:hover {
-  background-color: #858585;
+  background-color: #646464;
+  cursor: pointer;
+}
+#subscribe-btn:disabled {
+  cursor: default;
+  background-color: #c5c5c5;
 }
 
 .hours-title:before {
