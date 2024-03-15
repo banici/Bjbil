@@ -116,22 +116,28 @@ document.addEventListener('DOMContentLoaded', function () {
     window.onscroll = function() {scrollFunction()};
     let mobileNav = document.getElementsByClassName("header")[0];
     function scrollFunction() {
-        if (window.innerWidth < 900) {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-              mobileNav.style.position = "fixed";
-              mobileNav.style.zIndex = "10";
-              mobileNav.style.top = "0";
-              mobileNav.style.width = "100%";
-            } else {
-              mobileNav.style.position = "static";
-            }
-        } else {
+        if (window.innerWidth > 900) {
             let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
-            if (document.body.scrollTop > 210 || document.documentElement.scrollTop > 210) {
+            const navigationElement = document.querySelector(".timeline-container");
+            if (document.body.scrollTop > 214 || document.documentElement.scrollTop > 214) {
               navigationWrapper.style.position = "fixed";
+              navigationWrapper.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
+              navigationElement.style.paddingTop = "101px";
             } else {
               navigationWrapper.style.position = "relative";
-            }         
+              navigationWrapper.style.boxShadow = "none";
+              navigationElement.style.paddingTop = "0";
+            }  
+        } else {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                mobileNav.style.position = "fixed";
+                mobileNav.style.zIndex = "10";
+                mobileNav.style.top = "0";
+                mobileNav.style.width = "100%";
+                mobileNav.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
+            } else {
+                mobileNav.style.position = "static";
+            }       
         }
     }
 });
