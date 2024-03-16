@@ -2059,9 +2059,10 @@ input[type=checkbox] {
 }
 .footer {
   color: #FFFFFF;
-  background-color: #323a45;
+  background-color:var(--bjbil-blue);
   height: 380px;
   overflow: hidden;
+  width: 100%;
 }
 .footer-container {
   margin-top: 50px;
