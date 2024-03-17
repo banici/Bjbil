@@ -1692,7 +1692,6 @@ input[type=checkbox] {
 }
 
 .customer-service-wrapper {
-  border-right: 1px solid black;
   width: 350px;
 }
 
@@ -1725,6 +1724,9 @@ input[type=checkbox] {
   justify-content: center;
   color: black;
   height: 60px;
+  border-radius: 7px;
+  padding-right: 20px;
+  transition: padding-right 0.34s ease;
 }
 
 :is(.customer-help, .customer-warranty, .customer-faq, .customer-form,):hover {
@@ -1732,8 +1734,18 @@ input[type=checkbox] {
 }
 
 :is(.customer-help, .customer-warranty, .customer-faq, .customer-form,):hover .customer-chevron {
+  padding-right: 2px;
+} 
+
+:is(.help-box, .warranty-box, .faq-box, .form-box).active {
   background-color: var(--bjbil-orange);
+  border-bottom: none;
   cursor: pointer;
+}
+
+:is(.customer-help, .customer-warranty, .customer-faq, .customer-form,) {
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
 
 :is(.help-box, .warranty-box, .faq-box, .form-box) {
@@ -1742,8 +1754,9 @@ input[type=checkbox] {
   display: flex;
   flex-direction: row;
   padding-left: 20px;
-  border-bottom: 1px solid black;
   align-items: center;
+  border-radius: 7px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 
 :is(.help-box, .warranty-box, .faq-box, .form-box).active > .customer-chevron {
@@ -1754,10 +1767,10 @@ input[type=checkbox] {
   margin-left: 20px;
 }
 .customer-title-box {
-  border-bottom: 1px solid black;
-  padding-top: 10px;
-  padding-bottom: 15px;
+  padding-top: 50px;
+  padding-bottom: 55px;
   display: flex;
+  align-items: center;
 }
 .bubble-div {
   padding-top: 10px;
@@ -1786,10 +1799,10 @@ input[type=checkbox] {
   :is(#customer-help-title, #customer-warranty-title, #customer-faq-title, #customer-form-title) {
     display: none;
   }
-  
-  :is(.help-box, .warranty-box, .faq-box, .form-box).active {
-    background-color: var(--bjbil-orange);
-    border-bottom: none;
+
+  .customer-title-box {
+    padding-top: 10px;
+    padding-bottom: 15px;
   }
 
   .customer-chevron {
@@ -1803,6 +1816,10 @@ input[type=checkbox] {
 
   :is(.customer-help, .customer-warranty, .customer-faq, .customer-form,):hover .customer-chevron {
     background-color: transparent;
+  }
+
+  :is(.customer-help, .customer-warranty, .customer-faq, .customer-form,) {
+    padding-left: 0px;
   }
 
 }

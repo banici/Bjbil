@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function scrollFunction() {
         if (window.innerWidth > 900) {
             let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
-            const navigationElement = document.querySelector(".timeline-container");
+            const navigationElement = document.querySelector(".timeline-container"); // FIX THIS: SHOULD CHECK FOR ELEMENT UNDER THE NAVIGATOR ON EACH PAGE SO IT DOES NOT JUMP WHEN SCROLLING DOWN. THIS WAS ONLY DONE FOR TIMELINE BUT IT SHOULD BE APPLIED FOR ALL.
             if (document.body.scrollTop > 214 || document.documentElement.scrollTop > 214) {
               navigationWrapper.style.position = "fixed";
               navigationWrapper.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
