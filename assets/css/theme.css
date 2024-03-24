@@ -1824,6 +1824,123 @@ input[type=checkbox] {
 
 }
 
+/* Om oss page */
+
+.om-oss-container {
+  width: 100%;
+  height: 1650px;
+  background-color: rgb(219, 219, 219);
+  position: relative;
+}
+.om-oss-image-wrapper {
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+.om-oss-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* This property makes the image fill out the container */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.om-oss-image-title {
+  padding-left: 100px;
+  position: absolute;
+  top: 80px; /* Adjust top positioning as needed */
+  left: 200px; /* Adjust left positioning as needed */
+  z-index: 1; /* Set a higher z-index to ensure it appears above the image */
+}
+
+.om-oss-image-title h1 {
+  color: white;
+  font-size: 100px;
+  font-family: 'Bitter', serif;
+}
+
+.om-oss-intro {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  font-family: 'Bitter', serif;
+  background-color: #eeeeee;
+}
+.om-oss-intro span {
+  color: rgb(73, 73, 73);
+  font-size: 22px;
+  line-height: 1.45em;
+}
+
+.om-oss-box-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.om-oss-box-container > div {
+  width: 300px; /* Set width of child divs as needed */
+  height: 100%; /* Set height of child divs as needed */
+  margin-right: 30px; /* Add small space between child divs */
+  border-radius: 4px;
+}
+
+.om-oss-box-card:hover {
+  background-color: rgba(0, 0, 0, 0.479);
+  cursor: pointer;
+}
+
+.om-oss-box-card {
+  position: relative; /* Ensure relative positioning for absolute child elements */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.om-oss-box-card::after {
+  content: ""; /* Create the overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Transparent initially */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+.om-oss-box-card:hover::after {
+  opacity: 0.5; /* Opacity of overlay color on hover */
+  background-color: rgba(0, 0, 0, 0.479); /* Color and opacity of the overlay */
+}
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+}
+
+.card-info {
+  background-color: #4b5a73;
+  padding: 10px;
+}
+
+.om-oss-box-card p {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+.card-info h3 {
+  font-family: 'Bitter', serif;
+  font-size: 25px;
+  color: white;
+  padding-bottom: 10px;
+}
+
+
+
 /* ARROW DOWN */
 .sf-menu.nav > li > a.sf-with-ul,
 .sf-arrows .sf-with-ul {
