@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function scrollFunction() {
         if (window.innerWidth > 900) {
             let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
-            const navigationElement = document.querySelector(".timeline-container"); // FIX THIS: SHOULD CHECK FOR ELEMENT UNDER THE NAVIGATOR ON EACH PAGE SO IT DOES NOT JUMP WHEN SCROLLING DOWN. THIS WAS ONLY DONE FOR TIMELINE BUT IT SHOULD BE APPLIED FOR ALL.
+            const navigationElement = document.querySelector("#gallery-container"); // FIX THIS: SHOULD CHECK FOR ELEMENT UNDER THE NAVIGATOR ON EACH PAGE SO IT DOES NOT JUMP WHEN SCROLLING DOWN. THIS WAS ONLY DONE FOR TIMELINE BUT IT SHOULD BE APPLIED FOR ALL.
             if (document.body.scrollTop > 214 || document.documentElement.scrollTop > 214) {
               navigationWrapper.style.position = "fixed";
               navigationWrapper.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
@@ -276,6 +276,54 @@ submitButton.addEventListener("click", function() {
   emailInput.value = "";
   submitButton.disabled = true; // Disable button again after reset
 });
+
+
+const galleryContainer = document.getElementById('gallery-container');
+const loadMoreButton = document.getElementById('load-more');
+const lightboxOverlay = document.getElementById('lightbox-overlay');
+const lightboxImage = document.getElementById('lightbox-image');
+const closeLightboxButton = document.getElementById('close-lightbox');
+
+let currentIndex = 1;
+const imagesPerPage = 8;
+const totalImages = 'assets/img/preview/nostalgi'.length;
+
+function displayImages() {
+  const endIndex = Math.min(currentIndex + imagesPerPage, totalImages);
+
+  for (let i = currentIndex; i < endIndex; i++) {
+    const galleryItem = document.createElement('div');
+    galleryItem.classList.add('gallery-item');
+    galleryItem.style.backgroundImage = `url(assets/img/preview/nostalgi/${i}.jpg)`;
+    galleryItem.addEventListener('click', () => openLightbox(i));
+
+    galleryContainer.appendChild(galleryItem);
+  }
+
+  currentIndex += imagesPerPage;
+
+  if (currentIndex >= totalImages && loadMoreButton) {
+    loadMoreButton.style.display = 'none';
+  }
+}
+
+function openLightbox(index) {
+  lightboxImage.src = `assets/img/preview/nostalgi/${index}.jpg`;
+  lightboxOverlay.style.display = 'flex';
+}
+
+if (closeLightboxButton) {
+  closeLightboxButton.addEventListener('click', () => {
+    lightboxOverlay.style.display = 'none';
+  });
+}
+
+if (loadMoreButton) {
+  loadMoreButton.addEventListener('click', displayImages);
+}
+
+// Display the initial 20 images
+displayImages();
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {
