@@ -3943,21 +3943,17 @@ input[type=checkbox] {
 #load-more {
   display: block;
   border-radius: 4px;
-  background-color: var(--bjbil-orange);
+  background-color: transparent;
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 22px;
-  width: 150px;
+  font-size: 32px;
+  width: auto;
   height: 70px;
   transition: all 0.5s;
   cursor: pointer;
   position: relative;
   margin: 50px auto;
-}
-
-#load-more:hover {
-  background-color: #ca820d;
 }
 
 #load-more span {
@@ -3972,14 +3968,51 @@ input[type=checkbox] {
   opacity: 0;
   left: 54%;
   transform: translateX(-50%) rotate(90deg);
-  bottom: -35px;
+  bottom: -55px;
   transition: 0.5s;
   font-size:  48px;
 }
 
 #load-more:hover span:after {
   opacity: 1;
-  bottom: -29px;
+  bottom: -39px;
+}
+
+@media (max-width: 900px) { /* This applies for mobile view */
+  .gallery-item {
+    width: 30%; /* Adjust the width for smaller screens */
+    height: 150px; /* Adjust the height for smaller screens */
+    margin: 5px; /* Reduce margin for smaller screens */
+  }
+
+  #lightbox {
+    max-width: 180%;
+    max-height: 180%;
+  }
+  #lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  @keyframes load-more-animation {
+    0% { opacity: 1; bottom: -39px; }
+
+    100% { opacity: 0; bottom: -55px; }
+  }
+
+  #load-more span {
+    display: inline-block;
+  }
+
+  #load-more span:after {
+    left: 50%;
+    animation: load-more-animation 1.4s infinite; /* Adjust duration as needed */
+  }
+
+  #load-more.active span:after {
+    animation: none; /* Disable animation when active */
+  }
+
 }
 /* 5.7 */
 /* Accordions / FAQ

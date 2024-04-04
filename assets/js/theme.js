@@ -221,6 +221,13 @@ document.addEventListener("click", function(e) {
     }
 });
 
+document.addEventListener('click', function(event) {
+    if(event.target.id === 'nostalgi') { // lägg till resterande sidor (jobba hos oss, vi som arbetar här..) när de e klara.
+        window.location.href = "nostalgi-page.html";
+    }
+
+});
+
 
 // This is for Customer Service
 // When screen size is mobile then we want to have different behavior than desktop view
@@ -277,7 +284,7 @@ submitButton.addEventListener("click", function() {
   submitButton.disabled = true; // Disable button again after reset
 });
 
-
+/** Funktion som ser till att populera bilder i nostalgi sidan utefter antalet bilder i mappen */
 const galleryContainer = document.getElementById('gallery-container');
 const loadMoreButton = document.getElementById('load-more');
 const lightboxOverlay = document.getElementById('lightbox-overlay');
@@ -285,7 +292,7 @@ const lightboxImage = document.getElementById('lightbox-image');
 const closeLightboxButton = document.getElementById('close-lightbox');
 
 let currentIndex = 1;
-const imagesPerPage = 8;
+const imagesPerPage = isMobileView ? 9 : 12;
 const totalImages = 'assets/img/preview/nostalgi'.length;
 
 function displayImages() {
@@ -324,6 +331,20 @@ if (loadMoreButton) {
 
 // Display the initial 20 images
 displayImages();
+
+/** Detta hanterar animationen för mobil vy att ladda fler biler */
+let isAnimating = false;
+
+document.getElementById("load-more").addEventListener("click", function() {
+  if (!isAnimating) {
+    isAnimating = true;
+    this.classList.toggle("reverse");
+    setTimeout(() => {
+      isAnimating = false;
+    }, 2000); // Adjust the delay as needed
+  }
+});
+
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {
