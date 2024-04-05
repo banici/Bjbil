@@ -1957,6 +1957,19 @@ input[type=checkbox] {
   .om-oss-box-card {
     padding-top: 20px;
   }
+
+  .om-oss-box-card:hover::after {
+    background-color: rgba(0, 0, 0, 0.479);
+  }
+
+  .om-oss-box-card:hover {
+    background-color: transparent;
+  }
+
+  .om-oss-box-card::after {
+    margin-top: 20px;
+  }
+
 }
 
 /* ARROW DOWN */
@@ -3898,7 +3911,8 @@ input[type=checkbox] {
 
 .gallery-item:hover {
   transform: scale(1.05);
-  box-shadow: 16px 14px 12px 0px rgba(0, 0, 0, 0.6);}
+  box-shadow: 16px 14px 12px 0px rgba(0, 0, 0, 0.6);
+}
 
 #lightbox-overlay {
   position: fixed;

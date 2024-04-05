@@ -291,6 +291,7 @@ const lightboxOverlay = document.getElementById('lightbox-overlay');
 const lightboxImage = document.getElementById('lightbox-image');
 const closeLightboxButton = document.getElementById('close-lightbox');
 
+
 let currentIndex = 1;
 const imagesPerPage = isMobileView ? 9 : 12;
 const totalImages = 'assets/img/preview/nostalgi'.length;
@@ -317,12 +318,23 @@ function displayImages() {
 function openLightbox(index) {
   lightboxImage.src = `assets/img/preview/nostalgi/${index}.jpg`;
   lightboxOverlay.style.display = 'flex';
+  lightboxOverlay.style.overflowY = 'hidden';
+  body.style.overflowY = 'hidden';
 }
 
 if (closeLightboxButton) {
   closeLightboxButton.addEventListener('click', () => {
     lightboxOverlay.style.display = 'none';
+    body.style.overflowY = '';
   });
+
+  if (isMobileView) {
+    lightboxOverlay.addEventListener('click', () => {
+        lightboxOverlay.style.display = 'none';
+        body.style.overflowY = '';
+    });
+  }
+  
 }
 
 if (loadMoreButton) {
