@@ -294,26 +294,34 @@ const closeLightboxButton = document.getElementById('close-lightbox');
 
 let currentIndex = 1;
 const imagesPerPage = isMobileView ? 9 : 12;
-const totalImages = 'assets/img/preview/nostalgi'.length;
-
+const totalImages = 71;
 function displayImages() {
-  const endIndex = Math.min(currentIndex + imagesPerPage, totalImages);
-
-  for (let i = currentIndex; i < endIndex; i++) {
-    const galleryItem = document.createElement('div');
-    galleryItem.classList.add('gallery-item');
-    galleryItem.style.backgroundImage = `url(assets/img/preview/nostalgi/${i}.jpg)`;
-    galleryItem.addEventListener('click', () => openLightbox(i));
-
-    galleryContainer.appendChild(galleryItem);
-  }
-
-  currentIndex += imagesPerPage;
-
-  if (currentIndex >= totalImages && loadMoreButton) {
-    loadMoreButton.style.display = 'none';
-  }
+    const endIndex = Math.min(currentIndex + imagesPerPage, totalImages);
+    for (let i = currentIndex; i < endIndex; i++) {
+        const galleryItem = document.createElement('div');
+        galleryItem.classList.add('gallery-item');
+        galleryItem.style.backgroundImage = `url(assets/img/preview/nostalgi/${i}.jpg)`;
+        galleryItem.addEventListener('click', () => openLightbox(i));
+      
+        if (galleryContainer) {
+            galleryContainer.appendChild(galleryItem);
+        }
+    }
+  
+    currentIndex += imagesPerPage;
+  
+    if (currentIndex >= totalImages) {
+        currentIndex = 1;
+      if (loadMoreButton) {
+        loadMoreButton.style.display = 'none';
+        }
+    } else {
+      if (loadMoreButton) {
+        loadMoreButton.style.display = 'block';
+        }
+    }
 }
+
 
 function openLightbox(index) {
   lightboxImage.src = `assets/img/preview/nostalgi/${index}.jpg`;
