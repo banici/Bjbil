@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function scrollFunction() {
         if (window.innerWidth > 900) {
             let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
-            const navigationElement = document.querySelector("#gallery-container"); // FIX THIS: SHOULD CHECK FOR ELEMENT UNDER THE NAVIGATOR ON EACH PAGE SO IT DOES NOT JUMP WHEN SCROLLING DOWN. THIS WAS ONLY DONE FOR TIMELINE BUT IT SHOULD BE APPLIED FOR ALL.
+            const navigationElement = document.querySelector(".timeline-title-image"); // FIX THIS: SHOULD CHECK FOR ELEMENT UNDER THE NAVIGATOR ON EACH PAGE SO IT DOES NOT JUMP WHEN SCROLLING DOWN. THIS WAS ONLY DONE FOR TIMELINE BUT IT SHOULD BE APPLIED FOR ALL.
             if (document.body.scrollTop > 214 || document.documentElement.scrollTop > 214) {
               navigationWrapper.style.position = "fixed";
               navigationWrapper.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
@@ -355,16 +355,46 @@ displayImages();
 /** Detta hanterar animationen för mobil vy att ladda fler biler */
 let isAnimating = false;
 
-document.getElementById("load-more").addEventListener("click", function() {
-  if (!isAnimating) {
-    isAnimating = true;
-    this.classList.toggle("reverse");
-    setTimeout(() => {
-      isAnimating = false;
-    }, 2000); // Adjust the delay as needed
-  }
-});
+if(loadMoreButton) {
+    loadMoreButton.addEventListener("click", function() {
+        if (!isAnimating) {
+          isAnimating = true;
+          this.classList.toggle("reverse");
+          setTimeout(() => {
+            isAnimating = false;
+          }, 2000); // Adjust the delay as needed
+        }
+    });
+}
 
+
+
+// ================== Timeline ============== //
+
+const numberOfBoxes = 8;
+window.addEventListener('scroll', checkBoxes);
+const con = document.querySelector('.timeline-container');
+
+function checkBoxes() {
+    const triggerBottom = window.innerHeight / 4.8 * 3;
+
+    for (let i = 1; i <= numberOfBoxes; i++) {
+        // Check if the box already exists
+        if (!document.querySelector(`.box-${i}`)) {
+            const box = document.createElement('div');
+            box.classList.add('box', `box-${i}`);
+            box.textContent = `Box ${i}`;
+            con.appendChild(box); // Append the box to the container
+        }
+
+        const box = document.querySelector(`.box-${i}`);
+        const boxTop = box.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+            box.classList.add('show');
+        }
+    }
+}
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {
