@@ -169,12 +169,23 @@ body.boxed {
 /* ======================================== */
 /* Timeline */
 
+.timeline-line {
+  position: absolute;
+  top: 706px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  background: linear-gradient(to bottom, rgb(117, 117, 117) 20px, rgb(209, 209, 209) 300px);
+  z-index: -1;
+}
+
 .timeline-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 2500px;
+  height: 3500px;
 }
 
 .timeline-title-image {
@@ -184,23 +195,29 @@ body.boxed {
   background-color: green;
 }
 
-.box {
+.timeline-box {
   display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid black;
-  width: 400px;
-  height: 300px;
+  width: 1200px;
+  height: 500px;
   margin: 10px;
   transform: translateX(400%);
   transition: transform 0.4s ease;
 }
 
-.box:nth-of-type(even) {
+.timeline-box-content {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr 1.5fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  height: 100%;
+}
+
+.timeline-box:nth-of-type(even) {
   transform: translateX(-400%);
 }
 
-.box.show {
+.timeline-box.show {
   transform: translateX(0);
 }
 

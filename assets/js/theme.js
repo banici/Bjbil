@@ -115,6 +115,10 @@ document.addEventListener('DOMContentLoaded', function () {
     replaceLastWord();
 });
 
+
+// when all are added in array and scroll does not jump on any page. Still needs to loop in a querySelector like line 129.
+const elementsUnderNavigator = ['.content-area',];
+
 // // Makes the navigation bar fixed and on top when scrolling down.
 document.addEventListener('DOMContentLoaded', function () {
     window.onscroll = function() {scrollFunction()};
@@ -122,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function scrollFunction() {
         if (window.innerWidth > 900) {
             let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
-            const navigationElement = document.querySelector(".timeline-title-image"); // FIX THIS: SHOULD CHECK FOR ELEMENT UNDER THE NAVIGATOR ON EACH PAGE SO IT DOES NOT JUMP WHEN SCROLLING DOWN. THIS WAS ONLY DONE FOR TIMELINE BUT IT SHOULD BE APPLIED FOR ALL.
+            const navigationElement = document.querySelector(".content-area"); // FIX THIS: SHOULD CHECK FOR ELEMENT UNDER THE NAVIGATOR ON EACH PAGE SO IT DOES NOT JUMP WHEN SCROLLING DOWN. THIS WAS ONLY DONE FOR TIMELINE BUT IT SHOULD BE APPLIED FOR ALL.
             if (document.body.scrollTop > 214 || document.documentElement.scrollTop > 214) {
               navigationWrapper.style.position = "fixed";
               navigationWrapper.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
@@ -382,8 +386,10 @@ function checkBoxes() {
         // Check if the box already exists
         if (!document.querySelector(`.box-${i}`)) {
             const box = document.createElement('div');
-            box.classList.add('box', `box-${i}`);
-            box.textContent = `Box ${i}`;
+            const boxContent = document.createElement('div');
+            box.classList.add('timeline-box', `box-${i}`);
+            boxContent.classList.add('timeline-box-content');
+            box.appendChild(boxContent);
             con.appendChild(box); // Append the box to the container
         }
 
