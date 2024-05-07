@@ -394,9 +394,16 @@ function checkBoxes() {
             firstColumn.classList.add('first-column');
             const middleColumn = document.createElement('div');
             middleColumn.classList.add('middle-column');
+            const middleColumnContent = document.createElement('div');
+            middleColumnContent.classList.add('middle-column-content');
+            const middleColumnYear = document.createElement('p');
+            middleColumnYear.classList.add('middle-column-year');
             const lastColumn = document.createElement('div');
             lastColumn.classList.add('last-column');
 
+            middleColumnYear.textContent = "202"+i; // this should be more generic.
+            middleColumnContent.appendChild(middleColumnYear);
+            middleColumn.appendChild(middleColumnContent);
             boxContent.appendChild(firstColumn);
             boxContent.appendChild(middleColumn);
             boxContent.appendChild(lastColumn);
