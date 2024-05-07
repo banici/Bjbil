@@ -221,6 +221,51 @@ body.boxed {
   transform: translateX(0);
 }
 
+.first-column {
+  background-color: red;
+}
+
+.middle-column {
+  position: relative;
+  top: 30%;
+  left: 17.5%;
+  width: 110px; /* Set the desired width of the round div */
+  height: 110px; /* Set the desired height of the round div */
+  border-radius: 50%;
+  background-color: black;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.middle-column.animate {
+  animation: bounce 0.65s ease-in-out forwards
+}
+
+.middle-column.animate.delay {
+  animation-delay: 0.25s; 
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  90% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.last-column {
+  background-color: green;
+}
+
 /* 1.3 */
 /* Layout
 /* ========================================================================== */

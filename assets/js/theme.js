@@ -376,11 +376,11 @@ if(loadMoreButton) {
 // ================== Timeline ============== //
 
 const numberOfBoxes = 8;
+const containerBox = document.querySelector('.timeline-container');
 window.addEventListener('scroll', checkBoxes);
-const con = document.querySelector('.timeline-container');
 
 function checkBoxes() {
-    const triggerBottom = window.innerHeight / 4.8 * 3;
+    const triggerBottom = window.innerHeight / 5.8 * 3;
 
     for (let i = 1; i <= numberOfBoxes; i++) {
         // Check if the box already exists
@@ -389,18 +389,39 @@ function checkBoxes() {
             const boxContent = document.createElement('div');
             box.classList.add('timeline-box', `box-${i}`);
             boxContent.classList.add('timeline-box-content');
+
+            const firstColumn = document.createElement('div');
+            firstColumn.classList.add('first-column');
+            const middleColumn = document.createElement('div');
+            middleColumn.classList.add('middle-column');
+            const lastColumn = document.createElement('div');
+            lastColumn.classList.add('last-column');
+
+            boxContent.appendChild(firstColumn);
+            boxContent.appendChild(middleColumn);
+            boxContent.appendChild(lastColumn);
+            if (i % 2 !== 0) { // checks if the div is odd number
+                firstColumn.style.opacity = 0;
+            } else {
+                lastColumn.style.opacity = 0;
+            }
+
             box.appendChild(boxContent);
-            con.appendChild(box); // Append the box to the container
+            containerBox.appendChild(box); // Append the box to the container
         }
+
 
         const box = document.querySelector(`.box-${i}`);
         const boxTop = box.getBoundingClientRect().top;
 
         if (boxTop < triggerBottom) {
             box.classList.add('show');
+            box.querySelector('.middle-column').classList.add('animate');
+            box.querySelector('.middle-column').classList.add('delay');
         }
     }
 }
+
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {
