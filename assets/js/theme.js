@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // when all are added in array and scroll does not jump on any page. Still needs to loop in a querySelector like line 129.
-const elementsUnderNavigator = ['.content-area',];
+const elementsUnderNavigator = ['.content-area',]; // NOTE THIS WILL WORK FOR DESKTOP. SHOULD FIX FOR MOBILE WHEN EVERYTHING IS READY
 
 // // Makes the navigation bar fixed and on top when scrolling down.
 document.addEventListener('DOMContentLoaded', function () {
@@ -375,11 +375,16 @@ if(loadMoreButton) {
 
 // ================== Timeline ============== //
 
-const numberOfBoxes = 8;
-const containerBox = document.querySelector('.timeline-container');
 window.addEventListener('scroll', checkBoxes);
 
 function checkBoxes() {
+    const containerBox = document.querySelector('.timeline-container');
+
+    if (!containerBox) { // if user is scrolling on other page than timeline then return so appendChild wont log error in console.
+        return;
+    }
+
+    const numberOfBoxes = 8;
     const triggerBottom = window.innerHeight / 5.8 * 3;
 
     for (let i = 1; i <= numberOfBoxes; i++) {
@@ -407,11 +412,22 @@ function checkBoxes() {
             boxContent.appendChild(firstColumn);
             boxContent.appendChild(middleColumn);
             boxContent.appendChild(lastColumn);
-            if (i % 2 !== 0) { // checks if the div is odd number
-                firstColumn.style.opacity = 0;
+
+            if (!isMobileView) {
+                if (i % 2 !== 0) { // checks if the div is odd number
+                    firstColumn.style.opacity = 0;
+                } else {
+                    lastColumn.style.opacity = 0;
+                }
             } else {
-                lastColumn.style.opacity = 0;
+                if (i % 2 !== 0) { // checks if the div is odd number
+                    lastColumn.style.opacity = 1;
+                    firstColumn.style.opacity = 0;
+                } else {
+                    firstColumn.style.opacity = 0;
+                }
             }
+
 
             box.appendChild(boxContent);
             containerBox.appendChild(box); // Append the box to the container

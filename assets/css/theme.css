@@ -280,6 +280,42 @@ body.boxed {
   }
 }
 
+@media (max-width: 768px) {
+  .timeline-box {
+    transform: translateX(100%);
+  }
+
+  .timeline-box:nth-of-type(even) {
+    transform: translateX(100%);
+  }
+
+  .timeline-box.show {
+    transform: translateX(0);
+  }
+
+  .timeline-line {
+    left: 20px;
+    width: 6px;
+    top: 7%;
+  }
+
+  .timeline-box-content {
+    grid-template-columns: 395px 105px 270px;
+    grid-gap: 2px;
+
+  }
+  .first-column, .last-column {
+    width: 100%;
+  }
+
+  .middle-column {
+    width: 75px;
+    height: 75px;
+    border: 4px solid #636363;
+    top: 2%;
+  }
+}
+
 
 /* 1.3 */
 /* Layout
