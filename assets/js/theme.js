@@ -228,6 +228,8 @@ document.addEventListener("click", function(e) {
 document.addEventListener('click', function(event) {
     if(event.target.id === 'nostalgi') { // lägg till resterande sidor (jobba hos oss, vi som arbetar här..) när de e klara.
         window.location.href = "nostalgi-page.html";
+    } else if (event.target.id === 'historia') {
+        window.location.href = "tidslinje.html";
     }
 
 });
