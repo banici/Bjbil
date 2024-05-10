@@ -283,6 +283,7 @@ body.boxed {
 @media (max-width: 768px) {
   .timeline-box {
     transform: translateX(100%);
+    width: 100%;
   }
 
   .timeline-box:nth-of-type(even) {
@@ -300,12 +301,11 @@ body.boxed {
   }
 
   .timeline-box-content {
-    grid-template-columns: 395px 105px 270px;
-    grid-gap: 2px;
-
+    grid-template-columns: 1px 50px 270px;
   }
   .first-column, .last-column {
     width: 100%;
+    margin-left: 25px;
   }
 
   .middle-column {
@@ -313,6 +313,10 @@ body.boxed {
     height: 75px;
     border: 4px solid #636363;
     top: 2%;
+    left: 5%;
+  }
+  .wrapper {
+    overflow-x: hidden;
   }
 }
 
