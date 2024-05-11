@@ -183,7 +183,7 @@ document.addEventListener("click", function(e) {
     const BoxChildren = ['customer-chevron', 'fa'];
     let target = e.target.classList;
     if(boxes.includes(target[0]) || BoxChildren.includes(target[0])) {
-        // Checks if clicked object has not been clicked on before
+        CustomerServiceDefault(target[0]);
         if (selectedCustomerBox && target[0] !== selectedCustomerBox[0]) {
             selectedCustomerBox.remove("active");
             if(selectedContainer) {
@@ -225,14 +225,85 @@ document.addEventListener("click", function(e) {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    var defaultFaq = document.getElementsByClassName("faq-box");
+    if(defaultFaq) {
+        if(isMobileView) {
+            CustomerServiceDefault();
+        }
+    }
+});
+
+function CustomerServiceDefault(target = 'faq-box') { // set defautlt value to default target because mobile is not passing any arg.
+    var defaultFaq = document.getElementsByClassName("faq-box");
+    var defaultFaqContent = document.getElementsByClassName("faq-container");
+    var faqActive = defaultFaq[0].classList[1];
+    if (target !== 'faq-box' && faqActive === 'active') {
+        defaultFaq[0].classList.remove('active');
+        defaultFaqContent[0].classList.remove('active');
+        return;
+    } 
+    if (faqActive === 'active') {
+        defaultFaq[0].classList.remove('active');
+        defaultFaqContent[0].classList.remove('active');
+        return;
+    } 
+}
+
 document.addEventListener('click', function(event) {
     if(event.target.id === 'nostalgi') { // lägg till resterande sidor (jobba hos oss, vi som arbetar här..) när de e klara.
         window.location.href = "nostalgi-page.html";
     } else if (event.target.id === 'historia') {
         window.location.href = "tidslinje.html";
     }
-
 });
+
+
+// this block for desktop FAQ form
+document.querySelectorAll('.faq-row').forEach(function(faqRow) {
+    faqRow.addEventListener('click', function(event) {
+        var faqExpandable = this.closest('.faq-expandable');
+        var faqInfoContent = faqExpandable.querySelector('.faq-info-content');
+        var iconElement = this.querySelector('.faq-operator i');
+
+        iconElement.classList.toggle('fa-minus');
+        // Toggle the 'expanded' class on .faq-info-content
+        faqInfoContent.classList.toggle('expanded');
+
+        // Adjust the max-height of .faq-info-content based on its natural height
+        if (faqInfoContent.classList.contains('expanded')) {
+            faqInfoContent.style.maxHeight = faqInfoContent.scrollHeight + 'px';
+        } else {
+            faqInfoContent.style.maxHeight = '0';
+        }
+    });
+});
+
+// this block for mobile FAQ form
+if (isMobileView) {
+    document.addEventListener('click', function(event) {
+        const checkForFaqRowInMobile = ['faq-info-title', 'faq-operator'];
+        const targetClass = event.target.classList[0];
+    
+        // Check if the clicked element is a .faq-row or a child of it
+        if (targetClass === 'faq-row' || checkForFaqRowInMobile.includes(targetClass)) {
+            var parentOfChildsParent = event.target.closest('.faq-expandable');
+            var faqInfoContent = parentOfChildsParent.querySelector('.faq-info-content');
+            faqInfoContent.classList.toggle('expanded');
+    
+            // Adjust the max-height of .faq-info-content based on its natural height
+            if (faqInfoContent.classList.contains('expanded')) {
+                faqInfoContent.style.maxHeight = faqInfoContent.scrollHeight + 'px';
+            } else {
+                faqInfoContent.style.maxHeight = '0';
+            }
+    
+            // Toggle the class on the icon element
+            var iconElement = parentOfChildsParent.querySelector('.faq-operator i');
+            iconElement.classList.toggle('fa-minus');
+        }
+    });
+}
 
 
 // This is for Customer Service
@@ -247,8 +318,7 @@ function forceContentIntoDivForMobileView(parent) {
             newDiv.innerHTML = containerContent.innerHTML;
             newDiv.children[0].classList.remove(childClassName);
             newDiv.children[0].classList.add("customer-mobile-info");
-            newDiv.children[0].style.padding = "15px 10px 15px 20px"
-            newDiv.children[0].style.borderBottom = "1px solid black";
+            newDiv.children[0].style.padding = "15px"
             newDiv.children[0].style.fontSize = "17px";
             parent.appendChild(newDiv);
         } else {

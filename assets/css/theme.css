@@ -1840,7 +1840,8 @@ input[type=checkbox] {
 
 .customer-service-container {
   background-color: #fff;
-  height: 800px;
+  min-height: 800px;
+  height: 100%;
   padding-top: 1px;
   width: 80%;
   display: flex;
@@ -1978,8 +1979,60 @@ input[type=checkbox] {
     padding-left: 0px;
   }
 
+  .customer-mobile-info .faq-form-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+
 }
 
+.faq-form-container {
+  margin-top: 50px;
+  width: 75%;
+}
+
+.faq-row {
+  border-bottom: 2px solid black;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.faq-row, .faq-operator :hover {
+  cursor: pointer;
+}
+
+.faq-info-title {
+  font-size: 20px;
+}
+
+.faq-operator {
+  margin-left: auto;
+  margin-top: 20px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.faq-info-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.35s ease;
+}
+
+.faq-info-content.expanded {
+    height: none;
+    opacity: 1;
+}
+
+.fa.fa-plus {
+  pointer-events: none;
+}
+
+:is(.faq-info-content, .faq-info-content.expanded) p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
 /* Om oss page */
 
 .om-oss-container {
