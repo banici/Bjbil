@@ -301,7 +301,7 @@ body.boxed {
   }
 
   .timeline-box-content {
-    grid-template-columns: 1px 50px 270px;
+    grid-template-columns: 1px 50px 305px;
   }
   .first-column, .last-column {
     width: 100%;
