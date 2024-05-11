@@ -2808,6 +2808,36 @@ input[type=checkbox] {
   font-family: 'Outfit', sans-serif;
 }
 
+@media (max-width: 991px) {
+  .video-container {
+    max-height: 450px
+  }
+
+  .intro-box {
+    position: absolute;
+    display: block;
+    text-align: center;
+    height: 50vh;
+    margin: 0;
+  }
+
+  #dynamic-sentence {
+    font-size: 40px;
+  }
+
+  #last-word {
+    font-size: 70px;
+  }
+
+  .main-slider {
+    height: 500px;
+  }
+
+  .content-area {
+    padding-top: 0;
+  }
+}
+
 /* .main-slider .owl-theme .owl-controls {
   margin: 0 !important;
 }
