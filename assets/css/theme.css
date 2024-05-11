@@ -2179,6 +2179,23 @@ input[type=checkbox] {
     margin-top: 20px;
   }
 
+  .om-oss-image-wrapper{
+    max-height: 270px;
+  }
+
+  .om-oss-image-title {
+    padding-left: 10px;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 1;
+  }
+  
+  .om-oss-image-title h1 {
+    color: white;
+    font-size: 45px;
+    font-family: 'Bitter', serif;
+  }
 }
 
 /* ARROW DOWN */
