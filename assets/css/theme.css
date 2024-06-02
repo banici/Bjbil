@@ -2838,6 +2838,69 @@ input[type=checkbox] {
   }
 }
 
+
+/*----------------------*/
+
+.ansok-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin: 50px auto;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.ansok-child {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1.2);
+  transition: transform 0.5s ease;
+}
+
+.ansok-child:nth-child(1) {
+  background-color: #ff6347;
+  transform: skewY(-12deg);
+  height: 600px;
+}
+
+.ansok-child:nth-child(2) {
+  background-color: #4CAF50;
+  transform: skewY(-8deg);
+  transform-origin: top right; 
+  height: 400px;
+}
+
+.ansok-info {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+#ansok-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50px;
+  width: 300px;
+  border-radius: 30px;
+  font-size: 22px;
+  outline: none;
+  border: none;
+}
+
+#ansok-btn:hover {
+  background-color: red;
+}
+
+#ansok-text {
+  position: absolute;
+  top: 65%;
+  transform: translateY(-50%);
+}
+
 /* .main-slider .owl-theme .owl-controls {
   margin: 0 !important;
 }
