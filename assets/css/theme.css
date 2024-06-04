@@ -2212,9 +2212,192 @@ input[type=checkbox] {
   color: white;
 }
 
+.ansok-form-container {
+  display: none;
+  width: 100%;
+  height: 0px;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+.ansok-form {
+  opacity: 0;
+  display: flex;
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+#ansok-title {
+  color: #000;
+}
+
+.input-name, .input-email {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  align-items: center;
+}
+
+#name ,#email {
+  width: 90%;
+  height: 40px;
+  outline: none;
+  border: none;
+  margin-bottom: 15px;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  font-size: 16px;
+  transition: 300ms ease;
+  padding-left: 6px;
+}
+
+.input-name #name:focus,
+.input-email #email:focus {
+  border-color: black;
+  box-shadow: 0 1px 0 0 rgb(119, 119, 119);
+}
+
+#label-name, #label-email {
+  position: absolute;
+  right: 86%;
+  transition: all 0.3s ease;
+  color: #999;
+  padding-top: 13px;
+  display: flex;
+}
+
+#name:focus ~ #label-name,
+#name:not(:placeholder-shown) ~ #label-name,
+#email:focus ~ #label-email,
+#email:not(:placeholder-shown) ~ #label-email {
+  transform: translateY(-27px);
+}
+
+.cv-label, .pb-label {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #6b81a3;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin: 10px;
+  height: 45px;
+  width: 150px;
+}
+
+:is(.cv-label, .pb-label):hover {
+  background-color: #404d61;
+}
+
+:is(.cv-label, .pb-label) input[type="file"] {
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+#pb, #cv {
+  display: block;
+  width: 150px;
+  height: 45px;
+  opacity: 0;
+  position: relative;
+  top: -35px;
+  left: -20px;
+  border-radius: 5px;
+}
+
+#ansok-button {
+  margin-top: 30px;
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 90%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: var(--bjbil-orange);
+  color: white;
+}
+
+#ansok-button:hover {
+  background-color: rgb(172, 112, 0);
+}
+
+.close-ansok {
+  width: 20px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+  position: relative;
+  top: 7%;
+  left: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -10px; /* Adjust based on border thickness */
+  margin-left: -10px; /* Adjust based on border thickness */
+}
+
+.close-ansok::before,
+.close-ansok::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px; /* cross thickness */
+    background-color: rgb(151, 151, 151);;
+}
+
+.close-ansok::before {
+    transform: rotate(45deg);
+}
+
+.close-ansok::after {
+    transform: rotate(-45deg);
+}
+
+.close-ansok:hover::before,
+.close-ansok:hover::after {
+  background-color: black; /* Change color to white on hover */
+  cursor: pointer;
+}
+
+.close-ansok:hover {
+  cursor: pointer;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(30%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.show-form {
+  display: flex;
+}
+
+.show {
+  opacity: 1;
+  animation: bounceIn 1s ease;
+}
+
 @media (max-width: 991px) {
   .om-oss-container {
-    height: 2800px;
+    height: 2870px;
   }
 
   .om-oss-box-container {
@@ -2291,6 +2474,27 @@ input[type=checkbox] {
     text-align: center;
   }
 
+  #name ,#email {
+    width: 90%;
+    height: 40px;
+    outline: none;
+    border: none;
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    font-size: 16px;
+    transition: 300ms ease;
+    padding-left: 6px;
+  }
+
+  #label-name, #label-email {
+    position: absolute;
+    right: 83%;
+    transition: all 0.3s ease;
+    color: #999;
+    padding-top: 13px;
+    display: flex;
+  }
 }
 
 /* ARROW DOWN */
@@ -4566,19 +4770,19 @@ input[type=checkbox] {
 
 #carmake-button {
   display: inline-block;
-  width: 300px;
-  height: 60px;
+  width: 280px;
+  height: 50px;
   font-size: 20px;
-  border: 3px solid white;
-  background-color: transparent;
-  color: white;
+  border-radius: 25px;
+  background-color: white;
+  color: black;
   transition: background-color 0.45s ease;
   transition: color 0.30s ease;
   line-height: 50px;
 }
 #carmake-button:hover {
-  background-color: white;
-  color: grey;
+  background-color: rgb(50, 74, 110);
+  color: white;
   cursor: pointer;
 }
 

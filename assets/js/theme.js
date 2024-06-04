@@ -18,6 +18,7 @@ var hover = document.querySelectorAll('.thumbnail');
 var navigation = document.querySelector('.navigation');
 var superfishMenu = document.querySelector('ul.sf-menu');
 var priceSliderRange = document.querySelector('#slider-range');
+var jobbForm = document.querySelector('.ansok-form-container');
 var mixCarmakeName = false;
 var mixVideoOrder = false;
 var selectedCustomerBox;
@@ -348,7 +349,6 @@ function validateEmail(email) {
 emailInput.addEventListener("input", function() {
   const email = this.value;
   submitButton.disabled = !validateEmail(email); // Disable button if invalid
-  console.log(submitButton);
 });
 
 // Event listener for button click (optional)
@@ -516,6 +516,34 @@ function checkBoxes() {
         }
     }
 }
+
+
+/** ============== Jobb ansökan popup =================== */
+
+if (jobbForm) {
+    const formButton = document.querySelector('#ansok-btn');
+    const closeForm = jobbForm.querySelector('.close-ansok');
+
+    formButton.addEventListener('click', function() {
+        jobbForm.classList.add('show-form');
+        const form = jobbForm.querySelector('.ansok-form');
+
+        if (form) {
+            form.classList.add('show');
+        }
+    });
+
+    closeForm.addEventListener('click', function() {
+        jobbForm.classList.remove('show-form');
+        const form = jobbForm.querySelector('.ansok-form');
+
+        if (form) {
+            form.classList.remove('show');
+        }
+    });
+
+}
+
 
 
 // // Slide in/out with fade animation function
