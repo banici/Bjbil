@@ -252,10 +252,12 @@ function CustomerServiceDefault(target = 'faq-box') { // set defautlt value to d
 }
 
 document.addEventListener('click', function(event) {
-    if(event.target.id === 'nostalgi') { // lägg till resterande sidor (jobba hos oss, vi som arbetar här..) när de e klara.
+    if(event.target.id === 'nostalgi') {
         window.location.href = "nostalgi-page.html";
     } else if (event.target.id === 'historia') {
         window.location.href = "tidslinje.html";
+    } else if (event.target.id === 'arbetarna') {
+        window.location.href = "om_oss.html";
     }
 });
 

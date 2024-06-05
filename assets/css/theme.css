@@ -2410,6 +2410,59 @@ input[type=checkbox] {
   animation: bounceIn 1s ease;
 }
 
+.om-oss-presentation {
+  height: 600px;
+  width: 100%;
+  background-color: rgb(123, 145, 218);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.om-oss-presentation-title {
+  padding: 0;
+  margin: 0;
+  margin-right: 100px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: #000;
+  font-size: 45px;
+}
+
+.om-oss-mekaniker {
+  display: block;
+  width: 800px;
+  height: 500px;
+  margin-right: 150px;
+}
+
+#mekaniker {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.om-oss-text-container {
+  margin: 80px 350px 100px 350px;
+}
+
+#om-oss-text {
+  font-size: 20px;
+  font-family: 'Bitter', serif;
+}
+
+#om-oss-text::first-letter {
+  margin-top: 8px;
+  font-size: 3.5em; /* Make the first letter very large */
+  float: left; /* Float the large letter to the left */
+  line-height: 0.75; /* Adjust line height for the large letter */
+  margin-right: 3px;
+}
+
+#om-oss-content {
+  background-color: #ececec;
+}
+
 @media (max-width: 991px) {
   .om-oss-container {
     height: 2870px;
@@ -2506,9 +2559,49 @@ input[type=checkbox] {
     position: absolute;
     right: 83%;
     transition: all 0.3s ease;
-    color: #999;
+    color: #9e9d9d;
     padding-top: 13px;
     display: flex;
+  }
+
+  .om-oss-presentation {
+    margin-top: 150px;
+    position: absolute;
+    height: 100px;
+  }
+
+  .om-oss-presentation-title {
+    display: none;
+  }
+
+  .om-oss-mekaniker {
+    width: 100%;
+    height: 400px;
+    margin-right: 0;
+  }
+  
+  #mekaniker {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .om-oss-text-container {
+    margin: 0;
+    padding: 300px 20px 20px 20px;
+  }
+  
+  #om-oss-text {
+    font-size: 18px;
+    font-family: 'Bitter', serif;
+  }
+  
+  #om-oss-text::first-letter {
+    margin-top: 8px;
+    font-size: 4em; /* Make the first letter very large */
+    float: left; /* Float the large letter to the left */
+    line-height: 0.75; /* Adjust line height for the large letter */
+    margin-right: 3px;
   }
 }
 
