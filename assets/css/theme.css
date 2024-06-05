@@ -2407,6 +2407,9 @@ input[type=checkbox] {
 
 .show {
   opacity: 1;
+}
+
+.popup-form {
   animation: bounceIn 1s ease;
 }
 

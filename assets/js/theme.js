@@ -534,6 +534,7 @@ if (jobbForm) {
 
         if (form) {
             form.classList.add('show');
+            form.classList.add('popup-form');
         }
     });
 
@@ -544,6 +545,7 @@ if (jobbForm) {
 
         if (form) {
             form.classList.remove('show');
+            form.classList.remove('popup-form');
         }
     });
 
