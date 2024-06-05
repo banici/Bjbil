@@ -523,9 +523,11 @@ function checkBoxes() {
 if (jobbForm) {
     const formButton = document.querySelector('#ansok-btn');
     const closeForm = jobbForm.querySelector('.close-ansok');
+    const formWrapper = document.querySelector('.ansok-form-wrapper');
 
     formButton.addEventListener('click', function() {
         jobbForm.classList.add('show-form');
+        formWrapper.style.zIndex = '99';
         const form = jobbForm.querySelector('.ansok-form');
 
         if (form) {
@@ -534,6 +536,7 @@ if (jobbForm) {
     });
 
     closeForm.addEventListener('click', function() {
+        formWrapper.style.zIndex = '-1';
         jobbForm.classList.remove('show-form');
         const form = jobbForm.querySelector('.ansok-form');
 
