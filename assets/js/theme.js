@@ -85,24 +85,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Changes the last word in the sentence displayed on homepage
 document.addEventListener('DOMContentLoaded', function () {
-    var words = ['BMW', 'AUDI', 'MINI', 'VOLKSWAGEN'];
-    if (isMobileView) {
-        words[words.length -1] = 'VW'; 
-    }
+    var words = ['BMW', 'MINI', 'TESLA', 'VAG'];
     
     var currentIndex = 0;
     var lastWord = document.getElementById('last-word');
 
-    function getRandomIndex() {
-        return Math.floor(Math.random() * words.length);
-    }
-
     function replaceLastWord() {
         if (lastWord) {
-            if (mixCarmakeName === false){
-                currentIndex = getRandomIndex();
-                mixCarmakeName = true; // this happens only once so getRandomIndex fire once
-            } 
             lastWord.textContent = words[currentIndex];
             currentIndex = (currentIndex + 1) % words.length;         
           }
