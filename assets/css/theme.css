@@ -506,14 +506,15 @@ a:focus {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  color: inherit; /*should override bootstrap settings of turning focused to blue*/
 }
 
-a:hover,
+/* a:hover,
 a:active,
 a:focus {
   color: #0D3880;
   
-}
+} */
 .footer a {
   color: #232323;
 }
@@ -1365,9 +1366,9 @@ input[type=checkbox] {
 .top-bar ul a:hover span {
   border-bottom: solid 1px #0D3880;
 }
-.top-bar ul a:hover .fa {
+/* .top-bar ul a:hover .fa {
   color: #ec005f;
-}
+} */
 .top-bar ul a span.color {
   color: #0D3880;
   margin-left: 5px;
@@ -2964,7 +2965,7 @@ input[type=checkbox] {
   color: rgb(167, 167, 167);
 }
 
-#footer-text a:hover {
+#footer-text a:hover, .list-inline a:hover {
   color: white;
 }
 
