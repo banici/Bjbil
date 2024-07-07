@@ -2992,6 +2992,14 @@ input[type=checkbox] {
   image-rendering: optimizeQuality;
 }
 
+.gps-location {
+  width: 150px;
+}
+.gps-location:hover {
+  color: white !important;
+}
+
+
 @media (max-width: 768px) {
   :is(.about-box, .contact-box, .hours-box) {
     flex-basis: calc(100% - 40px); 
@@ -3044,6 +3052,10 @@ input[type=checkbox] {
     display: flex;
     justify-content: center;
     align-items: center; 
+  }
+
+  .gps-location {
+    width: 100%;
   }
 
 }
