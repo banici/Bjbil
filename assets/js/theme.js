@@ -336,20 +336,22 @@ function validateEmail(email) {
   // this way user wont accedentally press subscribe before the whole email ".com" has been typed.
 }
 
+if (emailInput) {
 // Event listener for input changes
 emailInput.addEventListener("input", function() {
-  const email = this.value;
-  submitButton.disabled = !validateEmail(email); // Disable button if invalid
-});
+    const email = this.value;
+    submitButton.disabled = !validateEmail(email); // Disable button if invalid
+  });
 
 // Event listener for button click (optional)
 submitButton.addEventListener("click", function() {
-// add logic here to pass the email to the "Bjbil nyhetsbrev mail".
-// Maybe double check if user already exist and handle that in a certain way.
-
-  emailInput.value = "";
-  submitButton.disabled = true; // Disable button again after reset
-});
+    // add logic here to pass the email to the "Bjbil nyhetsbrev mail".
+    // Maybe double check if user already exist and handle that in a certain way.
+    
+      emailInput.value = "";
+      submitButton.disabled = true; // Disable button again after reset
+    });
+}
 
 /** Funktion som ser till att populera bilder i nostalgi sidan utefter antalet bilder i mappen */
 const galleryContainer = document.getElementById('gallery-container');
