@@ -3263,14 +3263,14 @@ input[type=checkbox] {
 
 /* ----------------Tjänster------------------ */
 
-.kund-text-presentation {
+.kund-text-presentation, .ovriga-text-presentation {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
 }
 
-.kund-text-presentation h3 {
+.kund-text-presentation h3, .ovriga-text-presentation h3 {
   color: black;
   padding-left: 15px;
 }
@@ -3281,6 +3281,41 @@ input[type=checkbox] {
   justify-content: center;
   align-items: center;
   height: 350px;
+  width: 100%;
+}
+
+.ovriga-tjanster-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.ovriga-tjanster-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+  max-width: 80%;
+}
+
+#ovriga-button {
+  flex: 0 1 auto;
+  height: 120px;
+  display: inline-flex;
+  flex-direction: column;
+  width: auto;
+}
+#ovriga-button h3 {
+  margin: 0; /* Increased bottom margin */
+  padding-right: 20px;
+  font-size: 30px;
+  color: white;
+  font-weight: 500;
+}
+
+.service-btn-text-content {
   width: 100%;
 }
 
@@ -3349,8 +3384,19 @@ input[type=checkbox] {
 
 @media screen and (max-width: 768px) {
   .tre-steg-container {
+    padding-top: 20px;
     flex-direction: column;
     height: auto;
+    width: auto;
+  }
+  .ovriga-tjanster-box {
+    height: auto;
+  }
+  .ovriga-tjanster-container {
+    padding-top: 20px;
+    height: auto;
+    gap: 0px 20px;
+    max-width: 100%;
   }
 
   .custom-button {
