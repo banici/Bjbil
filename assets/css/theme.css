@@ -1707,7 +1707,9 @@ input[type=checkbox] {
 }
 
 .car-presentation-info {
-  /* Additional styling for the content below */
+  padding: 40px 15% 40px 15%;
+  font-size: 20px;
+  font-family: 'Bitter', serif;
   background-color: #eeeeee;
 }
 
