@@ -1688,6 +1688,28 @@ input[type=checkbox] {
 .coming-soon .header .navigation-wrapper {
   border-top: transparent;
 } */
+
+.car-info-container {
+  width: 100%;
+  display: flex;
+  background-color: #eeeeee;
+}
+
+.car-info-image-wrapper {
+  width: 100%; /* Set a fixed or percentage width for the image wrapper */
+  height: 750px; /* Set a fixed height for the image wrapper */
+}
+
+.car-info-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+.om-oss-intro {
+  /* Additional styling for the content below */
+}
+
 /* 2.1 */
 /* Logo
 /* ========================================================================== */
