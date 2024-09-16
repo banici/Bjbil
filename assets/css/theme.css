@@ -1706,8 +1706,23 @@ input[type=checkbox] {
   object-fit: cover; /* Ensure the image covers the entire area */
 }
 
-.om-oss-intro {
+.car-presentation-info {
   /* Additional styling for the content below */
+  background-color: #eeeeee;
+}
+
+@media (max-width: 900px) {
+  .car-info-image-wrapper {
+    width: auto;
+    height: 100%;
+  }
+  
+  .car-presentation-info {
+    padding: 20px 10px 40px 10px;
+    font-size: 16px;
+    font-family: 'Bitter', serif;
+
+  }
 }
 
 /* 2.1 */
