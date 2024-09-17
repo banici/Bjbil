@@ -1689,6 +1689,73 @@ input[type=checkbox] {
   border-top: transparent;
 } */
 
+/* Car selection
+/* ========================================================================== */
+.car-make-container {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.car-make-wrapper {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.car-logo-div {
+  width: 300px;
+  height: 300px;
+  transition: transform 0.4s ease, filter 0.3s ease; /* Smooth transition */
+}
+
+#car-make-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.car-logo-div:hover {
+  cursor: pointer;
+  z-index: 1;
+  transform: translateY(-40px); /* Moves the div up by 10px */
+  filter: none; /* Remove blur effect from the hovered div */
+}
+.car-make-wrapper:hover .car-logo-div {
+  filter: blur(6px); /* Blur all divs when hovering over the container */
+}
+.car-make-wrapper:hover .car-logo-div:hover {
+  filter: none; /* Remove blur effect from the hovered div */
+}
+
+.sub-car-make-category {
+  width: 100%;
+  margin-top: 50px;
+}
+
+#mini {
+  display: block;
+  height: 250px;
+}
+
+#mini #car-make-logo {
+  top: 10%;
+  position: relative;
+}
+
+#bmw-category, #mini-category, #tesla-category, #vag-category {
+  display: none;
+  justify-content: center;
+  width: 60%;
+  height: 200px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+
+/* Car presentation
+/* ========================================================================== */
 .car-info-container {
   width: 100%;
   display: flex;

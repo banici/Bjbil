@@ -542,6 +542,66 @@ if (jobbForm) {
 
 }
 
+if( document.getElementById('bmw') ) {
+    document.addEventListener('DOMContentLoaded', function () {
+        const bmwDiv = document.getElementById('bmw');
+        const miniDiv = document.getElementById('mini');
+        const teslaDiv = document.getElementById('tesla');
+        const vagDiv = document.getElementById('vag');
+    
+        const bmwCategory = document.getElementById('bmw-category');
+        const vagCategory = document.getElementById('vag-category');
+        const subCarMakeCategory = document.querySelector('.sub-car-make-category');
+    
+        // Helper function to hide all categories
+        function hideAllCategories() {
+            bmwCategory.style.display = 'none';
+            vagCategory.style.display = 'none';
+        }
+    
+        // Show category on hover
+        function showCategory(category) {
+            hideAllCategories();
+            category.style.display = 'flex';
+            category.style.marginBottom = '50px';
+        }
+    
+        // Add mouseenter and mouseleave for each logo div
+        function setupHover(div, category) {
+            div.addEventListener('mouseenter', function () {
+                showCategory(category);
+            });        
+        }
+    
+        setupHover(bmwDiv, bmwCategory);
+        setupHover(vagDiv, vagCategory);
+    
+        // Ensure the sub-car-make-category does not cause hiding of categories
+        subCarMakeCategory.addEventListener('mouseenter', function () {
+            // When mouse enters sub-car-make-category, keep visible category shown
+            const visibleCategory = document.querySelector('.sub-car-make-category > div[style*="display: flex"]');
+            if (visibleCategory) {
+                showCategory(visibleCategory);
+            }
+        });
+
+        miniDiv.addEventListener('mouseenter', function () {
+            hideAllCategories();
+        });
+        teslaDiv.addEventListener('mouseenter', function () {
+            hideAllCategories();
+        });
+    
+        subCarMakeCategory.addEventListener('mouseleave', function () {
+            const wrapper = document.querySelector('.wrapper');
+            // Prevents sub-car-make-category from glitch/hiding when moving mouse around.
+            if(!wrapper) {
+                hideAllCategories();
+            }
+        });
+    });
+    
+}
 
 
 // // Slide in/out with fade animation function
