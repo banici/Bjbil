@@ -552,18 +552,28 @@ if( document.getElementById('bmw') ) {
         const bmwCategory = document.getElementById('bmw-category');
         const vagCategory = document.getElementById('vag-category');
         const subCarMakeCategory = document.querySelector('.sub-car-make-category');
+
     
         // Helper function to hide all categories
         function hideAllCategories() {
-            bmwCategory.style.display = 'none';
-            vagCategory.style.display = 'none';
+            bmwCategory.style.transition = 'max-height 0.4s ease-in-out, opacity 0.4s ease-in-out';
+            bmwCategory.style.maxHeight = '0';
+            bmwCategory.style.opacity = 0;
+
+            vagCategory.style.transition = 'max-height 0.4s ease-in-out, opacity 0.4s ease-in-out';
+            vagCategory.style.maxHeight = '0';
+            vagCategory.style.opacity = 0;
         }
     
         // Show category on hover
         function showCategory(category) {
             hideAllCategories();
             category.style.display = 'flex';
-            category.style.marginBottom = '50px';
+            category.style.visibility = 'visible';
+            category.style.opacity = 1;
+            category.style.maxHeight = "500px";
+            category.style.transition = 'max-height 0.9s ease-in-out, opacity 0.3s ease-in-out';
+            category.style.overflow = 'hidden';
         }
     
         // Add mouseenter and mouseleave for each logo div
