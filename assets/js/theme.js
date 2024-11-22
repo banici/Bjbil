@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
 */
 // Toggle the customer service info on-click
 document.addEventListener("click", function(e) {
-    const boxes = ['help-box', 'warranty-box', 'faq-box', 'form-box'];
+    const boxes = ['warranty-box', 'faq-box'];
     const BoxChildren = ['customer-chevron', 'fa'];
     let target = e.target.classList;
     if(boxes.includes(target[0]) || BoxChildren.includes(target[0])) {
@@ -310,7 +310,7 @@ function forceContentIntoDivForMobileView(parent) {
             newDiv.innerHTML = containerContent.innerHTML;
             newDiv.children[0].classList.remove(childClassName);
             newDiv.children[0].classList.add("customer-mobile-info");
-            newDiv.children[0].style.padding = "15px"
+            newDiv.children[0].style.padding = "25px"
             newDiv.children[0].style.fontSize = "17px";
             parent.appendChild(newDiv);
         } else {

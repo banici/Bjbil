@@ -2022,6 +2022,9 @@ input[type=checkbox] {
   background-color: #e9e9e9;
 }
 /*Customer CSS*/
+#contact-page {
+  background-color: rgb(240, 240, 240);
+}
 .customer-page-section {
   display: flex;
   justify-content: center;
@@ -2042,18 +2045,18 @@ input[type=checkbox] {
   width: 350px;
 }
 
-:is(.help-container, .warranty-container, .faq-container, .form-container) {
+:is(.warranty-container, .faq-container) {
   display: none;
 }
 
-:is(.help-container, .warranty-container, .faq-container, .form-container).active {
+:is(.warranty-container, .faq-container).active {
   width: 75%;
   height: 100%;
   display: flex;
   justify-content: center;
 }
 
-:is(.help-info, .warranty-info, .faq-info, .form-info) {
+:is(.warranty-info, .faq-info) {
   padding-top: 50px;
   width: 60%;
 }
@@ -2062,6 +2065,17 @@ input[type=checkbox] {
   font-size: 16px;
   letter-spacing: 0.08em;
 }
+
+.warranty-information-box {
+  margin-top: 30px;
+  width: 125%;
+  height: auto;
+  font-size: 18px;
+}
+
+#warranty-list li {
+  padding-bottom: 10px;
+} 
 
 .customer-chevron {
   margin-left: auto;
@@ -2076,26 +2090,26 @@ input[type=checkbox] {
   transition: padding-right 0.34s ease;
 }
 
-:is(.customer-help, .customer-warranty, .customer-faq, .customer-form,):hover {
+:is(.customer-warranty, .customer-faq):hover {
   cursor: pointer;
 }
 
-:is(.customer-help, .customer-warranty, .customer-faq, .customer-form,):hover .customer-chevron {
+:is(.customer-warranty, .customer-faq):hover .customer-chevron {
   padding-right: 2px;
 } 
 
-:is(.help-box, .warranty-box, .faq-box, .form-box).active {
+:is(.warranty-box, .faq-box).active {
   background-color: var(--bjbil-orange);
   border-bottom: none;
   cursor: pointer;
 }
 
-:is(.customer-help, .customer-warranty, .customer-faq, .customer-form,) {
+:is(.customer-warranty, .customer-faq) {
   padding-bottom: 10px;
   padding-left: 20px;
 }
 
-:is(.help-box, .warranty-box, .faq-box, .form-box) {
+:is(.warranty-box, .faq-box) {
   font-size: 17px;
   font-weight: bold;
   display: flex;
@@ -2106,7 +2120,7 @@ input[type=checkbox] {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 
-:is(.help-box, .warranty-box, .faq-box, .form-box).active > .customer-chevron {
+:is(.warranty-box, .faq-box).active > .customer-chevron {
   background-color: var(--bjbil-orange);
 }
 
@@ -2127,6 +2141,10 @@ input[type=checkbox] {
   font-size: 60px;
   color: rgb(218, 218, 218);
 }
+#garanti-square {
+  background-color: rgb(255, 225, 124);
+  padding: 8px;
+}
 
 @media (max-width: 991px) {
   .customer-service-container {
@@ -2137,13 +2155,13 @@ input[type=checkbox] {
   .customer-service-wrapper {
     width: 100%;
   }
-  :is(.help-container, .warranty-container, .faq-container, .form-container).active {
+  :is(.warranty-container, .faq-container).active {
     width: 100%;
   }
-  :is(.help-info, .warranty-info, .faq-info, .form-info) {
+  :is(.warranty-info, .faq-info, .form-info) {
     display: none;
   }
-  :is(#customer-help-title, #customer-warranty-title, #customer-faq-title, #customer-form-title) {
+  :is(#customer-warranty-title, #customer-faq-title) {
     display: none;
   }
 
@@ -2157,15 +2175,15 @@ input[type=checkbox] {
     margin-right: 20px;
   }
 
-  :is(.help-box, .warranty-box, .faq-box, .form-box).active > .customer-chevron {
+  :is(.warranty-box, .faq-box).active > .customer-chevron {
     transform: rotate(270deg);
   }
 
-  :is(.customer-help, .customer-warranty, .customer-faq, .customer-form,):hover .customer-chevron {
+  :is(.customer-warranty, .customer-faq):hover .customer-chevron {
     background-color: transparent;
   }
 
-  :is(.customer-help, .customer-warranty, .customer-faq, .customer-form,) {
+  :is(.customer-warranty, .customer-faq,) {
     padding-left: 0px;
   }
 
@@ -2174,6 +2192,11 @@ input[type=checkbox] {
     margin-top: 10px;
   }
 
+  .warranty-information-box {
+    width: 100%;
+    font-size: 14px;
+  }
+  
 }
 
 .faq-form-container {
@@ -2222,6 +2245,13 @@ input[type=checkbox] {
 :is(.faq-info-content, .faq-info-content.expanded) p {
   margin-top: 10px;
   margin-bottom: 0;
+}
+
+#mrf-link {
+  color: red;
+}
+#mrf-link:hover {
+  color: var(--bjbil-blue);
 }
 /* Om oss page */
 
