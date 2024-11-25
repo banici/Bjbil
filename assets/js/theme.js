@@ -542,6 +542,66 @@ if (jobbForm) {
 
 }
 
+//new car selection
+if (document.getElementsByClassName('car-brand-container')) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const images = document.querySelectorAll('#selection');
+
+        images.forEach(image => {
+            image.addEventListener('mouseenter', () => {
+                images.forEach(otherImage => {
+                    if (otherImage !== image) {
+                        otherImage.classList.add('blur'); // Add blur class to other images
+                    }
+                });
+            });
+
+            image.addEventListener('mouseleave', () => {
+                images.forEach(otherImage => {
+                    otherImage.classList.remove('blur'); // Remove blur class from other images
+                });
+            });
+        });
+    });
+}
+
+if (document.getElementsByClassName('car-brand-container')) {
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.car-image');
+    const infoBoxes = document.querySelectorAll('.info-box');
+
+    images.forEach(image => {
+        image.addEventListener('mouseenter', () => {
+            // Hide all info boxes first
+            infoBoxes.forEach(box => {
+                box.classList.remove('active'); // Remove active class to hide
+            });
+
+            // Show the corresponding info box
+            const infoId = image.getAttribute('data-info');
+            const infoBox = document.getElementById(infoId);
+            if (infoBox) {
+                infoBox.classList.add('active'); // Add active class to show
+            }
+        });
+        
+        image.addEventListener('mouseleave', () => {
+            // Optionally, you can keep the box open until another image is hovered
+            // Uncomment below line if you want to hide on mouse leave
+            // infoBoxes.forEach(box => box.classList.remove('active'));
+        });
+    });
+
+    // Click anywhere else to hide all info boxes
+    document.addEventListener('click', (event) => {
+        if (!event.target.classList.contains('car-image')) {
+            infoBoxes.forEach(box => box.classList.remove('active'));
+        }
+    });
+});
+}
+
+// Old car selection
 if( document.getElementById('bmw') ) {
     document.addEventListener('DOMContentLoaded', function () {
         const bmwDiv = document.getElementById('bmw');

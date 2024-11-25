@@ -1690,6 +1690,57 @@ input[type=checkbox] {
 
 /* Car selection
 /* ========================================================================== */
+.car-brand-container {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-brand-container img {
+  margin: 60px 0 60px 0;
+  width: 400px;
+  height: 600px;
+  transition: filter 0.4s ease;
+  cursor: pointer;
+}
+
+.car-brand-container img.blur {
+    filter: blur(8px);
+}
+
+.car-brand-info {
+  display: flex;
+  justify-content: center;
+}
+
+.info-box {
+    display: none; /* Initially hidden */
+    position: relative; /* Position it relative to the section */
+    background-color: white;
+    padding: 10px;
+    height: 400px; /*should change this to auto later*/
+    width: 1200px;
+    transform: translateY(-20px); /* Start slightly above its final position */
+    opacity: 0; /* Start as invisible */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation for transform and opacity */
+}
+
+.info-box.active {
+    display: block; /* Make it block when active */
+    transform: translateY(0); /* Move to its final position */
+    opacity: 1; /* Fade in effect */
+}
+
+#info1 {
+  background-color: red;
+}
+
+#info2 {
+  background-color: green;
+}
+/* old car selection*/
+
 .car-make-section {
   margin-bottom: 20px;
 }
