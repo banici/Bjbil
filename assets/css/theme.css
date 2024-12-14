@@ -1692,9 +1692,10 @@ input[type=checkbox] {
 /* ========================================================================== */
 .car-brand-container {
   display: flex;
-  gap: 5px;
+  gap: 15px;
   justify-content: center;
   align-items: center;
+  min-height: 900px; /* Temporary css property, min-height stops glitch effect when selecting image and scrolling down a bit and then hover on another image so that the page collapse & expand infinite */
 }
 
 .car-brand-container img {
@@ -1705,188 +1706,92 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-.car-brand-container img.blur {
-    filter: blur(8px);
-}
-
 .car-brand-info {
   display: flex;
   justify-content: center;
 }
 
 .info-box {
-    display: none; /* Initially hidden */
-    position: relative; /* Position it relative to the section */
-    background-color: white;
-    padding: 10px;
-    height: 400px; /*should change this to auto later*/
-    width: 1200px;
-    transform: translateY(-20px); /* Start slightly above its final position */
-    opacity: 0; /* Start as invisible */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation for transform and opacity */
+  display: none; /* Initially hidden */
+  position: relative; /* Position it relative to the section */
+  background-color: white;
+  padding: 10px;
+  height: 400px; /*should change this to auto later*/
+  width: 1200px;
+  transform: translateY(-20px); /* Start slightly above its final position */
+  opacity: 0; /* Start as invisible */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation for transform and opacity */
 }
 
 .info-box.active {
-    display: block; /* Make it block when active */
-    transform: translateY(0); /* Move to its final position */
-    opacity: 1; /* Fade in effect */
+  display: block; /* Make it block when active */
+  transform: translateY(0); /* Move to its final position */
+  opacity: 1; /* Fade in effect */
 }
 
-#info1 {
-  background-color: red;
+.car-image.darken {
+  filter: brightness(45%);
+  transition: filter 0.3s ease;
 }
 
-#info2 {
-  background-color: green;
-}
-/* old car selection*/
-
-.car-make-section {
-  margin-bottom: 20px;
+/* Slide-down effect for hovered image */
+.car-image.slide-down {
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
 }
 
-.car-make-container {
-  width: 100%;
-  margin-top: 50px;
+/* Fully visible info box when active */
+.info-box.active {
+  opacity: 1;
+  top: 0;
 }
 
-.car-make-wrapper {
-  display: flex;
-  width: 60%;
-  justify-content: center;
-  position: relative;
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-.car-logo-div {
-  width: 300px;
-  height: 300px;
-  transition: transform 0.4s ease, filter 0.3s ease; /* Smooth transition */
-  position: relative;
-  align-items: center;
-  justify-content: center;
-}
-
-:is(#bmw, #tesla, #vag):before {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  left: 5%;
-  width: 90%;
-  height: 20px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  z-index: -1;
-  filter: blur(5px);
-  transition: transform 0.4s ease, filter 0.3s ease, width 0.3s ease, left 0.3s ease; /* Smooth transition */
-}
-
-#mini:before {
-  content: '';
-  position: absolute;
-  bottom: -80px;
-  left: 5%;
-  width: 90%;
-  height: 20px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  z-index: -1;
-  filter: blur(5px);
-  transition: transform 0.4s ease, filter 0.3s ease, width 0.3s ease, left 0.3s ease; /* Smooth transition */
-}
-
-:is(#bmw, #tesla, #vag, #mini):hover::before {
-  transform: translateY(40px); /* Move the pseudo-element down */
-  background: rgba(0, 0, 0, 0.5);
-  width: 70%;
-  left: 15%;
-}
-
-#car-make-logo, #sub-car-make-logo {
-  width: 100%;
-  height: 100%;
-}
-
-.car-logo-div:hover {
-  cursor: pointer;
-  z-index: 1;
-  transform: translateY(-40px); /* Moves the div up by 10px */
-  filter: none; /* Remove blur effect from the hovered div */
-}
-.car-make-wrapper:hover .car-logo-div {
-  filter: blur(6px); /* Blur all divs when hovering over the container */
-}
-.car-make-wrapper:hover .car-logo-div:hover {
-  filter: none; /* Remove blur effect from the hovered div */
-}
-
-.sub-car-make-category {
-  width: 100%;
-  margin-top: 70px;
-}
-
-#mini {
+/* Info box partially visible by default */
+.info-box.partial {
   display: block;
-  height: 250px;
+  opacity: 0.3;
 }
 
-#mini #car-make-logo {
-  top: 10%;
-  position: relative;
-}
-
-#bmw-category, #vag-category {
-  justify-content: center;
-  height: 100%;
-  max-height: 0px;
-  background: rgba(0, 0, 0, 0.5);
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
-  visibility: hidden;
-  border-radius: 4px;
-}
-
-#sub-car-div-logo {
-  width: 250px;
-  height: 250px;
-  border: 0;
-  border-left: 3px solid rgb(97, 97, 97);
-}
-
-:is(#bmw-category, #vag-category) #sub-car-div-logo:last-child {
-  border-right: 3px solid rgb(97, 97, 97);
-}
-
-#sub-car-make-logo:hover {
-  cursor: pointer;
-}
-
-#car-make-body {
+:is(#info1, #info2, #info3, #info4) {
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 1%, rgba(0, 0, 0, 0) 30%);
+  height: 1000px;
   overflow: hidden;
 }
 
-#car-make-footer {
-  height: 550px;
-  max-height: 650px;
+:is(#info1, #info2, #info3, #info4).active {
+  background: rgb(240, 240, 240);
 }
 
-#vag-sub-car-make-category {
-  margin-top: 0;
+#car-tag {
+  background-color: rgb(85, 85, 85);
+  color: white;
+  display: inline-block;
+  padding: 10px; 
+  text-align: center;
+  margin: 5px;
+  box-sizing: border-box;
 }
 
-.mobile-car-make-section {
-  display: none;
+.read-more {
+  text-align: center;
+  font-size: 35px;
+  position: relative;
+  color: black;
 }
 
-@media (max-width: 790px) {
-  .car-make-section {
-    display: none;
-  }
-
+.read-more.active {
+  opacity: 0;
 }
 
+#car-brand-title {
+  margin: 10px 10px 10px 10px;
+  border-bottom: 2px solid black;
+}
+
+#car-brand-content {
+  margin: 10px 10px 10px 10px;
+  font-size: 18px;
+}
 
 /* Car presentation
 /* ========================================================================== */

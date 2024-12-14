@@ -545,134 +545,69 @@ if (jobbForm) {
 //new car selection
 if (document.getElementsByClassName('car-brand-container')) {
     document.addEventListener('DOMContentLoaded', () => {
-        const images = document.querySelectorAll('#selection');
+        const images = document.querySelectorAll('.car-image');
+        const infoBoxes = document.querySelectorAll('.info-box');
+        const brandContainer = document.querySelector('.car-brand-container');
+        const readMore = document.querySelectorAll('.read-more'); 
 
         images.forEach(image => {
+            // Hover effect for images
             image.addEventListener('mouseenter', () => {
-                images.forEach(otherImage => {
-                    if (otherImage !== image) {
-                        otherImage.classList.add('blur'); // Add blur class to other images
-                    }
-                });
+                const infoId = image.getAttribute('data-info');
+                const infoBox = document.getElementById(infoId);
+
+                // Reset all images and info boxes
+                images.forEach(otherImage => otherImage.classList.remove('slide-down', 'darken'));
+                infoBoxes.forEach(box => box.classList.remove('visible', 'partial', 'active'));
+                readMore.forEach(read => read.classList.remove('active'));
+                // Highlight the hovered image and show its info box
+                image.classList.add('slide-down');
+                infoBox.classList.add('visible', 'partial');
             });
 
+            // Mouse leave on the image should NOT hide the info box if hovering on the parent container
             image.addEventListener('mouseleave', () => {
-                images.forEach(otherImage => {
-                    otherImage.classList.remove('blur'); // Remove blur class from other images
-                });
+                const infoId = image.getAttribute('data-info');
+                const infoBox = document.getElementById(infoId);
+
+                // Check if the mouse is still over the parent container
+                if (!brandContainer.matches(':hover')) {
+                    image.classList.remove('slide-down');
+                    infoBox.classList.remove('visible', 'partial');
+                }
+            });
+
+            // Click effect for images to make info box "active"
+            image.addEventListener('click', () => {
+                const infoId = image.getAttribute('data-info');
+                const infoBox = document.getElementById(infoId);
+                const readMore = infoBox.querySelector('.read-more'); 
+
+
+                // Reset all info boxes
+                infoBoxes.forEach(box => box.classList.remove('active', 'partial', 'visible'));
+
+                // Show the clicked info box fully
+                infoBox.classList.add('active');
+                infoBox.classList.remove('partial');
+                readMore.classList.add('active');
             });
         });
-    });
-}
 
-if (document.getElementsByClassName('car-brand-container')) {
-document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('.car-image');
-    const infoBoxes = document.querySelectorAll('.info-box');
-
-    images.forEach(image => {
-        image.addEventListener('mouseenter', () => {
-            // Hide all info boxes first
+        // Ensure the info box disappears when leaving the entire car-brand-container
+        brandContainer.addEventListener('mouseleave', () => {
+            // Reset everything except the active info box
+            images.forEach(image => image.classList.remove('slide-down', 'darken'));
             infoBoxes.forEach(box => {
-                box.classList.remove('active'); // Remove active class to hide
+                if (!box.classList.contains('active')) {
+                    box.classList.remove('visible', 'partial');
+                }
             });
-
-            // Show the corresponding info box
-            const infoId = image.getAttribute('data-info');
-            const infoBox = document.getElementById(infoId);
-            if (infoBox) {
-                infoBox.classList.add('active'); // Add active class to show
-            }
-        });
-        
-        image.addEventListener('mouseleave', () => {
-            // Optionally, you can keep the box open until another image is hovered
-            // Uncomment below line if you want to hide on mouse leave
-            // infoBoxes.forEach(box => box.classList.remove('active'));
         });
     });
-
-    // Click anywhere else to hide all info boxes
-    document.addEventListener('click', (event) => {
-        if (!event.target.classList.contains('car-image')) {
-            infoBoxes.forEach(box => box.classList.remove('active'));
-        }
-    });
-});
 }
 
-// Old car selection
-if( document.getElementById('bmw') ) {
-    document.addEventListener('DOMContentLoaded', function () {
-        const bmwDiv = document.getElementById('bmw');
-        const miniDiv = document.getElementById('mini');
-        const teslaDiv = document.getElementById('tesla');
-        const vagDiv = document.getElementById('vag');
-    
-        const bmwCategory = document.getElementById('bmw-category');
-        const vagCategory = document.getElementById('vag-category');
-        const subCarMakeCategory = document.querySelector('.sub-car-make-category');
-
-    
-        // Helper function to hide all categories
-        function hideAllCategories() {
-            bmwCategory.style.transition = 'max-height 0.4s ease-in-out, opacity 0.4s ease-in-out';
-            bmwCategory.style.maxHeight = '0';
-            bmwCategory.style.opacity = 0;
-
-            vagCategory.style.transition = 'max-height 0.4s ease-in-out, opacity 0.4s ease-in-out';
-            vagCategory.style.maxHeight = '0';
-            vagCategory.style.opacity = 0;
-        }
-    
-        // Show category on hover
-        function showCategory(category) {
-            hideAllCategories();
-            category.style.display = 'flex';
-            category.style.visibility = 'visible';
-            category.style.opacity = 1;
-            category.style.maxHeight = "500px";
-            category.style.transition = 'max-height 0.9s ease-in-out, opacity 0.3s ease-in-out';
-            category.style.overflow = 'hidden';
-        }
-    
-        // Add mouseenter and mouseleave for each logo div
-        function setupHover(div, category) {
-            div.addEventListener('mouseenter', function () {
-                showCategory(category);
-            });        
-        }
-    
-        setupHover(bmwDiv, bmwCategory);
-        setupHover(vagDiv, vagCategory);
-    
-        // Ensure the sub-car-make-category does not cause hiding of categories
-        subCarMakeCategory.addEventListener('mouseenter', function () {
-            // When mouse enters sub-car-make-category, keep visible category shown
-            const visibleCategory = document.querySelector('.sub-car-make-category > div[style*="display: flex"]');
-            if (visibleCategory) {
-                showCategory(visibleCategory);
-            }
-        });
-
-        miniDiv.addEventListener('mouseenter', function () {
-            hideAllCategories();
-        });
-        teslaDiv.addEventListener('mouseenter', function () {
-            hideAllCategories();
-        });
-    
-        subCarMakeCategory.addEventListener('mouseleave', function () {
-            const wrapper = document.querySelector('.wrapper');
-            // Prevents sub-car-make-category from glitch/hiding when moving mouse around.
-            if(!wrapper) {
-                hideAllCategories();
-            }
-        });
-    });
-    
-}
-
+// q
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {
