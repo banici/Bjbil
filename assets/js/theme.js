@@ -217,12 +217,13 @@ document.addEventListener("click", function(e) {
 
 document.addEventListener("DOMContentLoaded", function() {
     var defaultFaq = document.getElementsByClassName("faq-box");
-    if(defaultFaq) {
+    if(defaultFaq.length > 0) {
         if(isMobileView) {
             CustomerServiceDefault();
         }
     }
 });
+
 
 function CustomerServiceDefault(target = 'faq-box') { // set defautlt value to default target because mobile is not passing any arg.
     var defaultFaq = document.getElementsByClassName("faq-box");
@@ -542,7 +543,8 @@ if (jobbForm) {
 
 }
 
-//new car selection
+/* ============ car selection for desktop ============== */
+if (!isMobileView)
 if (document.getElementsByClassName('car-brand-container')) {
     document.addEventListener('DOMContentLoaded', () => {
         const images = document.querySelectorAll('.car-image');
@@ -607,7 +609,71 @@ if (document.getElementsByClassName('car-brand-container')) {
     });
 }
 
-// q
+
+/* ============ car selection for mobile ============== */
+if (isMobileView) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const carBrandContainer = document.querySelector('.car-brand-container');
+        const carImages = Array.from(document.querySelectorAll('.car-image'));
+      
+        let currentIndex = 0;
+        let startX = 0;
+        let endX = 0;
+      
+        // Function to update carousel
+        const updateCarousel = () => {
+          carImages.forEach((image, index) => {
+            image.classList.remove('active', 'previous', 'next', 'hidden');
+            const infoId = image.getAttribute('data-info');
+            const infoBox = document.getElementById(infoId);
+            const readMore = infoBox.querySelector('.read-more'); 
+            readMore.classList.add('active');
+
+            if (index === currentIndex) {
+              image.classList.add('active');
+              infoBox.classList.add('active'); 
+            } else if (index === (currentIndex - 1 + carImages.length) % carImages.length) {
+              image.classList.add('previous');
+              infoBox.classList.remove('active'); 
+            } else if (index === (currentIndex + 1) % carImages.length) {
+              image.classList.add('next');
+              infoBox.classList.remove('active'); 
+            } else {
+              image.classList.add('hidden');
+              infoBox.classList.remove('active'); 
+            }
+          });
+        };
+      
+        // Handle touch events for swiping
+        carBrandContainer.addEventListener('touchstart', (event) => {
+          startX = event.touches[0].clientX; // Record initial touch position
+          endX = startX; // Ensure endX is reset
+        });
+      
+        carBrandContainer.addEventListener('touchmove', (event) => {
+          endX = event.touches[0].clientX; // Track current touch position
+        });
+      
+        carBrandContainer.addEventListener('touchend', () => {
+          const swipeDistance = endX - startX; // Calculate swipe distance
+      
+          if (swipeDistance < -50) {
+            // Swipe left: Go to next item
+            currentIndex = (currentIndex + 1) % carImages.length;
+          } else if (swipeDistance > 50) {
+            // Swipe right: Go to previous item
+            currentIndex = (currentIndex - 1 + carImages.length) % carImages.length;
+          }
+      
+          // Update the carousel after swipe
+          updateCarousel();
+        });
+      
+        // Initialize carousel
+        updateCarousel();
+      });
+}
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {

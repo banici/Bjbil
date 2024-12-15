@@ -1793,6 +1793,77 @@ input[type=checkbox] {
   font-size: 18px;
 }
 
+/* Mobile view for car selection */
+
+@media (max-width: 900px) {
+  .car-brand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 300px;
+  overflow: hidden; /* Ensures only the visible parts of the carousel are shown */
+}
+
+.car-image {
+  position: absolute; /* Stack all items */
+  width: 60%; /* Size of the active image */
+  height: 80%;
+  background: lightgray;
+  border-radius: 4px;
+  box-shadow: 15px 15px 14px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.5s ease, z-index 0.5s ease;
+  opacity: 0;
+  z-index: 0; /* Non-active items go behind */
+}
+
+.car-brand-container img {
+  margin: 0;
+  width: 500px;
+  height: 700px;
+  transition: filter 0.4s ease;
+  cursor: pointer;
+}
+
+/* Styling for the active item */
+.car-image.active {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 3; /* Bring to the top */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Styling for the previous item */
+.car-image.previous {
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0.6;
+  z-index: 2;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Styling for the next item */
+.car-image.next {
+  transform: translateX(50%) scale(0.8);
+  opacity: 0.6;
+  z-index: 2;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Hidden items */
+.car-image.hidden {
+  transform: translateX(100%) scale(0.6); /* Off-screen position */
+  opacity: 0;
+  z-index: 0;
+  transition: transform 0.5s ease-in-out;
+}
+}
+
 /* Car presentation
 /* ========================================================================== */
 .car-info-container {
