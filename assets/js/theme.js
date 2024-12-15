@@ -556,7 +556,7 @@ if (jobbForm) {
 
 /* ============ car selection for desktop ============== */
 if (!isMobileView)
-if (document.getElementsByClassName('car-brand-container')) {
+if (document.querySelector('.car-brand-container')) {
     document.addEventListener('DOMContentLoaded', () => {
         const images = document.querySelectorAll('.car-image');
         const infoBoxes = document.querySelectorAll('.info-box');
@@ -622,7 +622,8 @@ if (document.getElementsByClassName('car-brand-container')) {
 
 
 /* ============ car selection for mobile ============== */
-if (isMobileView) {
+if (isMobileView)
+if (document.querySelector('.car-brand-container')) {
     document.addEventListener('DOMContentLoaded', () => {
         const carBrandContainer = document.querySelector('.car-brand-container');
         const carImages = Array.from(document.querySelectorAll('.car-image'));
@@ -683,7 +684,7 @@ if (isMobileView) {
       
         // Initialize carousel
         updateCarousel();
-      });
+    });
 }
 
 // // Slide in/out with fade animation function
