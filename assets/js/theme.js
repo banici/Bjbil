@@ -106,17 +106,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// when all are added in array and scroll does not jump on any page. Still needs to loop in a querySelector like line 129.
-const elementsUnderNavigator = ['.content-area',]; // NOTE THIS WILL WORK FOR DESKTOP. SHOULD FIX FOR MOBILE WHEN EVERYTHING IS READY
+// Scroll jump is no longer for PC or Mobile, but stil buggy behavior when extend-top-bar is extended ----> NEEDS TO BE FIXED! 
+const elementsUnderNavigator = ['.content-area', '.car-brand-section'];
 
 // // Makes the navigation bar fixed and on top when scrolling down.
 document.addEventListener('DOMContentLoaded', function () {
     window.onscroll = function() {scrollFunction()};
     let mobileNav = document.getElementsByClassName("header")[0];
+    const currentPage = elementsUnderNavigator.find(className => document.querySelector(className));
+    const navigationElement = document.querySelector(currentPage);
     function scrollFunction() {
         if (window.innerWidth > 900) {
             let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
-            const navigationElement = document.querySelector(".content-area"); // FIX THIS: SHOULD CHECK FOR ELEMENT UNDER THE NAVIGATOR ON EACH PAGE SO IT DOES NOT JUMP WHEN SCROLLING DOWN. THIS WAS ONLY DONE FOR TIMELINE BUT IT SHOULD BE APPLIED FOR ALL.
             if (document.body.scrollTop > 214 || document.documentElement.scrollTop > 214) {
               navigationWrapper.style.position = "fixed";
               navigationWrapper.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
@@ -133,8 +134,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 mobileNav.style.top = "0";
                 mobileNav.style.width = "100%";
                 mobileNav.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
+                navigationElement.style.paddingTop = "101px";
             } else {
                 mobileNav.style.position = "static";
+                navigationElement.style.paddingTop = "0";
             }       
         }
     }
