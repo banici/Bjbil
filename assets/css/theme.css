@@ -1797,6 +1797,8 @@ input[type=checkbox] {
 
 @media (max-width: 900px) {
   .car-brand-container {
+  min-height: 600px;
+  margin-bottom: -50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1825,8 +1827,8 @@ input[type=checkbox] {
 
 .car-brand-container img {
   margin: 0;
-  width: 500px;
-  height: 700px;
+  width: 280px;
+  height: 480px;
   transition: filter 0.4s ease;
   cursor: pointer;
 }
