@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Scroll jump is no longer for PC or Mobile, but stil buggy behavior when extend-top-bar is extended ----> NEEDS TO BE FIXED! 
+// These classes are looped through to get the current page the user is on. And when scrolling down on page the class element gets paddingTop value added to prevent the page to jump in a buggy behaviour.
 const elementsUnderNavigator = ['.content-area', '.car-brand-section'];
 
 // // Makes the navigation bar fixed and on top when scrolling down.
@@ -115,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let mobileNav = document.getElementsByClassName("header")[0];
     const currentPage = elementsUnderNavigator.find(className => document.querySelector(className));
     const navigationElement = document.querySelector(currentPage);
+    const extendTopBarElement = document.querySelector('.top-bar-container-mobile');
     function scrollFunction() {
         if (window.innerWidth > 900) {
             let navigationWrapper = document.getElementsByClassName("navigation-wrapper")[0];
@@ -128,13 +129,20 @@ document.addEventListener('DOMContentLoaded', function () {
               navigationElement.style.paddingTop = "0";
             }  
         } else {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            if ((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && extendTopBarElement.id === 'closed') {
                 mobileNav.style.position = "fixed";
                 mobileNav.style.zIndex = "10";
                 mobileNav.style.top = "0";
                 mobileNav.style.width = "100%";
                 mobileNav.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
                 navigationElement.style.paddingTop = "101px";
+            } else if ((document.body.scrollTop > 165 || document.documentElement.scrollTop > 165) && extendTopBarElement.id === 'open') {
+                mobileNav.style.position = "fixed";
+                mobileNav.style.zIndex = "10";
+                mobileNav.style.top = "0";
+                mobileNav.style.width = "100%";
+                mobileNav.style.boxShadow = "0px 7px 10px rgba(0, 0, 0, 0.48)";
+                navigationElement.style.paddingTop = "103px";
             } else {
                 mobileNav.style.position = "static";
                 navigationElement.style.paddingTop = "0";
