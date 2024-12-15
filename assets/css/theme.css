@@ -1846,7 +1846,7 @@ input[type=checkbox] {
   transform: translateX(-50%) scale(0.8);
   opacity: 0.6;
   z-index: 2;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 /* Styling for the next item */
@@ -1854,7 +1854,7 @@ input[type=checkbox] {
   transform: translateX(50%) scale(0.8);
   opacity: 0.6;
   z-index: 2;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 /* Hidden items */
@@ -1862,7 +1862,7 @@ input[type=checkbox] {
   transform: translateX(100%) scale(0.6); /* Off-screen position */
   opacity: 0;
   z-index: 0;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 }
 
