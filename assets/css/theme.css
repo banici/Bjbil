@@ -3532,7 +3532,8 @@ input[type=checkbox] {
   align-items: center;
   height: auto;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 60px;
+  padding-bottom: 80px;
 }
 
 .ovriga-tjanster-box {
@@ -3586,10 +3587,6 @@ input[type=checkbox] {
   border-radius: 3px;
 }
 
-.custom-button:last-child {
-  margin-bottom: 30px;
-}
-
 .custom-button::after {
   content: '';
   position: absolute;
@@ -3640,6 +3637,7 @@ input[type=checkbox] {
 @media screen and (max-width: 768px) {
   .tre-steg-container {
     padding-top: 50px;
+    padding-bottom: 0;
     flex-direction: column;
     height: auto;
     width: auto;
