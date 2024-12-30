@@ -2294,25 +2294,26 @@ input[type=checkbox] {
   width: 100%;
   height: 700px;
   position: relative;
+  overflow: hidden;
 }
 .om-oss-image-wrapper img {
-  width: 100%;
+  width: auto;
   height: 100%;
-  object-fit: fill; /* This property makes the image fill out the container */
+  object-fit: contain; /* This property makes the image fill out the container */
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
 .om-oss-image-title {
-  padding-left: 100px;
   position: absolute;
-  top: 80px; /* Adjust top positioning as needed */
-  left: 200px; /* Adjust left positioning as needed */
+  width: 100%;
+  left: 20%;
+  top: 180px; /* Adjust top positioning as needed */
   z-index: 1; /* Set a higher z-index to ensure it appears above the image */
 }
 
 .om-oss-image-title h1 {
-  color: white;
+  color: rgb(59, 59, 59);
   font-size: 100px;
   font-family: 'Bitter', serif;
 }
@@ -2341,9 +2342,9 @@ input[type=checkbox] {
 }
 
 .om-oss-box-container > div {
-  width: 300px; /* Set width of child divs as needed */
-  height: 100%; /* Set height of child divs as needed */
-  margin-right: 30px; /* Add small space between child divs */
+  width: 300px; 
+  height: 100%;
+  /* margin-right: 30px; Add small space between child divs ( Will need to adjust when more timeline is added ) */
   border-radius: 4px;
 }
 
@@ -2356,6 +2357,7 @@ input[type=checkbox] {
   position: relative; /* Ensure relative positioning for absolute child elements */
   border-radius: 5px;
   overflow: hidden;
+  box-shadow: 0 7px 27px rgba(0, 0, 0, 1.3);
 }
 
 .om-oss-box-card::after {
@@ -2717,10 +2719,6 @@ input[type=checkbox] {
 }
 
 @media (max-width: 991px) {
-  .om-oss-container {
-    height: 2870px;
-  }
-
   .om-oss-box-container {
     flex-direction: column;
     align-items: center;
@@ -2728,11 +2726,11 @@ input[type=checkbox] {
 
   .om-oss-box-container > div {
     margin-right: 0;
-    height: 290px;
+    height: 270px;
   }
 
-  .om-oss-box-card {
-    padding-top: 20px;
+  .om-oss-box-card:last-child {
+    margin-top: 40px;
   }
 
   .om-oss-box-card:hover::after {
@@ -2743,26 +2741,17 @@ input[type=checkbox] {
     background-color: transparent;
   }
 
-  .om-oss-box-card::after {
-    margin-top: 20px;
-  }
-
   .om-oss-image-wrapper{
     max-height: 270px;
   }
 
-  .om-oss-image-title {
-    padding-left: 10px;
-    position: absolute;
-    top: 20px;
-    left: 40px;
-    z-index: 1;
+  .om-oss-image-wrapper img {
+    width: 100%;
+    object-fit: cover;
   }
-  
-  .om-oss-image-title h1 {
-    color: white;
-    font-size: 45px;
-    font-family: 'Bitter', serif;
+
+  .om-oss-image-title {
+    display: none;
   }
 
   .ansok-container {
@@ -2856,6 +2845,12 @@ input[type=checkbox] {
     line-height: 0.75; /* Adjust line height for the large letter */
     margin-right: 3px;
   }
+
+  .om-oss-intro {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
 }
 
 /* ARROW DOWN */
@@ -5325,9 +5320,21 @@ input[type=checkbox] {
   }
 
   :is(.innovation-wrapper, .effect-wrapper) {
-    padding-top: 25px;
+    padding-top: 105px;
     padding-bottom: 25px;
     padding-left: 100px;
+  }
+
+  .innovation-img img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+  }
+  .effect-img img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    transform: scaleX(-1);
   }
 }
 @media (max-width: 768px) { /* This applies for mobile view */
@@ -5342,6 +5349,18 @@ input[type=checkbox] {
   }
   #title-line {
     margin-left: 20px;
+  }
+
+  .innovation-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  .effect-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transform: scaleX(-1);
   }
 }
 
@@ -5371,15 +5390,6 @@ input[type=checkbox] {
   background-color: rgb(50, 74, 110);
   color: white;
   cursor: pointer;
-}
-
-.innovation-img img {
-  width: 100%;
-  height: 100%;
-}
-.effect-img img {
-  width: 100%;
-  height: 100%;
 }
 
 .oil-container {
