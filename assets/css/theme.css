@@ -3574,6 +3574,7 @@ input[type=checkbox] {
 
 .service-btn-text-content {
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .custom-button {
@@ -3599,7 +3600,6 @@ input[type=checkbox] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.541); /* Adjust opacity as needed */
   transition: background-color 0.3s ease;
 }
 
@@ -3614,7 +3614,11 @@ input[type=checkbox] {
 }
 
 .custom-button:hover img {
-  transform: scale(1.15);
+  transform: scale(1.05);
+}
+
+.custom-button:hover::after {
+  background-color: rgba(0, 0, 0, 0.500);
 }
 
 .custom-button .service-btn-text-content{
