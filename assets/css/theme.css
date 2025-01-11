@@ -149,7 +149,8 @@ body{
   font-size: 14px;
   line-height: 1.72;
   /*background-image: url(../img/boardroom-bg.png);*/
-  background-color: #b6b6b6;
+  /* background-color: #b6b6b6; */
+  background-color: rgb(218, 218, 218);
   color: #000;
   -webkit-font-kerning: auto;
   -webkit-font-smoothing: antialiased;
@@ -3115,7 +3116,7 @@ input[type=checkbox] {
 .footer {
   color: #FFFFFF;
   background-color:var(--bjbil-blue);
-  height: 380px;
+  height: auto;
   overflow: hidden;
   width: 100%;
 }
@@ -3128,6 +3129,11 @@ input[type=checkbox] {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
+}
+.approved-logo {
+  margin-top: 50px;
+  margin-left: 5%;
+  width: 90%;
 }
 :is(.about-box, .contact-box, .hours-box) {
   flex: .3;
@@ -3254,10 +3260,14 @@ input[type=checkbox] {
     flex-direction: column-reverse;
   }
   .footer {
-    height: 900px;
+    height: auto;
+    padding-bottom: 30px;
   }
   .footer-logo {
     margin-right: 0;
+  }
+  .approved-logo {
+    margin-top: 25px;
   }
   :is(.about-box, .contact-box, .hours-box) li, p {
     font-size: 16px;
@@ -3669,42 +3679,41 @@ input[type=checkbox] {
   position: relative;
 }
 
-#service-header-img {
+.service-header-img-box {
+  margin-top:  40px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#service-header-img {
+  width: 50%;
+  object-fit: contain;
 }
 
 #service-header-container {
-  position: absolute;
   top: 0; 
-  left: 50px;
   height: 450px;
-  width: 530px;
-}
-
-#service-header-mark {
-  padding-top: 40px;
-  color: black;
-  font-family: 'Bitter', serif;
-}
-
-#under-line {
-  height: 3px;
-  width: 100px;
-  background-color: var(--bjbil-orange);
+  width: 100%;
+  text-align: center;
 }
 
 #service-header-title {
-  padding-top: 30px;
+  padding-top: 120px;
   color: black;
   font-size: 80px;
   font-weight: 900;
 }
 
-#service-header-content {
+#service-header-para {
+  width: 80%;
+  text-align: center;
+  margin-left: 10%;
+}
+
+#service-header-para p {
   font-family: 'Outfit', sans-serif;
-  padding-top: 20px;
+  padding-top: 40px;
   font-size: 18px;
 }
 
