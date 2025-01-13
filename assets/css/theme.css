@@ -3574,7 +3574,6 @@ input[type=checkbox] {
 
 .service-btn-text-content {
   width: 100%;
-  margin-bottom: 100px;
 }
 
 .custom-button {
@@ -3669,11 +3668,17 @@ input[type=checkbox] {
     max-width: 300px; /* But not too wide */
     height: 150px; /* You might want to adjust the height for mobile */
     margin: 10px 0; /* Vertical margin between stacked buttons */
+    background-color: #38393c;
   }
 
-  .custom-button::after {
-    background-color: rgba(0, 0, 0, 0.39); /* Adjust opacity as needed */
+  .custom-button img {
+    object-fit: contain;
   }
+
+  .custom-button h3 {
+    font-size: 30px;
+  }
+
 }
 
 
