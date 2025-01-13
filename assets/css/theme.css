@@ -3736,6 +3736,47 @@ input[type=checkbox] {
   font-family: 'Bitter', serif;
 }
 
+@media screen and (max-width: 768px) {
+  .service-header,
+  #service-header-container {
+    height: auto;
+  }
+
+  .title-selector-2nd {
+    font-size: 30px !important;
+  }
+
+  #service-header-title {
+    padding-top: 40px;
+    color: black;
+    font-size: 45px;
+    font-weight: 900;
+  }
+  #service-header-para {
+    width: 100%;
+    margin-left: 0;
+    text-align: start;
+    padding-left: 7px;
+    padding-right: 5px;
+
+  }
+  #service-header-para p {
+    font-family: 'Outfit', sans-serif;
+    padding-top: 40px;
+    font-size: 16px;
+  }
+  #service-header-img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .service-header-img-box {
+    margin-top:  20px;
+    margin-bottom: 0px;
+  }
+
+
+}
+
 /* .main-slider .owl-theme .owl-controls {
   margin: 0 !important;
 }
