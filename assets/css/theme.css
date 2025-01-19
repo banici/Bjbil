@@ -3698,6 +3698,7 @@ input[type=checkbox] {
 #service-header-img {
   width: 50%;
   object-fit: contain;
+  border-radius: 5px;
 }
 
 #service-header-container {
