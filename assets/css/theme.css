@@ -5382,14 +5382,14 @@ input[type=checkbox] {
 .post-excerpt {
   font-size: 22px;
   line-height: 20px;
-  background-color: #979797;
+  background-color: #bebebe;
   color: black;
   width: 80%;
 }
 
 @media (min-width: 768px) { /* This applies for desktop view */
   :is(.innovation-img, .innovation-container, .effect-img, .effect-container) {
-    background-color: #979797;
+    background-color: #bebebe;
     width: 50%;
     box-sizing: border-box;
   }
@@ -5436,6 +5436,13 @@ input[type=checkbox] {
     height: 400px;
     object-fit: cover;
     transform: scaleX(-1);
+  }
+  #carmake-button {
+    width: 280px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 25px;
+    line-height: 50px;
   }
 }
 
