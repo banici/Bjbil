@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
 */
 // Toggle the customer service info on-click
 document.addEventListener("click", function(e) {
-    const boxes = ['warranty-box', 'faq-box'];
+    const boxes = ['warranty-box', 'faq-box', 'customer-contact-box'];
     const BoxChildren = ['customer-chevron', 'fa'];
     let target = e.target.classList;
     if(boxes.includes(target[0]) || BoxChildren.includes(target[0])) {
@@ -199,9 +199,9 @@ document.addEventListener("click", function(e) {
         selectedParent = e.target.parentElement;
 
         switch(target[0]) {
-            case "help-box":
-                containerContent = document.getElementsByClassName("help-container")[0];
-                selectedContainer = document.getElementsByClassName("help-container")[0].classList;
+            case "customer-contact-box":
+                containerContent = document.getElementsByClassName("contact-container")[0];
+                selectedContainer = document.getElementsByClassName("contact-container")[0].classList;
                 selectedContainer.add("active");
                 break;
             case "warranty-box":
@@ -227,7 +227,7 @@ document.addEventListener("click", function(e) {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    var defaultFaq = document.getElementsByClassName("faq-box");
+    var defaultFaq = document.getElementsByClassName("customer-contact-box"); // WHEN FAQ IS READY, SET BACK TO "faq-box"
     if(defaultFaq.length > 0) {
         if(isMobileView) {
             CustomerServiceDefault();
@@ -235,12 +235,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
-function CustomerServiceDefault(target = 'faq-box') { // set defautlt value to default target because mobile is not passing any arg.
-    var defaultFaq = document.getElementsByClassName("faq-box");
-    var defaultFaqContent = document.getElementsByClassName("faq-container");
+function CustomerServiceDefault(target = 'customer-contact-box') { // set defautlt value to default target because mobile is not passing any arg.
+    var defaultFaq = document.getElementsByClassName("customer-contact-box");
+    var defaultFaqContent = document.getElementsByClassName("contact-container");
     var faqActive = defaultFaq[0].classList[1];
-    if (target !== 'faq-box' && faqActive === 'active') {
+    if (target !== 'customer-contact-box' && faqActive === 'active') {
         defaultFaq[0].classList.remove('active');
         defaultFaqContent[0].classList.remove('active');
         return;
@@ -251,6 +250,24 @@ function CustomerServiceDefault(target = 'faq-box') { // set defautlt value to d
         return;
     } 
 }
+
+/* WHEN FAQ IS READY UNCOMMENT THIS AND REMOVE THE ONE ABOVE THAT USES CONTACT AS DEFAULT*/
+
+// function CustomerServiceDefault(target = 'faq-box') { // set defautlt value to default target because mobile is not passing any arg.
+//     var defaultFaq = document.getElementsByClassName("faq-box");
+//     var defaultFaqContent = document.getElementsByClassName("faq-container");
+//     var faqActive = defaultFaq[0].classList[1];
+//     if (target !== 'faq-box' && faqActive === 'active') {
+//         defaultFaq[0].classList.remove('active');
+//         defaultFaqContent[0].classList.remove('active');
+//         return;
+//     } 
+//     if (faqActive === 'active') {
+//         defaultFaq[0].classList.remove('active');
+//         defaultFaqContent[0].classList.remove('active');
+//         return;
+//     } 
+// }
 
 document.addEventListener('click', function(event) {
     if(event.target.id === 'nostalgi') {

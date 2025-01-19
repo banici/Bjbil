@@ -2075,20 +2075,45 @@ input[type=checkbox] {
   width: 350px;
 }
 
-:is(.warranty-container, .faq-container) {
+:is(.warranty-container, .faq-container, .contact-container) {
   display: none;
 }
 
-:is(.warranty-container, .faq-container).active {
+:is(.warranty-container, .faq-container, .contact-container).active {
   width: 75%;
   height: 100%;
   display: flex;
   justify-content: center;
 }
 
-:is(.warranty-info, .faq-info) {
+:is(.warranty-info, .faq-info, .contact-info) {
   padding-top: 50px;
   width: 60%;
+}
+
+.contact-content-container {
+  margin-top: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  height: auto;
+  background-color: #e9e9e9;
+  border-radius: 5px;
+}
+.contact-content-container ul {
+  margin-left: 20px;
+}
+
+#contact-content-title {
+  color: black;
+}
+
+#contact-content-text {
+  font-size: 20px;
+}
+
+#contact-content-text:hover {
+  color: blue;
 }
 
 .warranty-info span {
@@ -2120,26 +2145,26 @@ input[type=checkbox] {
   transition: padding-right 0.34s ease;
 }
 
-:is(.customer-warranty, .customer-faq):hover {
+:is(.customer-warranty, .customer-faq, .customer-contact):hover {
   cursor: pointer;
 }
 
-:is(.customer-warranty, .customer-faq):hover .customer-chevron {
+:is(.customer-warranty, .customer-faq, .customer-contact):hover .customer-chevron {
   padding-right: 2px;
 } 
 
-:is(.warranty-box, .faq-box).active {
+:is(.warranty-box, .faq-box, .customer-contact-box).active {
   background-color: var(--bjbil-orange);
   border-bottom: none;
   cursor: pointer;
 }
 
-:is(.customer-warranty, .customer-faq) {
+:is(.customer-warranty, .customer-faq, .customer-contact) {
   padding-bottom: 10px;
   padding-left: 20px;
 }
 
-:is(.warranty-box, .faq-box) {
+:is(.warranty-box, .faq-box, .customer-contact-box) {
   font-size: 17px;
   font-weight: bold;
   display: flex;
@@ -2150,7 +2175,7 @@ input[type=checkbox] {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 
-:is(.warranty-box, .faq-box).active > .customer-chevron {
+:is(.warranty-box, .faq-box, .customer-contact-box).active > .customer-chevron {
   background-color: var(--bjbil-orange);
 }
 
@@ -2176,7 +2201,18 @@ input[type=checkbox] {
   padding: 8px;
 }
 
+
+
 @media (max-width: 991px) {
+  .contact-content-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: auto;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+  }
   .customer-service-container {
     width: 100%;
     height: 100%;
@@ -2185,13 +2221,13 @@ input[type=checkbox] {
   .customer-service-wrapper {
     width: 100%;
   }
-  :is(.warranty-container, .faq-container).active {
+  :is(.warranty-container, .faq-container, .contact-container).active {
     width: 100%;
   }
-  :is(.warranty-info, .faq-info, .form-info) {
+  :is(.warranty-info, .faq-info, .contact-info) {
     display: none;
   }
-  :is(#customer-warranty-title, #customer-faq-title) {
+  :is(#customer-warranty-title, #customer-faq-title, #customer-contact-title) {
     display: none;
   }
 
@@ -2205,15 +2241,15 @@ input[type=checkbox] {
     margin-right: 20px;
   }
 
-  :is(.warranty-box, .faq-box).active > .customer-chevron {
+  :is(.warranty-box, .faq-box, .customer-contact-box).active > .customer-chevron {
     transform: rotate(270deg);
   }
 
-  :is(.customer-warranty, .customer-faq):hover .customer-chevron {
+  :is(.customer-warranty, .customer-faq, .customer-contact):hover .customer-chevron {
     background-color: transparent;
   }
 
-  :is(.customer-warranty, .customer-faq,) {
+  :is(.customer-warranty, .customer-faq, .customer-contact) {
     padding-left: 0px;
   }
 
@@ -5437,13 +5473,6 @@ input[type=checkbox] {
     object-fit: cover;
     transform: scaleX(-1);
   }
-  #carmake-button {
-    width: 280px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 25px;
-    line-height: 50px;
-  }
 }
 
 .carmake-container {
@@ -5458,24 +5487,29 @@ input[type=checkbox] {
 
 #carmake-button {
   display: inline-block;
-  width: 280px;
-  height: 50px;
-  font-size: 20px;
-  border-radius: 25px;
-  background-color: white;
-  color: black;
+  width: 580px;
+  height: 80px;
+  font-size: 35px;
+  border-radius: 50px;
+  background-color: rgb(50, 74, 110);
+  color: white;
   transition: background-color 0.45s ease;
   transition: color 0.30s ease;
-  line-height: 50px;
+  line-height: 80px;
 }
 #carmake-button:hover {
-  background-color: rgb(50, 74, 110);
+  background-color: rgb(108, 140, 187);
   color: white;
   cursor: pointer;
 }
 
+#erfarenhet-italic {
+  font-style: italic;
+  font-size: 38px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .oil-container {
-  background-color: #979797;
   width: 100%;
   text-align: center;
 }
@@ -5532,7 +5566,14 @@ input[type=checkbox] {
 .post-wrap .owl-theme .owl-controls {
   margin: 0 !important;
 }
-@media (max-width: 639px) {
+@media (max-width: 769px) {
+  #carmake-button {
+    width: 280px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 25px;
+    line-height: 50px;
+  }
   .post-wrap .owl-theme .owl-controls {
     display: none;
   }
