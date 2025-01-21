@@ -1691,6 +1691,9 @@ input[type=checkbox] {
 
 /* Car selection
 /* ========================================================================== */
+#car-make-body {
+  overflow: hidden;
+}
 .car-brand-container {
   display: flex;
   gap: 15px;
@@ -1717,11 +1720,12 @@ input[type=checkbox] {
   position: relative; /* Position it relative to the section */
   background-color: white;
   padding: 10px;
-  height: 400px; /*should change this to auto later*/
+  height: auto; /*should change this to auto later*/
   width: 1200px;
   transform: translateY(-20px); /* Start slightly above its final position */
   opacity: 0; /* Start as invisible */
   transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation for transform and opacity */
+  margin-bottom: 50px;
 }
 
 .info-box.active {
@@ -1755,7 +1759,6 @@ input[type=checkbox] {
 
 :is(#info1, #info2, #info3, #info4) {
   background: linear-gradient(to bottom, rgb(255, 255, 255) 1%, rgba(0, 0, 0, 0) 30%);
-  height: 1000px;
   overflow: hidden;
 }
 
@@ -1767,10 +1770,17 @@ input[type=checkbox] {
   background-color: rgb(85, 85, 85);
   color: white;
   display: inline-block;
-  padding: 10px; 
+  padding: 20px; 
   text-align: center;
   margin: 5px;
   box-sizing: border-box;
+  font-size: 18px;
+}
+
+#car-tag:hover {
+  background-color: rgb(32, 32, 32);
+  box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .read-more {
@@ -1785,14 +1795,46 @@ input[type=checkbox] {
 }
 
 #car-brand-title {
+  text-align: center;
   margin: 10px 10px 10px 10px;
   border-bottom: 2px solid black;
 }
 
-#car-brand-content {
-  margin: 10px 10px 10px 10px;
-  font-size: 18px;
+#car-brand-title h2 {
+  font-size: 60px;
+  color: rgb(28, 28, 105);
 }
+
+#car-brand-content {
+  margin: 50px 10px 10px 10px;
+  margin-left: 10rem;
+  margin-bottom: 100px;
+}
+
+#car-brand-content p {
+  font-size: 19px;
+}
+
+.car-brand-image-service {
+  max-width: 40%;
+  border-radius: 3px;
+  float: right;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+#bmw-m-service-img {
+  max-width: 55%;
+}
+
+#bmw-i-service-img {
+  max-width: 35%;
+}
+
+#mini-service-img {
+  max-width: 50%;
+}
+
 
 /* Mobile view for car selection */
 
@@ -1864,6 +1906,35 @@ input[type=checkbox] {
   opacity: 0;
   z-index: 0;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#car-tag {
+  padding: 10px; 
+  font-size: 13px;
+}
+
+#car-brand-title h2 {
+  font-size: 40px;
+}
+
+#car-brand-content {
+  margin: 25px 10px 10px 10px;
+  margin-left: 5px;
+  margin-bottom: 100px;
+}
+
+#car-brand-content p {
+  font-size: 14px;
+}
+
+.car-brand-image-service {
+  max-width: 55%;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+#mini-service-img {
+  max-width: 60%;
 }
 }
 
@@ -3610,6 +3681,10 @@ input[type=checkbox] {
 
 .service-btn-text-content {
   width: 100%;
+}
+
+#mjukvara-knapp {
+  background-color: #38393c;
 }
 
 .custom-button {
