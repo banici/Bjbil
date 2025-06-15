@@ -63,6 +63,9 @@
 /* 1.1 */
 /* Preloader
 /* ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
 #preloader {
   position: fixed;
   z-index: 999999;
@@ -1693,6 +1696,13 @@ input[type=checkbox] {
 /* ========================================================================== */
 #car-make-body {
   overflow: hidden;
+}
+.scroll-anchor::before {
+  content: "";
+  display: block;
+  height: 110px;         /* Height of your fixed header or desired offset */
+  margin-top: -110px;    /* Negative to "pull" the scroll up */
+  visibility: hidden;
 }
 .car-brand-container {
   display: flex;
