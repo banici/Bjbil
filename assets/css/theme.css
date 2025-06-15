@@ -3685,7 +3685,7 @@ input[type=checkbox] {
   width: 100%;
 }
 
-#mjukvara-knapp {
+.tre-steg-container button {
   background-color: #38393c;
 }
 
