@@ -3684,6 +3684,10 @@ input[type=checkbox] {
   font-weight: 500;
 }
 
+.scroll-anchor {
+  scroll-margin-top: 115px; /* Adjust to whatever offset you need */
+}
+
 .service-btn-text-content {
   width: 100%;
 }
