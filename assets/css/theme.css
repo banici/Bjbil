@@ -63,6 +63,9 @@
 /* 1.1 */
 /* Preloader
 /* ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
 #preloader {
   position: fixed;
   z-index: 999999;
@@ -3685,7 +3688,7 @@ input[type=checkbox] {
   width: 100%;
 }
 
-#mjukvara-knapp {
+.tre-steg-container > button {
   background-color: #38393c;
 }
 
