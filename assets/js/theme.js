@@ -67,7 +67,10 @@ document.addEventListener('DOMContentLoaded', function () {
             videos[currentVideoIndex].classList.remove('active');
             currentVideoIndex = (currentVideoIndex + 1) % videos.length;
             videos[currentVideoIndex].classList.add('active');
-            videos[currentVideoIndex].play();
+            videos[currentVideoIndex].muted = true;
+            videos[currentVideoIndex].play().catch(function (error) {
+                console.warn("Autoplay blockerat på iOS:", error);
+            });
         }
     
         videos.forEach(function (video, index) {
@@ -78,7 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Display the first video
         videos[currentVideoIndex].classList.add('active');
-        videos[currentVideoIndex].play();
+        videos[currentVideoIndex].muted = true;
+
+        videos[currentVideoIndex].play().catch(function (error) {
+            console.warn("Första autoplay blockerat på iOS:", error);
+        });
     }
 
 });
