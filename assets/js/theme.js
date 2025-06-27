@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
               navigationWrapper.style.position = "relative";
               navigationWrapper.style.boxShadow = "none";
-              navigationElement.style.paddingTop = "0";
+              navigationElement.style.paddingTop = "10px";
             }  
         } else {
             if ((document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) && extendTopBarElement.id === 'closed') {
