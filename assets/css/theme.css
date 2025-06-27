@@ -151,9 +151,7 @@ body{
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   line-height: 1.72;
-  /*background-image: url(../img/boardroom-bg.png);*/
-  /* background-color: #b6b6b6; */
-  background-color: rgb(218, 218, 218);
+  background-color: #b1b1b1;
   color: #000;
   -webkit-font-kerning: auto;
   -webkit-font-smoothing: antialiased;
@@ -163,8 +161,10 @@ body{
 
 }
 .wrapper {
-  margin: 0;
+  background-color: rgb(218, 218, 218);
+  margin: 0 auto;
   overflow-y: auto;
+  max-width: 2250px;   /* set to 2550px after testing pages responsivness */
 }
 body.boxed {
   background-image: url(../img/boardroom-bg.png);
@@ -1429,6 +1429,8 @@ input[type=checkbox] {
 .header {
   background-color: var(--bjbil-blue);
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 .header-wrapper {
   position: relative;
