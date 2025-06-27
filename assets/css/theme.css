@@ -2332,6 +2332,7 @@ input[type=checkbox] {
   .customer-mobile-info .faq-form-container {
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 5px;
   }
 
   .warranty-information-box {
@@ -2344,6 +2345,7 @@ input[type=checkbox] {
 .faq-form-container {
   margin-top: 50px;
   width: 75%;
+  margin-bottom: 75px;
 }
 
 .faq-row {

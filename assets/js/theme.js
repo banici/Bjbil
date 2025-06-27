@@ -227,7 +227,7 @@ document.addEventListener("click", function(e) {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    var defaultFaq = document.getElementsByClassName("customer-contact-box"); // WHEN FAQ IS READY, SET BACK TO "faq-box"
+    var defaultFaq = document.getElementsByClassName("faq-box");
     if(defaultFaq.length > 0) {
         if(isMobileView) {
             CustomerServiceDefault();
@@ -235,11 +235,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-function CustomerServiceDefault(target = 'customer-contact-box') { // set defautlt value to default target because mobile is not passing any arg.
-    var defaultFaq = document.getElementsByClassName("customer-contact-box");
-    var defaultFaqContent = document.getElementsByClassName("contact-container");
+function CustomerServiceDefault(target = 'faq-box') { // set defautlt value to default target because mobile is not passing any arg.
+    var defaultFaq = document.getElementsByClassName("faq-box");
+    var defaultFaqContent = document.getElementsByClassName("faq-container");
     var faqActive = defaultFaq[0].classList[1];
-    if (target !== 'customer-contact-box' && faqActive === 'active') {
+    if (target !== 'faq-box' && faqActive === 'active') {
         defaultFaq[0].classList.remove('active');
         defaultFaqContent[0].classList.remove('active');
         return;
@@ -250,24 +250,6 @@ function CustomerServiceDefault(target = 'customer-contact-box') { // set defaut
         return;
     } 
 }
-
-/* WHEN FAQ IS READY UNCOMMENT THIS AND REMOVE THE ONE ABOVE THAT USES CONTACT AS DEFAULT*/
-
-// function CustomerServiceDefault(target = 'faq-box') { // set defautlt value to default target because mobile is not passing any arg.
-//     var defaultFaq = document.getElementsByClassName("faq-box");
-//     var defaultFaqContent = document.getElementsByClassName("faq-container");
-//     var faqActive = defaultFaq[0].classList[1];
-//     if (target !== 'faq-box' && faqActive === 'active') {
-//         defaultFaq[0].classList.remove('active');
-//         defaultFaqContent[0].classList.remove('active');
-//         return;
-//     } 
-//     if (faqActive === 'active') {
-//         defaultFaq[0].classList.remove('active');
-//         defaultFaqContent[0].classList.remove('active');
-//         return;
-//     } 
-// }
 
 document.addEventListener('click', function(event) {
     if(event.target.id === 'nostalgi') {
