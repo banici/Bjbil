@@ -39,69 +39,67 @@ checkScreenSize();
 window.addEventListener("resize", checkScreenSize);
 
 
-// Loads all the videos beforehand to reduce load time
 document.addEventListener('DOMContentLoaded', function () {
     var videos = document.querySelectorAll('.video-container video');
     if (videos.length > 0) {
         videos.forEach(function (video) {
             video.load();
+            video.muted = true; // Se till att alla videos är mutade för autoplay
         });
     }
-});
 
-// Iterates between different videos to play on homepage
-document.addEventListener('DOMContentLoaded', function () {
-    var videos = document.querySelectorAll('.video-container video');
+    var mixVideoOrder = false;
     var currentVideoIndex = 0;
 
     function getRandomIndex() {
         return Math.floor(Math.random() * videos.length);
     }
-    
+
     if (videos.length > 0) {
-        if (mixVideoOrder === false) { // if blocket ser till att slumpmässig video startar varje besök.
+        if (mixVideoOrder === false) { 
+            // Slumpmässig video på första besök
             currentVideoIndex = getRandomIndex();
             mixVideoOrder = true;
         }
+
         function playNextVideo() {
             videos[currentVideoIndex].classList.remove('active');
             currentVideoIndex = (currentVideoIndex + 1) % videos.length;
             videos[currentVideoIndex].classList.add('active');
-            videos[currentVideoIndex].play();
+            videos[currentVideoIndex].play().catch(function (error) {
+                console.warn("Autoplay blockerat:", error);
+            });
         }
-    
+
         videos.forEach(function (video, index) {
             video.addEventListener('ended', function () {
                 playNextVideo();
             });
         });
-    
-        // Display the first video
+
+        // Spelar den första videon
         videos[currentVideoIndex].classList.add('active');
-        videos[currentVideoIndex].play();
+        videos[currentVideoIndex].play().catch(function (error) {
+            console.warn("Första autoplay blockerat:", error);
+        });
     }
 
-});
-
-// Changes the last word in the sentence displayed on homepage
-document.addEventListener('DOMContentLoaded', function () {
+    // Ordbyte på hemsidan
     var words = ['BMW', 'MINI', 'TESLA', 'VAG'];
-    
     var currentIndex = 0;
     var lastWord = document.getElementById('last-word');
 
     function replaceLastWord() {
         if (lastWord) {
             lastWord.textContent = words[currentIndex];
-            currentIndex = (currentIndex + 1) % words.length;         
-          }
+            currentIndex = (currentIndex + 1) % words.length;
         }
+    }
 
+    // Byt ord var 3:e sekund
+    setInterval(replaceLastWord, 3000);
     
-    // Call the function to start the replacement
-    setInterval(replaceLastWord, 3000); // Change every 2 seconds (adjust as needed)
-    
-    // Initial replacement on page load
+    // Initialt ordbyte när sidan laddas
     replaceLastWord();
 });
 
