@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // These classes are looped through to get the current page the user is on. And when scrolling down on page the class element gets paddingTop value added to prevent the page to jump in a buggy behaviour.
-const elementsUnderNavigator = ['.top-bar', '.content-area', '.car-brand-section'];
+const elementsUnderNavigator = ['.wrapper'];
 
 // // Makes the navigation bar fixed and on top when scrolling down.
 document.addEventListener('DOMContentLoaded', function () {
