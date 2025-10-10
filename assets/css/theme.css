@@ -2157,17 +2157,20 @@ legend {
 /* 2.1 */
 /* Logo
 /* ========================================================================== */
-.logo {
+/* .logo {
   padding-top: 25px;
   margin: 0 auto;
   max-width: 518px;
   height: 150;
-}
+} */
 .logo img {
   max-width: 70%;
 }
 .header-logo-left .logo {
   margin-left: 0;
+}
+#header-nyckel {
+  max-width: 130%;
 }
 @media (max-width: 900px) {
   #header-logo img {
@@ -3395,6 +3398,10 @@ legend {
   text-align: center;
   margin-right: 100px;
 }
+#nyckel-footer {
+  max-width: 110%;
+  margin-top: -60px;
+}
 .footer-logo img {
   max-width: 70%;
 }
@@ -3416,8 +3423,7 @@ legend {
   flex-wrap: wrap;
 }
 .approved-logo {
-  margin-top: 50px;
-  margin-left: 5%;
+  margin-left: 10%;
   width: 90%;
 }
 :is(.about-box, .contact-box, .hours-box) {
@@ -3510,7 +3516,7 @@ legend {
 
 .social-media-box > a > div {
   margin-right: 20px;
-  font-size: 30px;
+  font-size: 50px;
   color: white;
 }
 
@@ -3551,8 +3557,13 @@ legend {
   .footer-logo {
     margin-right: 0;
   }
+  #nyckel-footer {
+    margin-top: -15px;
+    max-width: 95%;
+  }
   .approved-logo {
     margin-top: 25px;
+    margin-left: 5%;
   }
   :is(.about-box, .contact-box, .hours-box) li, p {
     font-size: 16px;
@@ -3589,6 +3600,7 @@ legend {
     margin-right: 5px;
     width: 50px;
     display: flex;
+    font-size: 40px;
     justify-content: center;
     align-items: center; 
   }
