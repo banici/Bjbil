@@ -59,6 +59,7 @@
                             <li><i class="fa fa-gear"></i><a href="tjanster.html">Våra tjänster</a></li>
                             <li><i class="fa fa-users"></i><a href="foretag.html">Om oss</a></li>
                             <li><i class="fa fa-wechat"></i><a href="kontakt.html">Kundservice</a></li>
+                            <li id="boka-side-bar"><i class="fa fa-wechat"></i><a href="#" id="bokaLink">Boka service</a></li>
                         </ul>
                     </nav>
                 </aside>
@@ -89,6 +90,11 @@
                                 </li>
                                 <li><a href="kontakt.html">Kundservice</a>
                                     <div id="under"></div>
+                                </li>
+                                <li id="boka-nav">
+                                  <a href="#" id="bokaLink">Boka service
+                                    <div id="under"></div>
+                                  </a>
                                 </li>
                             </ul>
                         </nav>
@@ -123,6 +129,7 @@
             </div>
         </div>
     <div class="wrapper ">
+        
         <div class="content-area">
             <section class="page-section no-padding slider ">
                 <div class="container full-width">
@@ -281,6 +288,54 @@
         <script src="assets/plugins/jquery.cookie.js"></script>
         <!--<script src="assets/js/theme-config.js"></script>-->
         <!--<![endif]-->
+        <div id="orderPopup" class="popup-overlay">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h2>Boka service</h2>
+                <form id="orderForm">
+                <label for="name">Namn</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">E-post</label>
+                <input type="email" id="email" name="email" required>
+
+                <fieldset>
+                  <legend>Vanliga orsaker</legend>
+                  <label><input type="checkbox" name="reason" value="Oljebyte"> Oljebyte</label>
+                  <label><input type="checkbox" name="reason" value="Bromsar"> Bromsar</label>
+                  <label><input type="checkbox" name="reason" value="Motorproblem"> Motorproblem</label>
+                  <label><input type="checkbox" name="reason" value="Annat"> Annat</label>
+                </fieldset>
+
+                <label for="description">Beskrivning</label>
+                <textarea id="description" name="description" rows="4" placeholder="Beskriv problemet..."></textarea>
+
+                <div class="gdpr">
+                  <label>
+                    <input type="checkbox" id="gdprConsent" required>
+                    Jag godkänner <a href="#" id="gdprInfoLink">GDPR-villkoren</a>
+                  </label>
+                </div>
+
+              <button type="submit" class="submit-btn">Skicka</button>
+            </form>
+          </div>
+        </div>
+
+<div id="gdprPopup" class="popup-overlay">
+  <div class="popup-content small">
+    <span id="closeGdpr" class="close-btn">&times;</span>
+    <h3>GDPR-information</h3>
+    <p>
+      Dina uppgifter används endast för att hantera din serviceorder. 
+      Vi delar inte information med tredje part. 
+      Du kan när som helst be oss ta bort dina uppgifter.
+    </p>
+  </div>
+</div>
 
 </body>
 

@@ -684,6 +684,78 @@ if (document.querySelector('.car-brand-container')) {
     });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById('orderPopup');
+  const closeBtn = document.getElementById('closePopup');
+  const gdprPopup = document.getElementById('gdprPopup');
+  const gdprLink = document.getElementById('gdprInfoLink');
+  const closeGdpr = document.getElementById('closeGdpr');
+  const form = document.getElementById('orderForm');
+  const bokaNav = document.getElementById('boka-nav');
+  const bokaSideBar = document.getElementById('boka-side-bar');
+
+  // === Öppna popup ===
+  bokaNav.addEventListener('click', (e) => {
+    e.preventDefault();
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+
+  bokaSideBar.addEventListener('click', (e) => {
+    e.preventDefault();
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+
+  // === Stäng popup ===
+  closeBtn.onclick = () => {
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  };
+
+  // === Öppna GDPR-popup ===
+  gdprLink.onclick = (e) => {
+    e.preventDefault();
+    gdprPopup.style.display = 'flex';
+  };
+
+  // === Stäng GDPR-popup ===
+  closeGdpr.onclick = () => gdprPopup.style.display = 'none';
+
+  // === Klick utanför popup ===
+  window.onclick = (e) => {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    if (e.target === gdprPopup) gdprPopup.style.display = 'none';
+  };
+
+  // === Formulärhantering ===
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const gdpr = document.getElementById('gdprConsent');
+    if (!gdpr.checked) {
+      alert('Du måste godkänna GDPR innan du skickar.');
+      return;
+    }
+
+    const data = new FormData(form);
+    const obj = Object.fromEntries(data.entries());
+    obj.reasons = [...form.querySelectorAll('input[name="reason"]:checked')].map(cb => cb.value);
+
+    console.log("Order skickad:", obj);
+    alert('Tack! Din bokning har skickats.');
+
+    form.reset();
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+});
+
+
+
+
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {
 //     return this.animate({opacity: 'toggle', height: 'toggle'}, speed, easing, callback);
