@@ -88,7 +88,7 @@
                             <li><i class="fa fa-gear"></i><a href="tjanster.html">Våra tjänster</a></li>
                             <li><i class="fa fa-users"></i><a href="foretag.html">Om oss</a></li>
                             <li><i class="fa fa-wechat"></i><a href="kontakt.html">Kundservice</a></li>
-                            <li id="boka-side-bar"><i class="fa fa-wechat"></i><a href="#" id="bokaLink">Boka service</a></li>
+                            <li id="boka-side-bar"><i class="fa fa-calendar"></i><a href="#" id="bokaLinkSidebar">Boka service</a></li>
                         </ul>
                     </nav>
                 </aside>
@@ -126,8 +126,8 @@
                                     <div id="under"></div>
                                 </li>
                                 <li id="boka-nav">
-                                  <a href="#" id="bokaLink">Boka service
-                                    <div id="under"></div>
+                                  <a href="#" id="bokaLinkNav">Boka service
+                                    <div id="boka-under"></div>
                                   </a>
                                 </li>
                             </ul>
@@ -294,54 +294,56 @@
         <script src="assets/plugins/jquery.cookie.js"></script>
         <!--<script src="assets/js/theme-config.js"></script>-->
         <!--<![endif]-->
-        <div id="orderPopup" class="popup-overlay">
-            <div class="popup-content">
-                <span class="close-btn">&times;</span>
-                <h2>Boka service</h2>
-                <form id="orderForm">
-                <label for="name">Namn</label>
-                <input type="text" id="name" name="name" required>
 
-                <label for="phone">Telefon</label>
-                <input type="tel" id="phone" name="phone" required>
+        <div id="booking-service-overlay" class="booking-service-overlay">
+            <div class="booking-service-popup">
+              <span class="booking-service-close">&times;</span>
+              <h2>Boka Service</h2>
+              <form id="booking-service-form">
+                <label>Namn</label>
+                <input type="text" id="bs-name" required>
 
-                <label for="email">E-post</label>
-                <input type="email" id="email" name="email" required>
+                <label>Telefon</label>
+                <input type="tel" id="bs-phone" required>
 
-                <fieldset>
-                  <legend>Vanliga orsaker</legend>
-                  <label><input type="checkbox" name="reason" value="Oljebyte"> Oljebyte</label>
-                  <label><input type="checkbox" name="reason" value="Bromsar"> Bromsar</label>
-                  <label><input type="checkbox" name="reason" value="Motorproblem"> Motorproblem</label>
-                  <label><input type="checkbox" name="reason" value="Annat"> Annat</label>
-                </fieldset>
+                <label>Email</label>
+                <input type="email" id="bs-email" required>
 
-                <label for="description">Beskrivning</label>
-                <textarea id="description" name="description" rows="4" placeholder="Beskriv problemet..."></textarea>
-
-                <div class="gdpr">
+                <div class="booking-service-checks">
+                  <p>Välj vad som ska servas:</p>
+                  <label><input type="checkbox" name="bs-service" value="Oljebyte"> Oljebyte</label>
+                  <label><input type="checkbox" name="bs-service" value="Däckbyte"> Däckbyte</label>
+                  <label><input type="checkbox" name="bs-service" value="Bromskontroll"> Bromskontroll</label>
+                  <label><input type="checkbox" name="bs-service" value="Motorcheck"> Motorcheck</label>
+                  <label><input type="checkbox" name="bs-service" value="AC-service"> AC-service</label>
+                </div>
+            
+                <label>Annan anledning</label>
+                <textarea id="bs-description" rows="3" placeholder="Beskriv varför du bokar service..."></textarea>
+            
+                <div class="booking-service-gdpr">
                   <label>
-                    <input type="checkbox" id="gdprConsent" required>
-                    Jag godkänner <a href="#" id="gdprInfoLink">GDPR-villkoren</a>
+                    <input type="checkbox" id="bs-gdpr">
+                    Jag godkänner <a href="javascript:void(0);" id="bs-gdpr-link">GDPR-villkoren</a>
                   </label>
                 </div>
-
-              <button type="submit" class="submit-btn">Skicka</button>
-            </form>
-          </div>
+            
+                <button type="submit" id="bs-submit" disabled>Skicka bokning</button>
+              </form>
+            </div>
         </div>
 
-<div id="gdprPopup" class="popup-overlay">
-  <div class="popup-content small">
-    <span id="closeGdpr" class="close-btn">&times;</span>
-    <h3>GDPR-information</h3>
-    <p>
-      Dina uppgifter används endast för att hantera din serviceorder. 
-      Vi delar inte information med tredje part. 
-      Du kan när som helst be oss ta bort dina uppgifter.
-    </p>
-  </div>
-</div>
+        <div id="booking-service-gdpr-info" class="booking-service-gdpr-info-overlay">
+          <div class="booking-service-gdpr-info-popup">
+            <span class="booking-service-gdpr-info-close">&times;</span>
+            <h3>GDPR-information</h3>
+            <p>
+              När du bokar service samlar vi in dina kontaktuppgifter för att kunna hantera din bokning. 
+              Dina uppgifter sparas endast så länge det krävs för detta syfte. 
+              Läs mer på <a href="https://www.imy.se/" target="_blank">Integritetsskyddsmyndigheten</a>.
+            </p>
+          </div>
+        </div>
 
 </body>
 

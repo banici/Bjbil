@@ -684,76 +684,83 @@ if (document.querySelector('.car-brand-container')) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const popup = document.getElementById('orderPopup');
-  const closeBtn = document.getElementById('closePopup');
-  const gdprPopup = document.getElementById('gdprPopup');
-  const gdprLink = document.getElementById('gdprInfoLink');
-  const closeGdpr = document.getElementById('closeGdpr');
-  const form = document.getElementById('orderForm');
-  const bokaNav = document.getElementById('boka-nav');
-  const bokaSideBar = document.getElementById('boka-side-bar');
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('booking-service-overlay');
+  const form = document.getElementById('booking-service-form');
+  const submitBtn = document.getElementById('bs-submit');
 
-  // === Öppna popup ===
-  bokaNav.addEventListener('click', (e) => {
-    e.preventDefault();
-    popup.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+  // öppna popup från dina knappar
+  document.querySelectorAll('#bokaLinkSidebar, #bokaLinkNav').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      overlay.style.display = 'block';
+    });
   });
 
-  bokaSideBar.addEventListener('click', (e) => {
-    e.preventDefault();
-    popup.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+  // stäng
+  document.querySelector('.booking-service-close').addEventListener('click', () => {
+    overlay.style.display = 'none';
   });
 
-  // === Stäng popup ===
-  closeBtn.onclick = () => {
-    popup.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  };
+  // klick utanför = stäng
+  window.addEventListener('click', e => {
+    if (e.target === overlay) overlay.style.display = 'none';
+  });
 
-  // === Öppna GDPR-popup ===
-  gdprLink.onclick = (e) => {
+  // validering
+  const inputs = form.querySelectorAll('#bs-name, #bs-phone, #bs-email, #bs-description, #bs-gdpr, input[name="bs-service"]');
+  
+  function validate() {
+    const name = document.getElementById('bs-name').value.trim();
+    const phone = document.getElementById('bs-phone').value.trim();
+    const email = document.getElementById('bs-email').value.trim();
+    const desc = document.getElementById('bs-description').value.trim();
+    const gdpr = document.getElementById('bs-gdpr').checked;
+    const services = [...document.querySelectorAll('input[name="bs-service"]:checked')];
+
+    const filled = name && phone && email;
+    const descValid = desc.split(' ').filter(Boolean).length >= 5;
+    const serviceValid = services.length > 0;
+    const allGood = filled && gdpr && (descValid || serviceValid);
+
+    submitBtn.disabled = !allGood;
+    submitBtn.classList.toggle('enabled', allGood);
+  }
+
+  inputs.forEach(el => el.addEventListener('input', validate));
+
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    gdprPopup.style.display = 'flex';
-  };
-
-  // === Stäng GDPR-popup ===
-  closeGdpr.onclick = () => gdprPopup.style.display = 'none';
-
-  // === Klick utanför popup ===
-  window.onclick = (e) => {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-    if (e.target === gdprPopup) gdprPopup.style.display = 'none';
-  };
-
-  // === Formulärhantering ===
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const gdpr = document.getElementById('gdprConsent');
-    if (!gdpr.checked) {
-      alert('Du måste godkänna GDPR innan du skickar.');
-      return;
-    }
-
-    const data = new FormData(form);
-    const obj = Object.fromEntries(data.entries());
-    obj.reasons = [...form.querySelectorAll('input[name="reason"]:checked')].map(cb => cb.value);
-
-    console.log("Order skickad:", obj);
     alert('Tack! Din bokning har skickats.');
-
     form.reset();
-    popup.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    submitBtn.disabled = true;
+    submitBtn.classList.remove('enabled');
+    overlay.style.display = 'none';
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const gdprOverlay = document.getElementById('booking-service-gdpr-info');
+  const gdprLink = document.getElementById('bs-gdpr-link');
+  const gdprClose = document.querySelector('.booking-service-gdpr-info-close');
 
+  if (gdprLink && gdprOverlay && gdprClose) {
+    gdprLink.addEventListener('click', (e) => {
+      e.preventDefault(); // Stoppar scroll upp
+      gdprOverlay.style.display = 'block';
+    });
+
+    gdprClose.addEventListener('click', () => {
+      gdprOverlay.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === gdprOverlay) gdprOverlay.style.display = 'none';
+    });
+  } else {
+    console.warn("GDPR-element saknas i DOM, kolla dina id:n");
+  }
+});
 
 
 // // Slide in/out with fade animation function
