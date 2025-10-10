@@ -1694,6 +1694,75 @@ input[type=checkbox] {
   color: #000;
 }
 
+/* CONFIRM CLOSE POPUP */
+.booking-service-overlay.blurred .booking-service-popup {
+  filter: blur(2px);
+}
+
+.booking-service-confirm-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  z-index: 20000;
+}
+
+
+.booking-service-confirm-popup {
+  background: #fff;
+  max-width: 380px;
+  margin: 12% auto;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.booking-service-confirm-popup h3 {
+  margin-top: 0;
+  color: #222;
+}
+
+.booking-service-confirm-popup p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.booking-service-confirm-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.booking-service-confirm-buttons button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#bs-confirm-yes {
+  background: #d9534f;
+  color: #fff;
+}
+
+#bs-confirm-yes:hover {
+  background: #c9302c;
+}
+
+#bs-confirm-no {
+  background: #f1f1f1;
+}
+
+#bs-confirm-no:hover {
+  background: #ddd;
+}
+
+
 
 /* header {
   position: fixed;

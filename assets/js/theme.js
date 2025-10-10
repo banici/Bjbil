@@ -702,11 +702,6 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.style.display = 'none';
   });
 
-  // klick utanför = stäng
-  window.addEventListener('click', e => {
-    if (e.target === overlay) overlay.style.display = 'none';
-  });
-
   // validering
   const inputs = form.querySelectorAll('#bs-name, #bs-phone, #bs-email, #bs-description, #bs-gdpr, input[name="bs-service"]');
   
@@ -760,6 +755,49 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.warn("GDPR-element saknas i DOM, kolla dina id:n");
   }
+
+// --- BEKRÄFTA STÄNGNING AV FORMULÄR ---
+const bookingOverlay = document.getElementById('booking-service-overlay');
+const bookingPopup = bookingOverlay.querySelector('.booking-service-popup');
+const confirmOverlay = document.getElementById('booking-service-confirm');
+const confirmYes = document.getElementById('bs-confirm-yes');
+const confirmNo = document.getElementById('bs-confirm-no');
+
+if (bookingOverlay && bookingPopup && confirmOverlay) {
+  // Klick på overlay (bakom popup) → visa bekräftelse
+bookingOverlay.addEventListener('click', e => {
+  if (e.target === bookingOverlay) {
+    // Visa confirm-popup, men **stäng inte overlayen**
+    confirmOverlay.style.display = 'block';
+    bookingOverlay.classList.add('blurred'); // bara visuellt
+  }
+});
+
+// Förhindra att click på confirm-popup bubblar upp
+confirmOverlay.querySelector('.booking-service-confirm-popup').addEventListener('click', e => {
+  e.stopPropagation();
+});
+
+// "Nej, stanna kvar"
+confirmNo.addEventListener('click', () => {
+  confirmOverlay.style.display = 'none';
+  bookingOverlay.classList.remove('blurred'); // formuläret blir interaktivt igen
+});
+
+// "Ja, stäng"
+confirmYes.addEventListener('click', () => {
+  confirmOverlay.style.display = 'none';
+  bookingOverlay.style.display = 'none';
+  form.reset();
+  bookingOverlay.classList.remove('blurred');
+});
+
+  // Förhindra att click på confirmPopup bubblar upp till overlay
+  confirmOverlay.querySelector('.booking-service-confirm-popup').addEventListener('click', e => {
+    e.stopPropagation();
+  });
+}
+
 });
 
 
