@@ -1986,17 +1986,20 @@ input[type=checkbox] {
 /* 2.1 */
 /* Logo
 /* ========================================================================== */
-.logo {
+/* .logo {
   padding-top: 25px;
   margin: 0 auto;
   max-width: 518px;
   height: 150;
-}
+} */
 .logo img {
   max-width: 70%;
 }
 .header-logo-left .logo {
   margin-left: 0;
+}
+#header-nyckel {
+  max-width: 130%;
 }
 @media (max-width: 900px) {
   #header-logo img {
