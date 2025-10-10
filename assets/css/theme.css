@@ -3339,7 +3339,7 @@ input[type=checkbox] {
 
 .social-media-box > a > div {
   margin-right: 20px;
-  font-size: 30px;
+  font-size: 50px;
   color: white;
 }
 
@@ -3418,6 +3418,7 @@ input[type=checkbox] {
     margin-right: 5px;
     width: 50px;
     display: flex;
+    font-size: 40px;
     justify-content: center;
     align-items: center; 
   }
