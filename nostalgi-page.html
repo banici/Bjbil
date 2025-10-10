@@ -206,6 +206,66 @@
         <script src="assets/plugins/jquery.cookie.js"></script>
         <!--<script src="assets/js/theme-config.js"></script>-->
         <!--<![endif]-->
+        <div id="booking-service-overlay" class="booking-service-overlay">
+            <div class="booking-service-popup">
+              <span class="booking-service-close">&times;</span>
+              <h2>Boka Service</h2>
+              <form id="booking-service-form">
+                <label>Namn</label>
+                <input type="text" id="bs-name" required>
+
+                <label>Telefon</label>
+                <input type="tel" id="bs-phone" required>
+
+                <label>Email</label>
+                <input type="email" id="bs-email" required>
+
+                <div class="booking-service-checks">
+                  <p>Välj vad som ska servas:</p>
+                  <label><input type="checkbox" name="bs-service" value="Oljebyte"> Oljebyte</label>
+                  <label><input type="checkbox" name="bs-service" value="Däckbyte"> Däckbyte</label>
+                  <label><input type="checkbox" name="bs-service" value="Bromskontroll"> Bromskontroll</label>
+                  <label><input type="checkbox" name="bs-service" value="Motorcheck"> Motorcheck</label>
+                  <label><input type="checkbox" name="bs-service" value="AC-service"> AC-service</label>
+                </div>
+            
+                <label>Annan anledning</label>
+                <textarea id="bs-description" rows="3" placeholder="Beskriv varför du bokar service..."></textarea>
+            
+                <div class="booking-service-gdpr">
+                  <label>
+                    <input type="checkbox" id="bs-gdpr">
+                    Jag godkänner <a href="javascript:void(0);" id="bs-gdpr-link">GDPR-villkoren</a>
+                  </label>
+                </div>
+            
+                <button type="submit" id="bs-submit" disabled>Skicka bokning</button>
+              </form>
+            </div>
+        </div>
+
+        <div id="booking-service-gdpr-info" class="booking-service-gdpr-info-overlay">
+          <div class="booking-service-gdpr-info-popup">
+            <span class="booking-service-gdpr-info-close">&times;</span>
+            <h3>GDPR-information</h3>
+            <p>
+              När du bokar service samlar vi in dina kontaktuppgifter för att kunna hantera din bokning. 
+              Dina uppgifter sparas endast så länge det krävs för detta syfte. 
+              Läs mer på <a href="https://www.imy.se/" target="_blank">Integritetsskyddsmyndigheten</a>.
+            </p>
+          </div>
+        </div>
+        <!-- CONFIRM CLOSE POPUP -->
+        <div id="booking-service-confirm" class="booking-service-confirm-overlay">
+          <div class="booking-service-confirm-popup">
+            <h3>Vill du stänga?</h3>
+            <p>Om du stänger nu försvinner all information du fyllt i.</p>
+            <div class="booking-service-confirm-buttons">
+              <button id="bs-confirm-yes">Ja, stäng</button>
+              <button id="bs-confirm-no">Nej, stanna</button>
+            </div>
+          </div>
+        </div>
 
     </body>
 
