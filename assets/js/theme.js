@@ -522,34 +522,34 @@ function checkBoxes() {
 
 /** ============== Jobb ansökan popup =================== */
 
-if (jobbForm) {
-    const formButton = document.querySelector('#ansok-btn');
-    const closeForm = jobbForm.querySelector('.close-ansok');
-    const formWrapper = document.querySelector('.ansok-form-wrapper');
+// if (jobbForm) {
+//     const formButton = document.querySelector('#ansok-btn');
+//     const closeForm = jobbForm.querySelector('.close-ansok');
+//     const formWrapper = document.querySelector('.ansok-form-wrapper');
 
-    formButton.addEventListener('click', function() {
-        jobbForm.classList.add('show-form');
-        formWrapper.style.zIndex = '99';
-        const form = jobbForm.querySelector('.ansok-form');
+//     formButton.addEventListener('click', function() {
+//         jobbForm.classList.add('show-form');
+//         formWrapper.style.zIndex = '99';
+//         const form = jobbForm.querySelector('.ansok-form');
 
-        if (form) {
-            form.classList.add('show');
-            form.classList.add('popup-form');
-        }
-    });
+//         if (form) {
+//             form.classList.add('show');
+//             form.classList.add('popup-form');
+//         }
+//     });
 
-    closeForm.addEventListener('click', function() {
-        formWrapper.style.zIndex = '-1';
-        jobbForm.classList.remove('show-form');
-        const form = jobbForm.querySelector('.ansok-form');
+//     closeForm.addEventListener('click', function() {
+//         formWrapper.style.zIndex = '-1';
+//         jobbForm.classList.remove('show-form');
+//         const form = jobbForm.querySelector('.ansok-form');
 
-        if (form) {
-            form.classList.remove('show');
-            form.classList.remove('popup-form');
-        }
-    });
+//         if (form) {
+//             form.classList.remove('show');
+//             form.classList.remove('popup-form');
+//         }
+//     });
 
-}
+// }
 
 /* ============ car selection for desktop ============== */
 if (!isMobileView)
