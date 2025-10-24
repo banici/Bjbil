@@ -2754,9 +2754,10 @@ input[type=checkbox] {
   overflow: hidden;
 }
 .om-oss-image-wrapper img {
-  width: auto;
+  width: 60%;
   height: 100%;
-  object-fit: contain; /* This property makes the image fill out the container */
+  object-fit: cover; /* This property makes the image fill out the container */
+  display: block;
   position: absolute;
   top: 0;
   right: 0;
