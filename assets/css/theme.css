@@ -1736,6 +1736,16 @@ input[type=checkbox] {
   gap: 1rem;
 }
 
+.booking-service-info {
+  background: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.05rem;
+  border-radius: 0.4rem;
+}
+
 .booking-service-confirm-buttons button {
   padding: 0.6rem 1.2rem;
   border: none;

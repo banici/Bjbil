@@ -240,7 +240,12 @@
         <div id="booking-service-overlay" class="booking-service-overlay">
             <div class="booking-service-popup">
               <span class="booking-service-close">&times;</span>
-              <h2>Boka Service</h2>
+              <h2>Skicka serviceförfrågan</h2>
+              <p class="booking-service-info">
+                Observera: detta formulär bokar inte en tid direkt. 
+                Din förfrågan skickas till oss och du får tidsförslag för service 
+                när vi gått igenom uppgifterna.
+              </p>
               <form id="booking-service-form">
                 <label>Namn</label>
                 <input type="text" id="bs-name" required>
@@ -250,6 +255,9 @@
 
                 <label>Email</label>
                 <input type="email" id="bs-email" required>
+
+                <label for="bs-reg">Registreringsnummer</label>
+                <input type="text" id="bs-reg" placeholder="ABC123" required>
 
                 <div class="booking-service-checks">
                   <p>Välj vad som ska servas:</p>
@@ -270,7 +278,7 @@
                   </label>
                 </div>
             
-                <button type="submit" id="bs-submit" disabled>Skicka bokning</button>
+                <button type="submit" id="bs-submit" disabled>Skicka</button>
               </form>
             </div>
         </div>

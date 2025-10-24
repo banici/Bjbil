@@ -709,11 +709,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = document.getElementById('bs-name').value.trim();
     const phone = document.getElementById('bs-phone').value.trim();
     const email = document.getElementById('bs-email').value.trim();
+    const reg = document.getElementById('bs-reg').value.trim();
     const desc = document.getElementById('bs-description').value.trim();
     const gdpr = document.getElementById('bs-gdpr').checked;
     const services = [...document.querySelectorAll('input[name="bs-service"]:checked')];
 
-    const filled = name && phone && email;
+    const filled = name && phone && email && reg;
     const descValid = desc.split(' ').filter(Boolean).length >= 5;
     const serviceValid = services.length > 0;
     const allGood = filled && gdpr && (descValid || serviceValid);
