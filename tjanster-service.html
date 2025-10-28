@@ -201,6 +201,8 @@
 
         <!-- JS Page Level -->
         <script src="assets/js/theme.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="module" src="assets/js/email.js"></script>
 
         <!--[if (gte IE 9)|!(IE)]><!-->
         <script src="assets/plugins/jquery.cookie.js"></script>
@@ -211,42 +213,42 @@
               <span class="booking-service-close">&times;</span>
               <h2>Skicka serviceförfrågan</h2>
               <p class="booking-service-info">
-                Observera: detta formulär bokar inte en tid direkt. 
-                Din förfrågan skickas till oss och du får tidsförslag för service 
-                när vi gått igenom uppgifterna.
+                Observera: Detta formulär gör ingen direktbokning. Din förfrågan skickas till oss, 
+                och efter att vi har gått igenom uppgifterna kommer vi att kontakta dig med förslag på lediga tider för service på din bil.
               </p>
               <form id="booking-service-form">
                 <label>Namn</label>
-                <input type="text" id="bs-name" required>
+                <input type="text" name="user_name" id="bs-name" required>
 
                 <label>Telefon</label>
-                <input type="tel" id="bs-phone" required>
+                <input type="tel" name="user_phone" id="bs-phone" required>
 
                 <label>Email</label>
-                <input type="email" id="bs-email" required>
+                <input type="email" name="user_email" id="bs-email" required>
 
                 <label for="bs-reg">Registreringsnummer</label>
-                <input type="text" id="bs-reg" placeholder="ABC123" required>
+                <input type="text" name="user_reg" id="bs-reg" placeholder="ABC123" required>
 
                 <div class="booking-service-checks">
-                  <p>Välj vad som ska servas:</p>
-                  <label><input type="checkbox" name="bs-service" value="Oljebyte"> Oljebyte</label>
-                  <label><input type="checkbox" name="bs-service" value="Däckbyte"> Däckbyte</label>
-                  <label><input type="checkbox" name="bs-service" value="Bromskontroll"> Bromskontroll</label>
-                  <label><input type="checkbox" name="bs-service" value="Motorcheck"> Motorcheck</label>
-                  <label><input type="checkbox" name="bs-service" value="AC-service"> AC-service</label>
+                  <p>Välj service:</p>
+                  <label><input type="checkbox" name="service" value="Oljebyte"> Oljebyte</label>
+                  <label><input type="checkbox" name="service" value="Däckbyte"> Däckbyte</label>
+                  <label><input type="checkbox" name="service" value="Bromskontroll"> Bromskontroll</label>
+                  <label><input type="checkbox" name="service" value="Motorcheck"> Motorcheck</label>
+                  <label><input type="checkbox" name="service" value="AC-service"> AC-service</label>
                 </div>
             
                 <label>Annan anledning</label>
-                <textarea id="bs-description" rows="3" placeholder="Beskriv varför du bokar service..."></textarea>
+                <textarea id="bs-description" name="user_message" rows="3" placeholder="Beskriv varför du bokar service..."></textarea>
             
                 <div class="booking-service-gdpr">
                   <label>
-                    <input type="checkbox" id="bs-gdpr">
+                    <input type="checkbox" id="bs-gdpr" name="gdpr_approved">
                     Jag godkänner <a href="javascript:void(0);" id="bs-gdpr-link">GDPR-villkoren</a>
                   </label>
                 </div>
-            
+
+                <input type="hidden" name="service_selected" id="bs-service-selected">
                 <button type="submit" id="bs-submit" disabled>Skicka</button>
               </form>
             </div>
@@ -258,7 +260,9 @@
             <h3>GDPR-information</h3>
             <p>
               När du bokar service samlar vi in dina kontaktuppgifter för att kunna hantera din bokning. 
-              Dina uppgifter sparas endast så länge det krävs för detta syfte. 
+              Dina uppgifter sparas endast så länge det krävs för detta syfte. Genom att skicka detta 
+              formulär godkänner du att dina uppgifter behandlas enligt vår integritetspolicy och skickas
+              via tjänsten EmailJS.
               Läs mer på <a href="https://www.imy.se/" target="_blank">Integritetsskyddsmyndigheten</a>.
             </p>
           </div>

@@ -1,5 +1,4 @@
 'use strict';
-
 // Cache
 var body = document.querySelector('body');
 var mainSlider = document.querySelector('#main-slider');
@@ -37,7 +36,6 @@ checkScreenSize();
 
 // Add an event listener for resize events
 window.addEventListener("resize", checkScreenSize);
-
 
 document.addEventListener('DOMContentLoaded', function () {
     var videos = document.querySelectorAll('.video-container video');
@@ -684,122 +682,7 @@ if (document.querySelector('.car-brand-container')) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const overlay = document.getElementById('booking-service-overlay');
-  const form = document.getElementById('booking-service-form');
-  const submitBtn = document.getElementById('bs-submit');
 
-  // öppna popup från dina knappar
-  document.querySelectorAll('#bokaLinkSidebar, #bokaLinkNav').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      overlay.style.display = 'block';
-    });
-  });
-
-  // stäng
-  document.querySelector('.booking-service-close').addEventListener('click', () => {
-    overlay.style.display = 'none';
-  });
-
-  // validering
-  const inputs = form.querySelectorAll('#bs-name, #bs-phone, #bs-email, #bs-description, #bs-gdpr, input[name="bs-service"]');
-  
-  function validate() {
-    const name = document.getElementById('bs-name').value.trim();
-    const phone = document.getElementById('bs-phone').value.trim();
-    const email = document.getElementById('bs-email').value.trim();
-    const reg = document.getElementById('bs-reg').value.trim();
-    const desc = document.getElementById('bs-description').value.trim();
-    const gdpr = document.getElementById('bs-gdpr').checked;
-    const services = [...document.querySelectorAll('input[name="bs-service"]:checked')];
-
-    const filled = name && phone && email && reg;
-    const descValid = desc.split(' ').filter(Boolean).length >= 5;
-    const serviceValid = services.length > 0;
-    const allGood = filled && gdpr && (descValid || serviceValid);
-
-    submitBtn.disabled = !allGood;
-    submitBtn.classList.toggle('enabled', allGood);
-  }
-
-  inputs.forEach(el => el.addEventListener('input', validate));
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Tack! Din bokning har skickats.');
-    form.reset();
-    submitBtn.disabled = true;
-    submitBtn.classList.remove('enabled');
-    overlay.style.display = 'none';
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const gdprOverlay = document.getElementById('booking-service-gdpr-info');
-  const gdprLink = document.getElementById('bs-gdpr-link');
-  const gdprClose = document.querySelector('.booking-service-gdpr-info-close');
-
-  if (gdprLink && gdprOverlay && gdprClose) {
-    gdprLink.addEventListener('click', (e) => {
-      e.preventDefault(); // Stoppar scroll upp
-      gdprOverlay.style.display = 'block';
-    });
-
-    gdprClose.addEventListener('click', () => {
-      gdprOverlay.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === gdprOverlay) gdprOverlay.style.display = 'none';
-    });
-  } else {
-    console.warn("GDPR-element saknas i DOM, kolla dina id:n");
-  }
-
-// --- BEKRÄFTA STÄNGNING AV FORMULÄR ---
-const bookingOverlay = document.getElementById('booking-service-overlay');
-const bookingPopup = bookingOverlay.querySelector('.booking-service-popup');
-const confirmOverlay = document.getElementById('booking-service-confirm');
-const confirmYes = document.getElementById('bs-confirm-yes');
-const confirmNo = document.getElementById('bs-confirm-no');
-
-if (bookingOverlay && bookingPopup && confirmOverlay) {
-  // Klick på overlay (bakom popup) → visa bekräftelse
-bookingOverlay.addEventListener('click', e => {
-  if (e.target === bookingOverlay) {
-    // Visa confirm-popup, men **stäng inte overlayen**
-    confirmOverlay.style.display = 'block';
-    bookingOverlay.classList.add('blurred'); // bara visuellt
-  }
-});
-
-// Förhindra att click på confirm-popup bubblar upp
-confirmOverlay.querySelector('.booking-service-confirm-popup').addEventListener('click', e => {
-  e.stopPropagation();
-});
-
-// "Nej, stanna kvar"
-confirmNo.addEventListener('click', () => {
-  confirmOverlay.style.display = 'none';
-  bookingOverlay.classList.remove('blurred'); // formuläret blir interaktivt igen
-});
-
-// "Ja, stäng"
-confirmYes.addEventListener('click', () => {
-  confirmOverlay.style.display = 'none';
-  bookingOverlay.style.display = 'none';
-  form.reset();
-  bookingOverlay.classList.remove('blurred');
-});
-
-  // Förhindra att click på confirmPopup bubblar upp till overlay
-  confirmOverlay.querySelector('.booking-service-confirm-popup').addEventListener('click', e => {
-    e.stopPropagation();
-  });
-}
-
-});
 
 
 // // Slide in/out with fade animation function
