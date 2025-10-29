@@ -1456,6 +1456,9 @@ input[type=checkbox] {
 #boka-nav:hover {
   background-color: #ec960d;;
 }
+#boka-side-bar {
+  background-color: #ec960dd2;;
+}
 
 .booking-service-overlay {
   display: none;
