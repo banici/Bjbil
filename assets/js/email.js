@@ -102,6 +102,10 @@ document.querySelector('.booking-service-close').addEventListener('click', () =>
     const serviceList = Array.from(form.querySelectorAll('input[name="service"]:checked'))
                              .map(cb => cb.value)
                              .join(', ');
+        
+    const extrasList = Array.from(form.querySelectorAll('input[name="extra"]:checked'))
+                         .map(cb => cb.value)
+                         .join(', ');
 
     const formData = {
       user_name: form.user_name.value,
@@ -110,6 +114,7 @@ document.querySelector('.booking-service-close').addEventListener('click', () =>
       user_reg: form.user_reg.value,
       user_message: form.user_message.value,
       services: serviceList || 'Ingen tjänst vald',
+      extra: extrasList || 'Inga extra tillägg',
       gdpr_approved: gdpr.checked ? 'Ja' : 'Nej'
     };
 
@@ -154,11 +159,12 @@ document.querySelector('.booking-service-close').addEventListener('click', () =>
     form.reset();
     submitBtn.disabled = true;
     submitBtn.classList.remove('enabled');
-      // **Rensa dropdowns**
-  const dropdowns = form.querySelectorAll('.dropdown-content');
-  dropdowns.forEach(d => d.classList.remove('open'));
-  const dropdownButtons = form.querySelectorAll('.dropdown-toggle');
-  dropdownButtons.forEach(b => b.classList.remove('active'));
+    // **Rensa dropdowns**
+    const dropdowns = form.querySelectorAll('.dropdown-content');
+    dropdowns.forEach(d => d.classList.remove('open'));
+    const dropdownButtons = form.querySelectorAll('.dropdown-toggle');
+    dropdownButtons.forEach(b => b.classList.remove('active'));
+    
     overlay.classList.remove('blurred');
   });
 });
