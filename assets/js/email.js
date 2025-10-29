@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const gdprInfoOverlay = document.getElementById('booking-service-gdpr-info');
   const gdprInfoClose = document.querySelector('.booking-service-gdpr-info-close');
 
+  const regInput = document.getElementById('bs-reg');
+  if (regInput) {
+    regInput.addEventListener('input', () => {
+      regInput.value = regInput.value.toUpperCase();
+    });
+  }
+
 document.querySelectorAll('.dropdown-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
     const target = document.getElementById(btn.dataset.target);

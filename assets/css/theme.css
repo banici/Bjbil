@@ -1679,6 +1679,10 @@ input[type=checkbox] {
   text-decoration: underline;
 }
 
+#bs-reg {
+  text-transform: uppercase;
+}
+
 #bs-submit {
   background: grey;
   color: #fff;
@@ -2543,6 +2547,7 @@ input[type=checkbox] {
 #contact-page {
   background-color: rgb(240, 240, 240);
 }
+
 .customer-page-section {
   display: flex;
   justify-content: center;
@@ -4055,6 +4060,13 @@ input[type=checkbox] {
 
 /* ----------------Tjänster------------------ */
 
+.kund-tjanster-wrapper {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.233)),
+            url('../img/tjanster-background.png') center/cover no-repeat;
+  padding: 100px 0;
+}
+
 .kund-text-presentation, .ovriga-text-presentation {
   display: flex;
   justify-content: center;
@@ -4119,18 +4131,18 @@ input[type=checkbox] {
 }
 
 .tre-steg-container > button {
-  background-color: #38393c;
+  background-color: #b4b4b41a;
 }
 
 .custom-button {
   background: none;
   border: none;
   padding: 0;
-  margin: 10px;
+  margin: 20px;
   cursor: pointer;
   position: relative;
-  width: 400px; /* Adjust as needed */
-  height: 300px; /* Adjust as needed */
+  width: 300px; /* Adjust as needed */
+  height: 280px; /* Adjust as needed */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -4161,9 +4173,8 @@ input[type=checkbox] {
 .custom-button:hover img {
   transform: scale(1.05);
 }
-
-.custom-button:hover::after {
-  background-color: rgba(0, 0, 0, 0.500);
+.tre-steg-container > button:hover {
+  background-color: #b4b4b43a;
 }
 
 .custom-button .service-btn-text-content{
@@ -4177,7 +4188,7 @@ input[type=checkbox] {
 .custom-button h3 {
   margin: 0 0 10px 0; /* Increased bottom margin */
   padding: 0;
-  font-size: 40px;
+  font-size: 35px;
   color: white;
   font-weight: 600;
 }
@@ -4189,6 +4200,9 @@ input[type=checkbox] {
 }
 
 @media screen and (max-width: 768px) {
+  .kund-tjanster-wrapper {
+    padding: 0 0 30px 0;
+  }
   .tre-steg-container {
     padding-top: 50px;
     padding-bottom: 0;
