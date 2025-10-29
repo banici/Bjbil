@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (videos.length > 0) {
         videos.forEach(function (video) {
             video.load();
-            video.muted = true; // Se till att alla videos är mutade för autoplay
+            video.muted = true;
         });
     }
 
@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (videos.length > 0) {
         if (mixVideoOrder === false) { 
-            // Slumpmässig video på första besök
             currentVideoIndex = getRandomIndex();
             mixVideoOrder = true;
         }

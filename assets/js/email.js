@@ -6,6 +6,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const confirmOverlay = document.getElementById('booking-service-confirm');
   const confirmYes = document.getElementById('bs-confirm-yes');
   const confirmNo = document.getElementById('bs-confirm-no');
+  const gdprLink = document.getElementById('bs-gdpr-link');
+  const gdprInfoOverlay = document.getElementById('booking-service-gdpr-info');
+  const gdprInfoClose = document.querySelector('.booking-service-gdpr-info-close');
+
+document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.getElementById(btn.dataset.target);
+    const isOpen = target.classList.toggle('open');
+    btn.classList.toggle('active', isOpen);
+  });
+});
+
+
+gdprLink.addEventListener('click', e => {
+  e.preventDefault(); // hindrar default länkbeteendet
+  gdprInfoOverlay.style.display = 'block';
+});
+
+gdprInfoClose.addEventListener('click', () => {
+  gdprInfoOverlay.style.display = 'none';
+});
+
+// Optional: klick utanför popup stänger den
+gdprInfoOverlay.addEventListener('click', e => {
+  if (e.target === gdprInfoOverlay) {
+    gdprInfoOverlay.style.display = 'none';
+  }
+});
 
   // --- Öppna popup ---
 document.querySelectorAll('#bokaLinkSidebar, #bokaLinkNav').forEach(btn => {
@@ -28,12 +56,11 @@ document.querySelectorAll('#bokaLinkSidebar, #bokaLinkNav').forEach(btn => {
 });
 
   // --- Stäng popup med kryss ---
-  document.querySelector('.booking-service-close').addEventListener('click', () => {
-    overlay.style.display = 'none';
-    form.reset();
-    submitBtn.disabled = true;
-    submitBtn.classList.remove('enabled');
-  });
+document.querySelector('.booking-service-close').addEventListener('click', () => {
+  // Visa confirm-popup istället för att stänga direkt
+  confirmOverlay.style.display = 'block';
+  overlay.classList.add('blurred');
+});
 
   // --- Initiera EmailJS ---
   emailjs.init('66lQFUU5otsfLEaYz');
@@ -127,6 +154,11 @@ document.querySelectorAll('#bokaLinkSidebar, #bokaLinkNav').forEach(btn => {
     form.reset();
     submitBtn.disabled = true;
     submitBtn.classList.remove('enabled');
+      // **Rensa dropdowns**
+  const dropdowns = form.querySelectorAll('.dropdown-content');
+  dropdowns.forEach(d => d.classList.remove('open'));
+  const dropdownButtons = form.querySelectorAll('.dropdown-toggle');
+  dropdownButtons.forEach(b => b.classList.remove('active'));
     overlay.classList.remove('blurred');
   });
 });
