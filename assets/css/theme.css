@@ -1524,6 +1524,13 @@ input[type=checkbox] {
   margin-bottom: 1.2rem;
 }
 
+.info-link {
+  color: blue;
+}
+.info-link:hover {
+  color: rgba(0, 0, 255, 0.514);
+}
+
 .dropdown-toggle {
   display: flex;
   justify-content: space-between;
@@ -1574,6 +1581,12 @@ input[type=checkbox] {
   cursor: pointer;
   font-size: 1.45rem;
   line-height: 1.1;
+}
+
+.dropdown-content .price {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .dropdown-content input[type="checkbox"] {
