@@ -2816,6 +2816,15 @@ input[type=checkbox] {
 }
 /* Om oss page */
 
+.om-oss-upper-box {
+  text-align: center;
+  margin: 50px 0 50px 0;
+}
+.om-oss-upper-title {
+  color: rgb(73, 73, 73);
+  font-size: 50px;
+  font-family: 'Bitter', serif;
+}
 .om-oss-container {
   width: 100%;
   height: auto;
@@ -2831,32 +2840,26 @@ input[type=checkbox] {
 .om-oss-image-wrapper img {
   width: 60%;
   height: 100%;
-  object-fit: cover; /* This property makes the image fill out the container */
+  object-fit: cover;
   display: block;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%); /* magin som centrerar */
 }
 .om-oss-image-title {
-  position: absolute;
-  width: 100%;
-  left: 20%;
-  top: 180px; /* Adjust top positioning as needed */
-  z-index: 1; /* Set a higher z-index to ensure it appears above the image */
-}
-
-.om-oss-image-title h1 {
   color: rgb(59, 59, 59);
-  font-size: 100px;
+  font-size: 40px;
   font-family: 'Bitter', serif;
+  text-align: center;
 }
 
 .om-oss-intro {
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 40px;
   padding-left: 20%;
   padding-right: 20%;
-  display: flex;
+  display: block;
   font-family: 'Bitter', serif;
   background-color: #eeeeee;
 }
@@ -3252,6 +3255,9 @@ input[type=checkbox] {
 }
 
 @media (max-width: 991px) {
+  .om-oss-upper-box {
+    display: none;
+  }
   .om-oss-box-container {
     flex-direction: column;
     align-items: center;
@@ -3284,7 +3290,7 @@ input[type=checkbox] {
   }
 
   .om-oss-image-title {
-    display: none;
+    font-size: 30px;
   }
 
   .ansok-container {
@@ -3382,6 +3388,10 @@ input[type=checkbox] {
   .om-oss-intro {
     padding-left: 5%;
     padding-right: 5%;
+  }
+
+  .om-oss-intro > span {
+    font-size: 17px;
   }
 
 }
