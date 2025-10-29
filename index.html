@@ -17,32 +17,34 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="module" src="assets/js/email.js"></script>
 
-    <!-- Favicon -->
-    <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"> -->
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
-
-    <!-- CSS Global -->
-    <link rel="stylesheet" href="assets/css/fonts/fonts.css">
-
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet"> -->
-    <link href="assets/plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet">
-    <link href="assets/plugins/owl-carousel2/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/plugins/owl-carousel2/assets/owl.theme.default.min.css" rel="stylesheet">
-    <link href="assets/plugins/animate/animate.min.css" rel="stylesheet">
-    <!-- <link href="assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet"> -->
-
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    
+      <!-- CSS Global -->
+      <link rel="stylesheet" href="assets/css/fonts/fonts.css">
+      <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet">
+      <link href="assets/plugins/owl-carousel2/assets/owl.carousel.min.css" rel="stylesheet">
+      <link href="assets/plugins/owl-carousel2/assets/owl.theme.default.min.css" rel="stylesheet">
+      <link href="assets/plugins/animate/animate.min.css" rel="stylesheet">
+    
+      <!-- Font Awesome 6 -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- Theme CSS -->
-    <link href="assets/css/theme.css" rel="stylesheet">
-    <link href="assets/css/theme-pink.css" rel="stylesheet" id="theme-config-link">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Head Libs -->
-    <script src="assets/plugins/modernizr.custom.js"></script>
-
+    <link rel="preload" href="assets/css/theme.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="assets/css/theme.css" rel="stylesheet"></noscript>
+    
+    <link rel="preload" href="assets/css/theme-pink.css" as="style" onload="this.rel='stylesheet'" id="theme-config-link">
+    <noscript><link href="assets/css/theme-pink.css" rel="stylesheet" id="theme-config-link"></noscript>
+    
+    <!-- JS Head Libs -->
+    <script defer src="assets/plugins/modernizr.custom.js"></script>
+    
     <!--[if lt IE 9]>
         <script src="assets/plugins/iesupport/html5shiv.js"></script>
         <script src="assets/plugins/iesupport/respond.min.js"></script>
-        <![endif]-->
+    <![endif]-->
 
 
 </head>
@@ -55,22 +57,22 @@
                 <div class="top-bar-container-mobile" id="closed">
                     <div class="top-bar-left">
                         <ul class="list-inline">
-                            <li><i class="fa fa-clock-o"></i>Måndag-Torsdag 07:00 - 17:00</li>
-                            <li><i class="fa fa-clock-o"></i>Fredag 07:00 - 12:00</li>
+                            <li><i class="fas fa-clock-o"></i>Måndag-Torsdag 07:00 - 17:00</li>
+                            <li><i class="fas fa-clock-o"></i>Fredag 07:00 - 12:00</li>
                             <br>
-                            <li><a href="tel:031847529"><i class="fa fa-phone"></i>031-84 75 29</a></li>
-                            <li><a href="https://www.google.com/maps/search/?api=1&query=Aminogatan+15E,+431+53+Mölndal"><i class="fa fa-map-marker"></i>Aminogatan 15E, 431 53 Mölndal</a></li>
+                            <li><a href="tel:031847529"><i class="fas fa-phone"></i> 031-84 75 29</a></li>
+                            <li><a href="https://www.google.com/maps/search/?api=1&query=Aminogatan+15E,+431+53+Mölndal"><i class="fas fa-map-marker"></i> Aminogatan 15E, 431 53 Mölndal</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="chevron-box"><i class="fa fa-chevron-down"></i></div>
+                <div class="chevron-box"><i class="fas fa-chevron-down"></i></div>
             </div>
             <div class="top-bar-container">
                 <div class="top-bar-left">
                     <ul class="list-inline">
-                        <li><i class="fa fa-clock-o"></i> Måndag-Torsdag 07:00 - 17:00 <span id="day-divider">|</span>
+                        <li><i class="fas fa-clock-o"></i> Måndag-Torsdag 07:00 - 17:00 <span id="day-divider">|</span>
                             Fredag</span> 07:00 - 12:00</li>
-                        <li><a href="tel:031847529"><i class="fa fa-phone"></i> 031-84 75 29 </a></li>
+                        <li><a href="tel:031847529"><i class="fas fa-phone"></i> 031-84 75 29 </a></li>
                         <li><a href="https://www.google.com/maps/search/?api=1&query=Aminogatan+15E,+431+53+Mölndal"><i class="fa fa-map-marker"></i> Aminogatan 15E, 431 53 Mölndal</a></li>
                     </ul>
                 </div>
@@ -85,11 +87,11 @@
                 <aside class="nav-sidebar">
                     <nav class="nav-wrapper">
                         <ul class="nav-list">
-                            <li><i class="fa fa-home"></i><a href="index.html">Hem</a></li>
-                            <li><i class="fa fa-car"></i><a href="car-make-selection.html">Våra bilmärken</a></li>
-                            <li><i class="fa fa-gear"></i><a href="tjanster.html">Våra tjänster</a></li>
-                            <li><i class="fa fa-users"></i><a href="foretag.html">Om oss</a></li>
-                            <li><i class="fa fa-wechat"></i><a href="kontakt.html">Kundservice</a></li>
+                            <li><i class="fas fa-home"></i><a href="index.html">Hem</a></li>
+                            <li><i class="fas fa-car"></i><a href="car-make-selection.html">Våra bilmärken</a></li>
+                            <li><i class="fas fa-gear"></i><a href="tjanster.html">Våra tjänster</a></li>
+                            <li><i class="fas fa-users"></i><a href="foretag.html">Om oss</a></li>
+                            <li><i class="fas fa-comment-dots"></i><a href="kontakt.html">Kundservice</a></li>
                             <li id="boka-side-bar"><i class="fa fa-calendar"></i><a href="javascript:void(0);" id="bokaLinkSidebar">Boka service</a></li>
                         </ul>
                     </nav>
@@ -275,7 +277,7 @@
                             <li><a href="mailto:bayerische@telia.com">Maila oss</a></li>
                         </ul>
                         <div class="social-media-box">
-                            <a href="https://www.instagram.com/bojimmybilservice/"><div><i class="fa fa-instagram"></i></div></a>
+                            <a target="_blank" href="https://www.instagram.com/bojimmybilservice/"><div><i class="fa-brands fa-instagram"></i></div></a>
                         </div>
                         <!-- <a href="https://www.facebook.com"><div><i class="fa fa-facebook-square"></i></div></a>
                         <a href="https://www.linkedin.com"><div><i class="fa fa-linkedin-square"></i></div></a> -->
