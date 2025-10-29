@@ -2084,15 +2084,13 @@ input[type=checkbox] {
 
 /* Car selection
 /* ========================================================================== */
-#car-make-body {
-  overflow: hidden;
-}
+
 .car-brand-container {
   display: flex;
   gap: 15px;
   justify-content: center;
   align-items: center;
-  min-height: 900px; /* Temporary css property, min-height stops glitch effect when selecting image and scrolling down a bit and then hover on another image so that the page collapse & expand infinite */
+  min-height: clamp(600px, 80vh, 900px); /*New v2-update to fix the glitch behavior on desktop*/
 }
 
 .car-brand-container img {
@@ -2127,6 +2125,12 @@ input[type=checkbox] {
   opacity: 1; /* Fade in effect */
 }
 
+.car-image,
+.info-box {
+  will-change: transform, opacity;
+  contain: layout paint;
+}
+
 .car-image.darken {
   filter: brightness(45%);
   transition: filter 0.3s ease;
@@ -2136,12 +2140,6 @@ input[type=checkbox] {
 .car-image.slide-down {
   transform: translateY(20px);
   transition: transform 0.3s ease;
-}
-
-/* Fully visible info box when active */
-.info-box.active {
-  opacity: 1;
-  top: 0;
 }
 
 /* Info box partially visible by default */
