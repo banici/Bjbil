@@ -1352,6 +1352,9 @@ input[type=checkbox] {
     --animation-timing: 200ms ease-in-out;
     --navigation-height: calc(var(--navigation-height) * 3 + var(--bar-gap) * 2);
 }
+.fas {
+  margin-right: 5px;
+}
 
 .top-bar ul {
   margin-bottom: 0;
