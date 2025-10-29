@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Toggle the customer service info on-click
 document.addEventListener("click", function(e) {
     const boxes = ['warranty-box', 'faq-box', 'customer-contact-box'];
-    const BoxChildren = ['customer-chevron', 'fa'];
+    const BoxChildren = ['customer-chevron', 'fas'];
     let target = e.target.classList;
     if(boxes.includes(target[0]) || BoxChildren.includes(target[0])) {
         CustomerServiceDefault(target[0]);
@@ -263,8 +263,11 @@ document.querySelectorAll('.faq-row').forEach(function(faqRow) {
         var faqExpandable = this.closest('.faq-expandable');
         var faqInfoContent = faqExpandable.querySelector('.faq-info-content');
         var iconElement = this.querySelector('.faq-operator i');
-
+        
+        // **Fix:** Toggle both icon classes to ensure only one is present at a time
         iconElement.classList.toggle('fa-minus');
+        iconElement.classList.toggle('fa-plus');
+        
         // Toggle the 'expanded' class on .faq-info-content
         faqInfoContent.classList.toggle('expanded');
 
@@ -282,23 +285,24 @@ if (isMobileView) {
     document.addEventListener('click', function(event) {
         const checkForFaqRowInMobile = ['faq-info-title', 'faq-operator'];
         const targetClass = event.target.classList[0];
-    
+
         // Check if the clicked element is a .faq-row or a child of it
         if (targetClass === 'faq-row' || checkForFaqRowInMobile.includes(targetClass)) {
             var parentOfChildsParent = event.target.closest('.faq-expandable');
             var faqInfoContent = parentOfChildsParent.querySelector('.faq-info-content');
             faqInfoContent.classList.toggle('expanded');
-    
+
             // Adjust the max-height of .faq-info-content based on its natural height
             if (faqInfoContent.classList.contains('expanded')) {
                 faqInfoContent.style.maxHeight = faqInfoContent.scrollHeight + 'px';
             } else {
                 faqInfoContent.style.maxHeight = '0';
             }
-    
-            // Toggle the class on the icon element
+
+            // Correct toggle logic for the icon element
             var iconElement = parentOfChildsParent.querySelector('.faq-operator i');
             iconElement.classList.toggle('fa-minus');
+            iconElement.classList.toggle('fa-plus');
         }
     });
 }
