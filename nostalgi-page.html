@@ -83,6 +83,7 @@
                                 <li><i class="fas fa-gear"></i><a href="tjanster.html">Våra tjänster</a></li>
                                 <li><i class="fas fa-users"></i><a href="foretag.html">Om oss</a></li>
                                 <li><i class="fas fa-comment-dots"></i><a href="kontakt.html">Kundservice</a></li>
+                                <li id="boka-side-bar"><i class="fas fa-calendar"></i><a href="javascript:void(0);" id="bokaLinkSidebar">Boka service</a></li>
                             </ul>
                         </nav>
                     </aside>
@@ -90,7 +91,7 @@
                 <div class="header-wrapper">
                     <div class="container">
                         <div id="header-logo" class="logo">
-                            <a href="index.html"><img src="assets/img/bj-bil-loggan-skugga.png" alt="" /></a>
+                            <a href="index.html"><img id="header-nyckel" src="assets/img/boJimmyLoggaSVG.svg" alt="" /></a>
                         </div>
                         <!-- <div class="header-cart">
                             <div class="cart-wrapper">
@@ -207,6 +208,8 @@
 
         <!-- JS Page Level -->
         <script src="assets/js/theme.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="module" src="assets/js/email.js"></script>
 
         <!--[if (gte IE 9)|!(IE)]><!-->
         <script src="assets/plugins/jquery.cookie.js"></script>
@@ -217,57 +220,86 @@
               <span class="booking-service-close">&times;</span>
               <h2>Skicka serviceförfrågan</h2>
               <p class="booking-service-info">
-                Observera: detta formulär bokar inte en tid direkt. 
-                Din förfrågan skickas till oss och du får tidsförslag för service 
-                när vi gått igenom uppgifterna.
+                Observera: Detta formulär gör ingen direktbokning. Din förfrågan skickas till oss, 
+                och efter att vi har gått igenom uppgifterna kommer vi att kontakta dig med förslag på lediga tider för service på din bil.
               </p>
               <form id="booking-service-form">
                 <label>Namn</label>
-                <input type="text" id="bs-name" required>
+                <input type="text" name="user_name" id="bs-name" required>
 
                 <label>Telefon</label>
-                <input type="tel" id="bs-phone" required>
+                <input type="tel" name="user_phone" id="bs-phone" required>
 
                 <label>Email</label>
-                <input type="email" id="bs-email" required>
+                <input type="email" name="user_email" id="bs-email" required>
 
                 <label for="bs-reg">Registreringsnummer</label>
-                <input type="text" id="bs-reg" placeholder="ABC123" required>
+                <input type="text" name="user_reg" id="bs-reg" placeholder="ABC123" required>
 
-                <div class="booking-service-checks">
-                  <p>Välj vad som ska servas:</p>
-                  <label><input type="checkbox" name="bs-service" value="Oljebyte"> Oljebyte</label>
-                  <label><input type="checkbox" name="bs-service" value="Däckbyte"> Däckbyte</label>
-                  <label><input type="checkbox" name="bs-service" value="Bromskontroll"> Bromskontroll</label>
-                  <label><input type="checkbox" name="bs-service" value="Motorcheck"> Motorcheck</label>
-                  <label><input type="checkbox" name="bs-service" value="AC-service"> AC-service</label>
+                <div class="booking-service-dropdown">
+                  <button type="button" class="dropdown-toggle" data-target="service-options">
+                    Servicealternativ
+                  </button>
+                  <div class="dropdown-content" id="service-options">
+                    <label><input id="service-check" type="checkbox" name="service" value="Oljebyte"> Oljebyte</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="Däckbyte"> Däckbyte</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="Bromskontroll"> Bromskontroll</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="Motorcheck"> Motorcheck</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="AC-service"> AC-service</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="Hydrive"> Hydrive 
+                      <a href="/tjanster-hydrive.html" target="_blank" class="info-link">Läs mer..</a>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="booking-service-dropdown">
+                  <button type="button" class="dropdown-toggle" data-target="extra-options">
+                    Övrigt
+                  </button>
+                  <div class="dropdown-content" id="extra-options">
+                    <label><input id="service-check" type="checkbox" name="extra" value="Torkarblad"> Torkarblad</label>
+                    <label><input id="service-check" type="checkbox" name="extra" value="Däckhotell"> Däckhotell</label>
+                    <label><input id="service-check" type="checkbox" name="extra" value="Motortvätt"> Motortvätt</label>
+                  </div>
                 </div>
             
                 <label>Annan anledning</label>
-                <textarea id="bs-description" rows="3" placeholder="Beskriv varför du bokar service..."></textarea>
+                <textarea id="bs-description" name="user_message" rows="3" placeholder="Beskriv varför du bokar service..."></textarea>
             
                 <div class="booking-service-gdpr">
                   <label>
-                    <input type="checkbox" id="bs-gdpr">
+                    <input type="checkbox" id="bs-gdpr" name="gdpr_approved">
                     Jag godkänner <a href="javascript:void(0);" id="bs-gdpr-link">GDPR-villkoren</a>
                   </label>
                 </div>
-            
+
+                <input type="hidden" name="service_selected" id="bs-service-selected">
                 <button type="submit" id="bs-submit" disabled>Skicka</button>
               </form>
             </div>
         </div>
 
         <div id="booking-service-gdpr-info" class="booking-service-gdpr-info-overlay">
-          <div class="booking-service-gdpr-info-popup">
-            <span class="booking-service-gdpr-info-close">&times;</span>
-            <h3>GDPR-information</h3>
-            <p>
-              När du bokar service samlar vi in dina kontaktuppgifter för att kunna hantera din bokning. 
-              Dina uppgifter sparas endast så länge det krävs för detta syfte. 
-              Läs mer på <a href="https://www.imy.se/" target="_blank">Integritetsskyddsmyndigheten</a>.
-            </p>
-          </div>
+            <div class="booking-service-gdpr-info-popup">
+              <span class="booking-service-gdpr-info-close">&times;</span>
+              <h3>GDPR-information</h3>
+              <p>
+                När du skickar in detta formulär samlar vi in dina kontaktuppgifter för att kunna hantera din serviceförfrågan. 
+                Dina uppgifter sparas endast så länge det är nödvändigt för detta ändamål. 
+                Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt vår 
+                <a href="/integritetspolicy.pdf" class="gdpr-link" target="_blank">
+                  Integritetspolicy
+                </a>.<br><br>
+                Formuläret skickas via 
+                <a href="https://www.emailjs.com/legal/terms-of-service/" class="gdpr-link" target="_blank">
+                  EmailJS
+                </a>, deras behandling styrs av deras Privacy Policy.<br><br>
+                Läs mer på 
+                <a href="https://www.imy.se/" class="gdpr-link" target="_blank">
+                  Integritetsskyddsmyndigheten
+                </a>.
+              </p>
+            </div>
         </div>
         <!-- CONFIRM CLOSE POPUP -->
         <div id="booking-service-confirm" class="booking-service-confirm-overlay">
