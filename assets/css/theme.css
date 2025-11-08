@@ -6139,7 +6139,18 @@ input[type=checkbox] {
   color: white;
   cursor: pointer;
 }
-
+.car-btn-bread-wrapper {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.car-btn-bread-box {
+  width: 1400px;
+}
+#car-btn-bread {
+  font-family: 'Lato', sans-serif;
+}
 #erfarenhet-italic {
   font-style: italic;
   font-size: 38px;
@@ -6204,6 +6215,10 @@ input[type=checkbox] {
   margin: 0 !important;
 }
 @media (max-width: 769px) {
+  .oil-wrapper > p {
+  margin-top: 10px;
+  font-size: 16px;
+}
   #carmake-button {
     width: 280px;
     height: 50px;
