@@ -1353,8 +1353,8 @@ input[type=checkbox] {
     --bar-width: 40px;
     --bar-height: 5px;
     --bar-gap: 6px;
-    --bjbil-blue: #2b3442;
-    --bjbil-orange: #ec960d;
+    --bjbil-blue: #1A1E24;
+    --bjbil-orange:  #ec960d;;
     --animation-timing: 200ms ease-in-out;
     --navigation-height: calc(var(--navigation-height) * 3 + var(--bar-gap) * 2);
 }
@@ -1449,9 +1449,15 @@ input[type=checkbox] {
   width: 100%;
   top: 0;
 }
+#main-title-undertext {
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
 #boka-nav {
-  background-color: #ec960d5d;;
+  background-color: #C0C0C0;
   padding-left: 0;
   margin-left: 50px;
 }
@@ -1463,7 +1469,7 @@ input[type=checkbox] {
   background-color: #ec960d;;
 }
 #boka-side-bar {
-  background-color: #ec960dd2;;
+  background-color: #ec960dd2;
 }
 
 .booking-service-overlay {
