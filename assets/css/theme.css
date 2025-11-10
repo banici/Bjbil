@@ -1449,6 +1449,19 @@ input[type=checkbox] {
   width: 100%;
   top: 0;
 }
+#welcome-to-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+#welcome-to-title > h1 {
+  color: black;
+  background-color: rgb(228, 190, 67);
+  width: 280px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+}
 #main-title-undertext {
   font-size: 28px;
   display: flex;
@@ -5886,9 +5899,9 @@ input[type=checkbox] {
 /* Blog / Post
 /* ========================================================================== */
 .text-center {
-  font-family: 'Bitter', serif;
-  font-size: 45px;
-  font-weight: 400;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 85px;
+  font-weight: 700;
   color: black;
 }
 .content .post-wrap {
@@ -5965,15 +5978,15 @@ input[type=checkbox] {
   justify-content: center;
   margin-top: -120px;
   position: relative;
-  padding-bottom: 38px;
+  padding-bottom: 55px;
 }
 .inno-box {
   background-color: var(--bjbil-orange);
-  width: 370px;
+  width: 260px;
 }
 .inno-box h1 {
   color: white;
-  font-size: 57px;
+  font-size: 40px;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -5984,15 +5997,15 @@ input[type=checkbox] {
   justify-content: center;
   margin-top: -120px;
   position: relative;
-  padding-bottom: 38px;
+  padding-bottom: 57px;
 }
 .inno-effect-box {
   background-color: var(--bjbil-orange);
-  width: 570px;
+  width: 420px;
 }
 .inno-effect-box h1 {
   color: white;
-  font-size: 56px;
+  font-size: 40px;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -6003,15 +6016,15 @@ input[type=checkbox] {
   justify-content: center;
   margin-top: -120px;
   position: relative;
-  padding-bottom: 38px;
+  padding-bottom: 56px;
 }
 .inno-kund-box {
   background-color: var(--bjbil-orange);
-  width: 580px;
+  width: 420px;
 }
 .inno-kund-box h1 {
   color: white;
-  font-size: 56px;
+  font-size: 40px;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -6110,6 +6123,9 @@ input[type=checkbox] {
   .page-section {
     background-color:#bebebe;;
   }
+  .text-center {
+  font-size: 65px;
+}
 }
 
 .carmake-container {
