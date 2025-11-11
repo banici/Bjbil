@@ -2620,6 +2620,12 @@ input[type=checkbox] {
   width: 60%;
 }
 
+.contact-info > span {
+  font-family: 'Nunito Sans';
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .contact-content-container {
   margin-top: 60px;
   padding-top: 20px;
@@ -2635,10 +2641,21 @@ input[type=checkbox] {
 
 #contact-content-title {
   color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* mellanrum mellan ikon och text */
+  margin: 5px 0;
 }
 
-#contact-content-text {
-  font-size: 20px;
+#contact-content-title i {
+  width: 25px; /* fast bredd så att texten alltid börjar på samma punkt */
+  text-align: center;
+  font-size: 18px;
+  color: #333; /* valfri färg */
+}
+
+#closed-red {
+  color: red;
 }
 
 #contact-content-text:hover {
@@ -2740,9 +2757,13 @@ input[type=checkbox] {
   font-weight: 500;
 }
 
-#customer-faq-title {
+#customer-faq-title, #customer-contact-title {
   font-family: 'Inter';
   color: rgb(59, 59, 59);
+}
+
+#contact-list-details {
+  font-family: 'Nunito Sans';
 }
 
 @media (max-width: 991px) {
