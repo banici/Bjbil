@@ -2871,6 +2871,7 @@ input[type=checkbox] {
 .faq-info-title {
   font-size: 20px;
   font-family: 'Inter';
+  color: rgb(59, 59, 59);
 }
 
 .faq-operator {
@@ -6236,7 +6237,7 @@ input[type=checkbox] {
   height: 80px;
   font-size: 35px;
   border-radius: 50px;
-  background-color: rgb(50, 74, 110);
+  background-color: var(--bjbil-blue);
   color: white;
   transition: background-color 0.45s ease;
   transition: color 0.30s ease;
@@ -6245,7 +6246,7 @@ input[type=checkbox] {
   font-weight: 600;
 }
 #carmake-button:hover {
-  background-color: rgb(108, 140, 187);
+  background-color: rgb(50, 72, 105);
   color: white;
   cursor: pointer;
 }
