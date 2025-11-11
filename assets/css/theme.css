@@ -63,6 +63,9 @@
 /* 1.1 */
 /* Preloader
 /* ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
 html {
   scroll-behavior: smooth;
 }
@@ -1282,6 +1285,7 @@ input[type=checkbox] {
     font-size: 17px;
     display: flex;
     align-items: center;
+    font-family: 'Inter';
   }
   .nav-list li:first-child {
     border-top: 1px solid rgb(85, 85, 85);
@@ -1461,12 +1465,18 @@ input[type=checkbox] {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 8px;
+  font-family: 'Inter';
+}
+#intro-description-index {
+  font-family: 'Inter';
+  font-weight: 400;
 }
 #main-title-undertext {
   font-size: 28px;
   display: flex;
   justify-content: center;
   text-align: center;
+  font-family: 'Nunito Sans';
 }
 
 #boka-nav {
@@ -2461,6 +2471,7 @@ input[type=checkbox] {
   text-align: left;
   display: inline-block;
   margin: 0 auto !important;
+  font-family: 'Inter';
 }
 .navigation ul {
   list-style: none;
@@ -2645,9 +2656,14 @@ input[type=checkbox] {
   height: auto;
   font-size: 18px;
 }
+.warranty-information-box > h3 {
+  font-family: 'Inter';
+}
 
 #warranty-list li {
   padding-bottom: 10px;
+  font-family: 'Nunito Sans';
+  font-weight: 500;
 } 
 
 .customer-chevron {
@@ -2691,6 +2707,7 @@ input[type=checkbox] {
   align-items: center;
   border-radius: 7px;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  font-family: 'Nunito Sans';
 }
 
 :is(.warranty-box, .faq-box, .customer-contact-box).active > .customer-chevron {
@@ -2699,6 +2716,8 @@ input[type=checkbox] {
 
 .customer-title {
   margin-left: 20px;
+  font-family: 'Inter';
+  color: rgb(59, 59, 59);
 }
 .customer-title-box {
   padding-top: 50px;
@@ -2717,9 +2736,14 @@ input[type=checkbox] {
 #garanti-square {
   background-color: rgb(255, 225, 124);
   padding: 8px;
+  font-family: 'Nunito Sans';
+  font-weight: 500;
 }
 
-
+#customer-faq-title {
+  font-family: 'Inter';
+  color: rgb(59, 59, 59);
+}
 
 @media (max-width: 991px) {
   .contact-content-container {
@@ -2781,6 +2805,10 @@ input[type=checkbox] {
     width: 100%;
     font-size: 14px;
   }
+  #warranty-list li {
+  font-size: 15px;
+  font-weight: 500;
+} 
   
 }
 
@@ -2803,6 +2831,7 @@ input[type=checkbox] {
 
 .faq-info-title {
   font-size: 20px;
+  font-family: 'Inter';
 }
 
 .faq-operator {
@@ -2817,6 +2846,8 @@ input[type=checkbox] {
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.4s ease, max-height 0.35s ease;
+  font-family: 'Nunito Sans';
+  font-weight: 500;
 }
 
 .faq-info-content.expanded {
@@ -2846,9 +2877,9 @@ input[type=checkbox] {
   margin: 50px 0 50px 0;
 }
 .om-oss-upper-title {
-  color: rgb(73, 73, 73);
+  color: rgb(59, 59, 59);
   font-size: 50px;
-  font-family: 'Bitter', serif;
+  font-family: 'Inter';
 }
 .om-oss-container {
   width: 100%;
@@ -2875,7 +2906,7 @@ input[type=checkbox] {
 .om-oss-image-title {
   color: rgb(59, 59, 59);
   font-size: 40px;
-  font-family: 'Bitter', serif;
+  font-family: 'Inter';
   text-align: center;
 }
 
@@ -2892,6 +2923,8 @@ input[type=checkbox] {
   color: rgb(73, 73, 73);
   font-size: 22px;
   line-height: 1.45em;
+  font-family: 'Nunito Sans';
+  font-weight: 500;
 }
 
 .om-oss-box-container {
@@ -2955,10 +2988,16 @@ input[type=checkbox] {
 }
 
 .card-info h3 {
-  font-family: 'Bitter', serif;
+  font-family: 'Inter';
   font-size: 25px;
   color: white;
   padding-bottom: 10px;
+}
+
+.card-info > p {
+  font-family: 'Nunito Sans';
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .ansok-container {
@@ -3723,6 +3762,7 @@ input[type=checkbox] {
   color: white;
   font-size: 22px;
   padding-bottom: 10px;
+  font-family: 'Inter';
 }
 
 :is(.about-title, .contact-title, .hours-title):before {
@@ -3783,10 +3823,15 @@ input[type=checkbox] {
 
 #footer-text, #footer-text a {
   color: rgb(167, 167, 167);
+  font-family: 'Nunito Sans';
 }
 
 #footer-text a:hover, .list-inline a:hover {
   color: white;
+}
+
+.list-inline {
+  font-family: 'Nunito Sans';
 }
 
 .social-media-box {
@@ -4048,7 +4093,8 @@ input[type=checkbox] {
 #dynamic-sentence {
   color: white;
   font-size: 60px;
-  font-family: 'Bitter', serif;
+  font-family: 'Nunito Sans';
+  font-weight: 700;
   text-align: center;
   margin-bottom: -20px;
   letter-spacing: 0.02em;
@@ -4058,7 +4104,7 @@ input[type=checkbox] {
   color: white;
   font-size: 90px;
   font-weight: bold; /* Optional: Make the last word bold */
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter';
 }
 
 @media (max-width: 991px) {
@@ -4218,6 +4264,7 @@ input[type=checkbox] {
   text-align: center;
   width: 90%;
   color: white; /* Set text color to white */
+  font-family: 'Inter';
 }
 
 .custom-button h3 {
@@ -5899,7 +5946,7 @@ input[type=checkbox] {
 /* Blog / Post
 /* ========================================================================== */
 .text-center {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Inter';
   font-size: 85px;
   font-weight: 700;
   color: black;
@@ -5935,6 +5982,7 @@ input[type=checkbox] {
   margin-top: 0;
   font-size: 40px;
   font-weight: 100;
+  font-family: 'Inter';
 }
 #title-line {
   width: 70px;
@@ -5970,6 +6018,8 @@ input[type=checkbox] {
   background-color: #bebebe;
   color: black;
   width: 80%;
+  font-family: 'Nunito Sans';
+  font-weight: 600;
 }
 .inno-container {
   width: 100%;
@@ -6136,6 +6186,7 @@ input[type=checkbox] {
 .car-expertise-title {
   font-size: 40px;
   color: black;
+  font-family: 'Inter';
 }
 
 #carmake-button {
@@ -6149,6 +6200,8 @@ input[type=checkbox] {
   transition: background-color 0.45s ease;
   transition: color 0.30s ease;
   line-height: 80px;
+  font-family: 'Nunito Sans';
+  font-weight: 600;
 }
 #carmake-button:hover {
   background-color: rgb(108, 140, 187);
@@ -6165,7 +6218,8 @@ input[type=checkbox] {
   width: 1400px;
 }
 #car-btn-bread {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Nunito Sans';
+  font-weight: 600;
 }
 #erfarenhet-italic {
   font-style: italic;
@@ -6189,12 +6243,13 @@ input[type=checkbox] {
   background-color: var(--bjbil-orange);
 }
 .post-title {
-  font-family: 'Bitter', serif;
+  font-family: 'Nunito Sans';
 }
 .oil-wrapper > p {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: -3px;
+  font-family: 'Nunito Sans';
 }
 .about-the-author {
   margin-top: 30px;
