@@ -1524,6 +1524,7 @@ input[type=checkbox] {
   text-align: center;
   margin-top: 0;
   color: #222;
+  font-family: 'Inter';
 }
 
 .booking-service-close {
@@ -1560,6 +1561,7 @@ input[type=checkbox] {
 
 .booking-service-dropdown {
   margin-bottom: 1.2rem;
+  font-family: 'Inter';
 }
 
 .info-link {
@@ -1668,6 +1670,8 @@ input[type=checkbox] {
   gap: 0.5rem;
   color: #333;
   cursor: pointer;
+  font-family: 'Nunito Sans';
+  font-weight: 800;
 }
 
 .booking-service-gdpr input[type="checkbox"] {
@@ -1727,6 +1731,10 @@ input[type=checkbox] {
   width: 100%;
   cursor: not-allowed;
   transition: background 0.3s, transform 0.2s;
+  font-family: 'Nunito Sans';
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1px;
 }
 
 #bs-submit.enabled:hover {
@@ -1804,6 +1812,10 @@ input[type=checkbox] {
   color: #444;
 }
 
+#service-options, #extra-options {
+  font-family: 'Nunito Sans';
+  font-weight: 500;
+}
 
 /* CONFIRM CLOSE POPUP */
 .booking-service-overlay.blurred .booking-service-popup {
@@ -1853,8 +1865,14 @@ input[type=checkbox] {
   padding: 0.8rem 1rem;
   margin-bottom: 1.5rem;
   color: #333;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   border-radius: 0.4rem;
+  font-family: 'Nunito Sans';
+  font-weight: 500;
+}
+
+#booking-service-form > label {
+  font-family: 'Inter';
 }
 
 .booking-service-confirm-buttons button {
