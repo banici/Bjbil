@@ -4375,7 +4375,8 @@ input[type=checkbox] {
   padding-top: 120px;
   color: black;
   font-size: 80px;
-  font-weight: 900;
+  font-weight: 700;
+  font-family: 'Inter';
 }
 
 #service-header-para {
@@ -4385,9 +4386,10 @@ input[type=checkbox] {
 }
 
 #service-header-para p {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Nunito Sans';
   padding-top: 40px;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .service-content {
