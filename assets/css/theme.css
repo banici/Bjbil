@@ -332,6 +332,30 @@ body.boxed {
 }
 
 /* 1.3 */
+/* Dackhotell
+/* ========================================================================== */
+#dack-hotell-section {
+  min-height: 900px;
+}
+.dack-hotell-title {
+  padding-top: 100px;
+  text-align: center;
+  font-family: 'Inter';
+}
+.dack-hotell-title > h1 {
+  color: black;
+}
+.dack-hotell-text {
+  padding-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.dack-hotell-text > p {
+    width: 1300px;
+}
+
+/* 1.4 */
 /* Layout
 /* ========================================================================== */
 /* .coming-soon .content-area {
