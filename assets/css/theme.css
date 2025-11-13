@@ -6269,7 +6269,7 @@ input[type=checkbox] {
   font-weight: 600;
 }
 #carmake-button:hover {
-  background-color: rgb(50, 72, 105);
+  background-color: #5b6c85;
   color: white;
   cursor: pointer;
 }
