@@ -18,6 +18,8 @@ var navigation = document.querySelector('.navigation');
 var superfishMenu = document.querySelector('ul.sf-menu');
 var priceSliderRange = document.querySelector('#slider-range');
 var jobbForm = document.querySelector('.ansok-form-container');
+var section = document.getElementById('page-section');
+var sticky = document.querySelector('.sticky-dack');
 var mixCarmakeName = false;
 var mixVideoOrder = false;
 var selectedCustomerBox;
@@ -685,8 +687,41 @@ if (document.querySelector('.car-brand-container')) {
     });
 }
 
-
-
+if (sticky && section) {
+  function updateStickerPosition() {
+    const sectionRect = section.getBoundingClientRect();
+    const sectionTop = sectionRect.top;
+    const sectionBottom = sectionRect.bottom;
+    const sectionHeight = sectionRect.height;
+    const viewportHeight = window.innerHeight;
+    const stickerHeight = sticky.offsetHeight;
+    
+    // Adjust this value to control when sticker starts moving
+    const startOffset = 200; // Start moving 200px earlier
+    
+    // Maximum distance the sticker can travel
+    const maxTravel = sectionHeight - stickerHeight;
+    
+    // Calculate position based on viewport position
+    let newPosition;
+    
+    if (sectionTop > startOffset) {
+      // Section hasn't reached trigger point yet - sticker at top
+      newPosition = 0;
+    } else if (sectionBottom < viewportHeight) {
+      // Section has scrolled past viewport - sticker at bottom
+      newPosition = maxTravel;
+    } else {
+      // Section is in view - sticker follows scroll
+      newPosition = Math.min(maxTravel, -(sectionTop - startOffset));
+    }
+    
+    sticky.style.top = `${newPosition}px`;
+  }
+  
+  window.addEventListener('scroll', updateStickerPosition);
+  updateStickerPosition();
+}
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {
