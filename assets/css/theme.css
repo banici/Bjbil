@@ -1480,6 +1480,9 @@ input[type=checkbox] {
   width: 100%;
   top: 0;
 }
+.navigation-wrapper .container {
+  width: 1500px;
+}
 .sticky-dack {
   position: absolute;
   top: 0;
