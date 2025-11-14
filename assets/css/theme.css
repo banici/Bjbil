@@ -3067,7 +3067,7 @@ input[type=checkbox] {
 }
 
 .card-info {
-  background-color: #4b5a73;
+  background-color: var(--bjbil-blue);
   padding: 10px;
 }
 
