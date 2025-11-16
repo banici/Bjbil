@@ -3118,6 +3118,11 @@ input[type=checkbox] {
   font-size: 50px;
   font-family: 'Inter';
 }
+#om-oss-upper-sub-title {
+  color: rgb(59, 59, 59);
+  font-size: 30px;
+  font-family: 'Inter';
+}
 .om-oss-container {
   width: 100%;
   height: auto;
@@ -3138,6 +3143,8 @@ input[type=checkbox] {
   position: absolute;
   top: 0;
   left: 50%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
   transform: translateX(-50%); /* magin som centrerar */
 }
 .om-oss-image-title {
