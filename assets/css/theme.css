@@ -4566,7 +4566,7 @@ input[type=checkbox] {
 }
 
 .service-header-img-box {
-  margin-top:  40px;
+  margin-top:  100px;
   width: 100%;
   text-align: center;
   margin-bottom: 25px;
@@ -4588,7 +4588,7 @@ input[type=checkbox] {
 #service-header-title {
   padding-top: 120px;
   color: black;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 700;
   font-family: 'Inter';
 }
@@ -4599,11 +4599,21 @@ input[type=checkbox] {
   margin-left: 10%;
 }
 
+#service-header-para span{
+  font-family: 'Nunito Sans';
+  font-size: 20px;
+  font-weight: 600;
+}
+
 #service-header-para p {
   font-family: 'Nunito Sans';
   padding-top: 40px;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
+}
+
+.mobile-view-service-info {
+  display: none;
 }
 
 .service-content {
@@ -4616,6 +4626,10 @@ input[type=checkbox] {
   font-family: 'Bitter', serif;
 }
 
+  .hydrive-list {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
 
 #hjul-img-box {
   margin-top: 190px;
@@ -4630,11 +4644,10 @@ input[type=checkbox] {
   .title-selector-2nd {
     font-size: 30px !important;
   }
-
   #service-header-title {
     padding-top: 40px;
     color: black;
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 900;
   }
   #service-header-para {
@@ -4643,12 +4656,22 @@ input[type=checkbox] {
     text-align: start;
     padding-left: 7px;
     padding-right: 5px;
-
   }
   #service-header-para p {
-    font-family: 'Outfit', sans-serif;
     padding-top: 40px;
-    font-size: 16px;
+    font-size: 22px;
+    text-align: center;
+  }
+  #service-header-para span{
+  font-family: 'Nunito Sans';
+  font-size: 16px;
+  font-weight: 600;
+}
+  .desktop-view-service-info {
+    display: none;
+  }
+  .mobile-view-service-info {
+  display: block;
   }
   #service-header-img {
     width: 100%;
