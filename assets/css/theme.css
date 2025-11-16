@@ -335,24 +335,168 @@ body.boxed {
 /* Dackhotell
 /* ========================================================================== */
 #dack-hotell-section {
-  min-height: 900px;
+  min-height: 800px;
+  background-color: #e3e3e3;
 }
 .dack-hotell-title {
-  padding-top: 100px;
   text-align: center;
   font-family: 'Inter';
 }
 .dack-hotell-title > h1 {
-  color: black;
+  color: white;
+  font-size: 50px;
 }
-.dack-hotell-text {
-  padding-top: 50px;
+.dack-hotell-title > h2 {
+  color: white;
+  padding-bottom: 50px;
+}
+.dack-img-container {
+  position: relative;
   width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.dack-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* mörka overlay */
+.dack-img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.678);
+  z-index: 1;
+}
+
+/* text ovanpå overlay */
+.dack-img-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+  width: 90%;
+  font-size: 24px;
+}
+
+.dack-hotell-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+  width: 65%;
+  font-size: 24px;
+  padding-top: 0;
+}
+
+.dack-hotell-text > p {
+  width: 100%;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: 'Nunito Sans';
+}
+
+.four-boxes {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.dack-box {
+  background: #e3e3e3;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.dack-box > h2 {
+  font-family: 'Inter';
+  color: black;
+  padding-bottom: 20px;
+}
+
+.dack-box > p {
+  font-size: 18px;
+}
+
+#dack-hotell-ikon {
+  width: 100%;
+  max-width: 200px; /* eller vad som faktiskt FÅR plats */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.villkor-box {
   display: flex;
   justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
-.dack-hotell-text > p {
-    width: 1300px;
+.villkor-btn {
+  background-color: var(--bjbil-orange);
+  cursor: pointer;
+  width: 20%;
+  height: 65px;
+  font-size: 30px;
+  font-family: 'Nunito Sans';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  color:white; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.villkor-btn:hover {
+  background-color: orange;
+  box-shadow: 0 0 11px 7px rgba(0,0,0,0.3);
+  color:black; 
+}
+
+/* Mobil: gör det simpelt — 1 kolumn */
+@media (max-width: 768px) {
+  .dack-hotell-text {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    z-index: 2;
+    color: white;
+    text-align: start;
+    width: 100%;
+  }
+  .dack-hotell-title > h1 {
+    padding-top: 30px;
+  }
+  .dack-img-container {
+    height: 585px;
+  }
+  .dack-hotell-text > p {
+    width: 100%;
+    font-size: 17px;
+    font-weight: 300;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .four-boxes {
+    grid-template-columns: 1fr;
+  }
+  .villkor-btn {
+    width: 40%;
+    box-shadow: 0 0 12px 5px rgba(0,0,0,0.3);
+  }
 }
 
 /* 1.4 */
