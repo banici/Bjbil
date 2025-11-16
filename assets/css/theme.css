@@ -2874,6 +2874,9 @@ input[type=checkbox] {
   color: blue;
 }
 
+#garanti-title-top {
+  padding-bottom: 20px;
+}
 .warranty-info span {
   font-size: 16px;
   letter-spacing: 0.08em;
