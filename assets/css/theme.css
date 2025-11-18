@@ -3211,6 +3211,9 @@ input[type=checkbox] {
   color: rgb(59, 59, 59);
   font-size: 50px;
   font-family: 'Inter';
+  width: 680px;
+  margin: 0 auto;
+  padding-bottom: 40px;
 }
 #om-oss-upper-sub-title {
   color: rgb(59, 59, 59);
