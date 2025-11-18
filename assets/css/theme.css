@@ -3128,8 +3128,10 @@ input[type=checkbox] {
 }
 #om-oss-upper-sub-title {
   color: rgb(59, 59, 59);
-  font-size: 30px;
+  font-size: 22px;
   font-family: 'Inter';
+  width: 680px;
+  margin: 0 auto;
 }
 .om-oss-container {
   width: 100%;
