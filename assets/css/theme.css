@@ -372,7 +372,7 @@ body.boxed {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.790);
+  background: rgba(0, 0, 0, 0.800);
   z-index: 1;
 }
 
@@ -487,9 +487,10 @@ body.boxed {
   .dack-hotell-text > p {
     width: 100%;
     font-size: 17px;
-    font-weight: 300;
+    font-weight: 400;
     padding-left: 5px;
     padding-right: 5px;
+    text-align: center;
   }
   .four-boxes {
     grid-template-columns: 1fr;
@@ -498,6 +499,9 @@ body.boxed {
     width: 40%;
     box-shadow: 0 0 12px 5px rgba(0,0,0,0.3);
   }
+  .dack-img-container::after {
+  background: rgba(0, 0, 0, 0.850);
+}
 }
 
 /* 1.4 */
