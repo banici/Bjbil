@@ -2365,6 +2365,55 @@ input[type=checkbox] {
 /* Car selection
 /* ========================================================================== */
 
+.car-select-welcome-container {
+  text-align: center;
+  margin-top: 80px;
+}
+.car-select-welcome-container h2 {
+  font-size: 60px;
+  font-family: 'Inter';
+  font-weight: 700;
+  color: var(--bjbil-blue);
+}
+.car-select-welcome-container span {
+  font-size: 30px;
+  font-family: 'Nunito Sans';
+  font-weight: 400;
+}
+.car-select-welcome-btn-box {
+  padding-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.car-select-welcome-btn-box a {
+  height: 60px;
+  width: 250px;
+  font-size: 25px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.select-btn-1 {
+  background-color: rgb(228, 190, 67);
+}
+.select-btn-1:hover {
+  background-color: rgb(196, 164, 59);
+  color: white;
+}
+.select-btn-2 {
+  border: 2px solid black;
+}
+.select-btn-2:hover {
+  border: 2px solid #a3a3a3;
+  color: white;
+  background-color: #a3a3a3;
+}
+
 .car-brand-container {
   display: flex;
   gap: 15px;
@@ -2520,6 +2569,24 @@ input[type=checkbox] {
   width: 100vw;
   height: 300px;
   overflow: hidden; /* Ensures only the visible parts of the carousel are shown */
+}
+
+.car-select-welcome-container {
+  margin-top: 40px;
+}
+.car-select-welcome-container h2 {
+  font-size: 50px;
+}
+.car-select-welcome-container span {
+  font-size: 25px;
+}
+.car-select-welcome-btn-box {
+  gap: 10px;
+}
+.car-select-welcome-btn-box a {
+  height: 50px;
+  width: 170px;
+  font-size: 20px;
 }
 
 .car-image {
@@ -2924,6 +2991,10 @@ input[type=checkbox] {
   transition: padding-right 0.34s ease;
 }
 
+.mobile-contact-content {
+  display: none;
+}
+
 :is(.customer-warranty, .customer-faq, .customer-contact):hover {
   cursor: pointer;
 }
@@ -3003,6 +3074,16 @@ input[type=checkbox] {
     height: auto;
     background-color: #e9e9e9;
     border-radius: 5px;
+  }
+  .mobile-contact-content {
+    font-size: 18px;
+    margin: 20px;
+    font-family: 'Nunito Sans';
+    font-weight: 500;
+    display: block;
+  }
+  #desktop-contact-content {
+    display: none;
   }
   .customer-service-container {
     width: 100%;

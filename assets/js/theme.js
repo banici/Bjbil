@@ -20,6 +20,7 @@ var priceSliderRange = document.querySelector('#slider-range');
 var jobbForm = document.querySelector('.ansok-form-container');
 var section = document.getElementById('page-section');
 var sticky = document.querySelector('.sticky-dack');
+var btn2 = document.querySelector('.select-btn-2');
 var mixCarmakeName = false;
 var mixVideoOrder = false;
 var selectedCustomerBox;
@@ -224,26 +225,26 @@ document.addEventListener("click", function(e) {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    var defaultFaq = document.getElementsByClassName("faq-box");
-    if(defaultFaq.length > 0) {
+    var defaultBox = document.getElementsByClassName("customer-contact-box");
+    if(defaultBox.length > 0) {
         if(isMobileView) {
             CustomerServiceDefault();
         }
     }
 });
 
-function CustomerServiceDefault(target = 'faq-box') { // set defautlt value to default target because mobile is not passing any arg.
-    var defaultFaq = document.getElementsByClassName("faq-box");
-    var defaultFaqContent = document.getElementsByClassName("faq-container");
-    var faqActive = defaultFaq[0].classList[1];
-    if (target !== 'faq-box' && faqActive === 'active') {
-        defaultFaq[0].classList.remove('active');
-        defaultFaqContent[0].classList.remove('active');
+function CustomerServiceDefault(target = 'customer-contact-box') { // set defautlt value to default target because mobile is not passing any arg.
+    var defaultBox = document.getElementsByClassName("customer-contact-box");
+    var defaultBoxContent = document.getElementsByClassName("contact-container");
+    var defaultBoxActive = defaultBox[0].classList[1];
+    if (target !== 'customer-contact-box' && defaultBoxActive === 'active') {
+        defaultBox[0].classList.remove('active');
+        defaultBoxContent[0].classList.remove('active');
         return;
     } 
-    if (faqActive === 'active') {
-        defaultFaq[0].classList.remove('active');
-        defaultFaqContent[0].classList.remove('active');
+    if (defaultBoxActive === 'active') {
+        defaultBox[0].classList.remove('active');
+        defaultBoxContent[0].classList.remove('active');
         return;
     } 
 }
@@ -554,6 +555,16 @@ function checkBoxes() {
 
 // }
 
+if(btn2) {
+    if (!isMobileView) {
+        btn2.setAttribute('href','kontakt.html');
+    } else {
+        btn2.setAttribute('href','tel:031847529');
+        btn2.textContent = 'Ring oss';
+    }
+
+}
+
 /* ============ car selection for desktop ============== */
 if (!isMobileView)
 if (document.querySelector('.car-brand-container')) {
@@ -561,7 +572,7 @@ if (document.querySelector('.car-brand-container')) {
         const images = document.querySelectorAll('.car-image');
         const infoBoxes = document.querySelectorAll('.info-box');
         const brandContainer = document.querySelector('.car-brand-container');
-        const readMore = document.querySelectorAll('.read-more'); 
+        const readMore = document.querySelectorAll('.read-more');
 
         images.forEach(image => {
             // Hover effect for images
@@ -627,7 +638,7 @@ if (document.querySelector('.car-brand-container')) {
     document.addEventListener('DOMContentLoaded', () => {
         const carBrandContainer = document.querySelector('.car-brand-container');
         const carImages = Array.from(document.querySelectorAll('.car-image'));
-      
+
         let currentIndex = 0;
         let startX = 0;
         let endX = 0;

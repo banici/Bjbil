@@ -43,7 +43,7 @@ gdprInfoOverlay.addEventListener('click', e => {
 });
 
   // --- Öppna popup ---
-document.querySelectorAll('#bokaLinkSidebar, #bokaLinkNav').forEach(btn => {
+document.querySelectorAll('#bokaLinkSidebar, #bokaLinkNav, .select-btn-1').forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
     overlay.style.display = 'block';
