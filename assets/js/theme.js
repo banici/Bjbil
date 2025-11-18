@@ -21,6 +21,7 @@ var jobbForm = document.querySelector('.ansok-form-container');
 var section = document.getElementById('page-section');
 var sticky = document.querySelector('.sticky-dack');
 var btn2 = document.querySelector('.select-btn-2');
+var scrollCarSelect = document.querySelector('.car-scroll-link');
 var mixCarmakeName = false;
 var mixVideoOrder = false;
 var selectedCustomerBox;
@@ -569,43 +570,15 @@ if(btn2) {
 if (!isMobileView)
 if (document.querySelector('.car-brand-container')) {
     document.addEventListener('DOMContentLoaded', () => {
-        const images = document.querySelectorAll('.car-image');
+        const images = document.querySelectorAll('.car-card');
         const infoBoxes = document.querySelectorAll('.info-box');
         const brandContainer = document.querySelector('.car-brand-container');
-        const readMore = document.querySelectorAll('.read-more');
 
         images.forEach(image => {
-            // Hover effect for images
-            image.addEventListener('mouseenter', () => {
-                const infoId = image.getAttribute('data-info');
-                const infoBox = document.getElementById(infoId);
-
-                // Reset all images and info boxes
-                images.forEach(otherImage => otherImage.classList.remove('slide-down', 'darken'));
-                infoBoxes.forEach(box => box.classList.remove('visible', 'partial', 'active'));
-                readMore.forEach(read => read.classList.remove('active'));
-                // Highlight the hovered image and show its info box
-                image.classList.add('slide-down');
-                infoBox.classList.add('visible', 'partial');
-            });
-
-            // Mouse leave on the image should NOT hide the info box if hovering on the parent container
-            image.addEventListener('mouseleave', () => {
-                const infoId = image.getAttribute('data-info');
-                const infoBox = document.getElementById(infoId);
-
-                // Check if the mouse is still over the parent container
-                if (!brandContainer.matches(':hover')) {
-                    image.classList.remove('slide-down');
-                    infoBox.classList.remove('visible', 'partial');
-                }
-            });
-
             // Click effect for images to make info box "active"
             image.addEventListener('click', () => {
                 const infoId = image.getAttribute('data-info');
                 const infoBox = document.getElementById(infoId);
-                const readMore = infoBox.querySelector('.read-more'); 
 
 
                 // Reset all info boxes
@@ -614,7 +587,6 @@ if (document.querySelector('.car-brand-container')) {
                 // Show the clicked info box fully
                 infoBox.classList.add('active');
                 infoBox.classList.remove('partial');
-                readMore.classList.add('active');
             });
         });
 
@@ -637,7 +609,7 @@ if (isMobileView)
 if (document.querySelector('.car-brand-container')) {
     document.addEventListener('DOMContentLoaded', () => {
         const carBrandContainer = document.querySelector('.car-brand-container');
-        const carImages = Array.from(document.querySelectorAll('.car-image'));
+        const carImages = Array.from(document.querySelectorAll('#mobile-car'));
 
         let currentIndex = 0;
         let startX = 0;
@@ -649,8 +621,6 @@ if (document.querySelector('.car-brand-container')) {
             image.classList.remove('active', 'previous', 'next', 'hidden');
             const infoId = image.getAttribute('data-info');
             const infoBox = document.getElementById(infoId);
-            const readMore = infoBox.querySelector('.read-more'); 
-            readMore.classList.add('active');
 
             if (index === currentIndex) {
               image.classList.add('active');
@@ -733,6 +703,45 @@ if (sticky && section) {
   window.addEventListener('scroll', updateStickerPosition);
   updateStickerPosition();
 }
+
+if(scrollCarSelect) {
+document.querySelectorAll('.car-scroll-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        const offset = 100; // <-- scrolla 100px ovanför target
+        const start = window.scrollY;
+        const end = target.getBoundingClientRect().top + window.scrollY - offset;
+        const distance = end - start;
+
+        const duration = 1200; // scrolltid i ms
+        const startTime = performance.now();
+
+        function smoothScroll(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Easing
+            const ease = progress < 0.5
+                ? 2 * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+            window.scrollTo(0, start + distance * ease);
+
+            if (elapsed < duration) {
+                requestAnimationFrame(smoothScroll);
+            }
+        }
+
+        requestAnimationFrame(smoothScroll);
+    });
+});
+}
+
 
 // // Slide in/out with fade animation function
 // jQuery.fn.slideFadeToggle  = function(speed, easing, callback) {

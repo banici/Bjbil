@@ -2419,15 +2419,64 @@ input[type=checkbox] {
   gap: 15px;
   justify-content: center;
   align-items: center;
-  min-height: clamp(600px, 80vh, 900px); /*New v2-update to fix the glitch behavior on desktop*/
+  overflow-x: hidden;
 }
 
 .car-brand-container img {
-  margin: 60px 0 60px 0;
+  margin: 60px 0 10px 0;
   width: 400px;
   height: 600px;
   transition: filter 0.4s ease;
   cursor: pointer;
+  order: 0;
+  border-radius: 15px;
+}
+
+.car-brand-container > .car-box-presentation-wrapper {
+  text-align: center;
+  margin-top: -20px; /* justera efter smak */
+}
+
+.car-box-presentation-wrapper {
+  width: 400px;
+}
+
+.car-card {
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+.car-brand-container:has(.car-card:hover) .car-card:not(:hover) img {
+  filter: brightness(0.4) blur(2px);
+  transform: scale(0.98);
+}
+.car-card:hover {
+  transform: translateY(-20px);
+}
+
+/* Endast bilden du hovrar */
+.car-card:hover img {
+  transform: scale(1.05);
+  filter: none;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  transition: 0.3s ease;
+}
+
+.car-card h2 {
+  font-family: 'Inter';
+  color: var(--bjbil-blue);
+  font-weight: 600;
+  font-size: 40px;
+}
+.car-card span {
+  font-family: 'Nunito Sans';
+  font-size: 28px;
+  font-weight: 500;
+}
+.car-card p {
+  font-family: 'Nunito Sans';
+  font-size: 24px;
 }
 
 .car-brand-info {
@@ -2522,7 +2571,8 @@ input[type=checkbox] {
 
 #car-brand-title h2 {
   font-size: 60px;
-  color: rgb(28, 28, 105);
+  color: var(--bjbil-blue);
+  font-family: 'Inter';
 }
 
 #car-brand-content {
@@ -2533,6 +2583,12 @@ input[type=checkbox] {
 
 #car-brand-content p {
   font-size: 19px;
+  font-family: 'Nunito Sans';
+  font-weight: 500;
+}
+
+#mobile-car {
+  display: none;
 }
 
 .car-brand-image-service {
@@ -2570,7 +2626,13 @@ input[type=checkbox] {
   height: 300px;
   overflow: hidden; /* Ensures only the visible parts of the carousel are shown */
 }
+#mobile-car {
+  display: block;
+}
 
+.car-card {
+  display: none;
+}
 .car-select-welcome-container {
   margin-top: 40px;
 }
