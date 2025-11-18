@@ -1522,6 +1522,14 @@ input[type=checkbox] {
     opacity: 0;
     width: 0;
   }
+
+  #index-title-name {
+    font-size: 53px;
+  }
+  #welcome-to-title > h1 {
+    margin-top: 0;
+    font-size: 30px;
+  }
 }
 
 :root {
