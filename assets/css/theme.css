@@ -2497,6 +2497,17 @@ input[type=checkbox] {
   margin-bottom: 50px;
 }
 
+.bmw-list-info {
+  font-size: 19px;
+  list-style: disc;
+  font-family: 'Nunito Sans';
+  font-weight: 400;
+}
+.underline-service-info {
+  height: 4px;
+  background-color: var(--bjbil-orange);
+  width: 180px;
+}
 .info-box.active {
   display: block; /* Make it block when active */
   transform: translateY(0); /* Move to its final position */
@@ -2610,7 +2621,35 @@ input[type=checkbox] {
 #mini-service-img {
   max-width: 50%;
 }
+.bmw-list-info li {
+  margin-left: 17px;
+}
 
+#context-question {
+  margin: 0;
+  font-weight: bold !important;
+  font-family: 'Inter' !important;
+}
+#context-ending {
+  font-weight: bold !important;
+  font-size: 22px !important;
+  font-family: 'Inter' !important;
+}
+#underline-1, #underline-6, #underline-7, #underline-8 {
+  width: 165px;
+}
+#underline-5, #underline-9 {
+  width: 175px;
+}
+#underline-2 {
+  width: 195px;
+}
+#underline-3 {
+  width: 365px;
+}
+#underline-4 {
+  width: 255px;
+}
 
 /* Mobile view for car selection */
 
@@ -2629,7 +2668,27 @@ input[type=checkbox] {
 #mobile-car {
   display: block;
 }
-
+.bmw-list-info {
+  font-size: 16px;
+  list-style: disc;
+  font-family: 'Nunito Sans';
+  font-weight: 400;
+}
+#underline-1, #underline-6, #underline-7, #underline-8 {
+  width: 130px;
+}
+#underline-5, #underline-9 {
+  width: 135px;
+}
+#underline-2 {
+  width: 155px;
+}
+#underline-3 {
+  width: 295px;
+}
+#underline-4 {
+  width: 205px;
+}
 .car-card {
   display: none;
 }
@@ -2724,7 +2783,11 @@ input[type=checkbox] {
 }
 
 #car-brand-content p {
-  font-size: 14px;
+  font-size: 15px;
+}
+
+#context-ending {
+  font-size: 16px !important;
 }
 
 .car-brand-image-service {
