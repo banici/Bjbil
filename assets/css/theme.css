@@ -457,13 +457,14 @@ body.boxed {
   justify-content: center;
   align-items: center;
   border-radius: 2px;
-  color:white; 
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color:white;
+  box-shadow: 0 0 11px 7px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
 }
 .villkor-btn:hover {
   background-color: orange;
-  box-shadow: 0 0 11px 7px rgba(0,0,0,0.3);
-  color:black; 
+  box-shadow: 0 0 16px 9px rgba(0,0,0,0.4);
+  color:rgb(66, 66, 66); 
 }
 
 /* Mobil: gör det simpelt — 1 kolumn */
