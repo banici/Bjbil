@@ -6298,7 +6298,7 @@ input[type=checkbox] {
   border-radius: 4px;
   background-color: transparent;
   border: none;
-  color: #FFFFFF;
+  color: var(--bjbil-blue);
   text-align: center;
   font-size: 32px;
   width: auto;
