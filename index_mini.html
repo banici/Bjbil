@@ -12,34 +12,34 @@
         <meta name="author" content="www.bjbil.se" />
         <title>Bilverkstad service Audi, BMW, MINI, TESLA och VW. Aminogatan 15. 431 53 Mölndal, Göteborg</title>
 
-          <!-- Favicon -->
-          <link rel="shortcut icon" href="assets/ico/favicon.ico">
-
-          <!-- CSS Global -->
-          <link rel="stylesheet" href="assets/css/fonts/fonts.css">
-          <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-          <link href="assets/plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet">
-          <link href="assets/plugins/owl-carousel2/assets/owl.carousel.min.css" rel="stylesheet">
-          <link href="assets/plugins/owl-carousel2/assets/owl.theme.default.min.css" rel="stylesheet">
-          <link href="assets/plugins/animate/animate.min.css" rel="stylesheet">
-
-          <!-- Font Awesome 6 -->
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-        <!-- Theme CSS -->
-        <link rel="preload" href="assets/css/theme.css" as="style" onload="this.rel='stylesheet'">
-        <noscript><link href="assets/css/theme.css" rel="stylesheet"></noscript>
-
-        <link rel="preload" href="assets/css/theme-pink.css" as="style" onload="this.rel='stylesheet'" id="theme-config-link">
-        <noscript><link href="assets/css/theme-pink.css" rel="stylesheet" id="theme-config-link"></noscript>
-
-        <!-- JS Head Libs -->
-        <script defer src="assets/plugins/modernizr.custom.js"></script>
-
-        <!--[if lt IE 9]>
-            <script src="assets/plugins/iesupport/html5shiv.js"></script>
-            <script src="assets/plugins/iesupport/respond.min.js"></script>
-        <![endif]-->
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    
+      <!-- CSS Global -->
+      <link rel="stylesheet" href="assets/css/fonts/fonts.css">
+      <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet">
+      <link href="assets/plugins/owl-carousel2/assets/owl.carousel.min.css" rel="stylesheet">
+      <link href="assets/plugins/owl-carousel2/assets/owl.theme.default.min.css" rel="stylesheet">
+      <link href="assets/plugins/animate/animate.min.css" rel="stylesheet">
+    
+      <!-- Font Awesome 6 -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Theme CSS -->
+    <link rel="preload" href="assets/css/theme.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="assets/css/theme.css" rel="stylesheet"></noscript>
+    
+    <link rel="preload" href="assets/css/theme-pink.css" as="style" onload="this.rel='stylesheet'" id="theme-config-link">
+    <noscript><link href="assets/css/theme-pink.css" rel="stylesheet" id="theme-config-link"></noscript>
+    
+    <!-- JS Head Libs -->
+    <script defer src="assets/plugins/modernizr.custom.js"></script>
+    
+    <!--[if lt IE 9]>
+        <script src="assets/plugins/iesupport/html5shiv.js"></script>
+        <script src="assets/plugins/iesupport/respond.min.js"></script>
+    <![endif]-->
     </head>
     <body id="home" >
         
@@ -83,6 +83,8 @@
                                 <li><i class="fas fa-gear"></i><a href="tjanster.html">Våra tjänster</a></li>
                                 <li><i class="fas fa-users"></i><a href="foretag.html">Om oss</a></li>
                                 <li><i class="fas fa-comment-dots"></i><a href="kontakt.html">Kundservice</a></li>
+                                <li id="boka-side-bar"><i class="fas fa-calendar"></i><a href="#" id="bokaLinkSidebar">Serviceförfrågan</a></li>
+                                <li><i class="fas fa-database"></i><a href="dack-hotell.html">Däckhotell</a></li>
                             </ul>
                         </nav>
                     </aside>
@@ -121,6 +123,10 @@
                                     <li><a href="kontakt.html">Kundservice</a>
                                         <div id="under"></div>
                                     </li>
+                                    <li id="boka-nav">
+                                    <a href="#" id="bokaLinkNav">Serviceförfrågan</a>
+                                        <div id="boka-under"></div>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -129,179 +135,508 @@
             </header>
             
 				<section class="car-brand-section" >
-                    <div class="car-brand-container">
-                        <img class="car-image" data-info="info1" id="selection" src="assets/img/car-selection/bmw-drive-alternative.jpg">
-                        <img class="car-image" data-info="info2" id="selection" src="assets/img/car-selection/mini-cooper-drive.jpg">
-                        <img class="car-image" data-info="info3" id="selection" src="assets/img/car-selection/tesla-drive-alternative1.jpg">
-                        <img class="car-image" data-info="info4" id="selection" src="assets/img/car-selection/vag-drive.jpg">
+                    <div class="car-select-welcome-container">
+                        <h2>Välj ditt bilmärke</h2>
+                        <span>Specialiserad service på flera märken - med kvalitet, erfarenhet och omtanke.</span>
+                        <div class="car-select-welcome-btn-box">
+                            <a class="select-btn-1">Serviceförfrågan</a>
+                            <a class="select-btn-2">Kontakta oss</a>
+                        </div>
                     </div>
+                    <div class="car-brand-container">
+                        <a href="#bmw-section" class="car-scroll-link">
+                            <div class="car-card" data-info="info1">
+                                <img class="car-image" src="assets/img/car-selection/bmw-drive-alternative.jpg">
+                                <div class="car-box-presentation-wrapper">
+                                    <h2>BMW</h2>
+                                    <span>Specialiserad service och reparation av BMW.</span>
+                                    <p>Läs mer ></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#mini-section" class="car-scroll-link">
+                            <div class="car-card" data-info="info2">
+                                <img class="car-image" src="assets/img/car-selection/mini-cooper-drive.jpg">
+                                <div class="car-box-presentation-wrapper">
+                                    <h2>MINI</h2>
+                                    <span>Specialiserad service och reparation av MINI.</span>
+                                    <p>Läs mer ></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#tesla-section" class="car-scroll-link">
+                            <div class="car-card" data-info="info3">
+                                <img class="car-image" src="assets/img/car-selection/tesla-drive-alternative1.jpg">
+                                <div class="car-box-presentation-wrapper">
+                                    <h2>TESLA</h2>
+                                    <span>Specialiserad service och reparation av TESLA.</span>
+                                    <p>Läs mer ></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#vw-section" class="car-scroll-link">
+                            <div class="car-card" data-info="info4">
+                                <img class="car-image" src="assets/img/car-selection/vag-drive.jpg">
+                                <div class="car-box-presentation-wrapper">
+                                    <h2>VAG</h2>
+                                    <span>Specialiserad service och reparation av VAG.</span>
+                                    <p>Läs mer ></p>
+                                </div>
+                            </div>
+                        </a>
+                        <img id="mobile-car" class="car-image" data-info="info1" src="assets/img/car-selection/bmw-drive-alternative.jpg">
+                        <img id="mobile-car" class="car-image" data-info="info2" src="assets/img/car-selection/mini-cooper-drive.jpg">
+                        <img id="mobile-car" class="car-image" data-info="info3" src="assets/img/car-selection/tesla-drive-alternative1.jpg">
+                        <img id="mobile-car" class="car-image" data-info="info4" src="assets/img/car-selection/vag-drive.jpg">
+                    </div>
+
                     <div class="car-brand-info">
                         <div id="info1" class="info-box">
                             <div>
-                                <div id="car-tag">BMW</div>
-                                <div id="car-tag">ALPINA</div>
-                                <div id="car-tag">BMW-M</div>
-                                <div id="car-tag">BMW i</div>
+                                <a href="#bmw-section">
+                                    <div id="car-tag">BMW</div>
+                                </a>
+                                <a href="#alpina-section">
+                                    <div id="car-tag">ALPINA</div>
+                                </a>
+                                <a href="#bmw-m-section">
+                                    <div id="car-tag">BMW-M</div>
+                                </a>
+                                <a href="#bmw-i-section">
+                                    <div id="car-tag">BMW-i</div>
+                                </a>
                             </div>
-                            <div class="read-more">fortsätt läsa...</div>
                             <div class="car-brand-wrapper">
                                 <div id="car-brand-title">
-                                    <h2>BMW Service</h2>
+                                    <h2 id="bmw-section" class="scroll-anchor">BMW Service</h2>
                                 </div>
                                 <div id="car-brand-content">
                                     <img src="assets/img/service-images/bmw-service-img.jpg" class="car-brand-image-service" />
                                     <p>
-                                        Bo & Jimmy Bilservice är fristående specialist med över 40 års erfarenhet inom BMW-bilar. Vi har samlat på oss bred kunskap och specialverktyg för BMW-modeller från 80-talet och framåt. Utöver standardservice erbjuder vi dessutom avancerad service för hela drivlinan, inklusive växellåda, fördelningslåda och differentialer, för att säkerställa att din bil håller i många mil. Vårt mål är att din BMW ska behålla känslan av en ny bil och ge körglädje som är kärnan i BMW-upplevelsen.
-                                        
-                                        På Bo & Jimmy Bilservice utför vi alla typer av arbeten på din BMW – från kamkedjebyte och topplocksrenoveringar till renovering av fram- och bakvagn, samt mindre service. Vi använder oss enbart av originaldelar eller delar som motsvarar originalkvalitet. När det gäller oljor och oljebyten använder vi oss av Motul.
+                                        Bo & Jimmy Bilservice är en fristående specialist med över 40 års erfarenhet av BMW. Vi har samlat bred kunskap och specialverktyg för BMW-modeller från 80-talet och framåt.
                                     </p>
+                                    <p id="context-question" >Vad vi erbjuder:</p>
+                                    <div class="underline-service-info" id="underline-1"></div>
+                                    <br>
+                                    <ul class="bmw-list-info">
+                                        <li>
+                                            Standardservice för alla BMW-modeller
+                                        </li>
+                                        <li>
+                                            Avancerad drivlinjeservice, inklusive växellåda, fördelningslåda och differentialer
+                                        </li>
+                                        <li>
+                                            Reparationer och renoveringar, exempelvis kamkedjebyte, topplocksrenovering och renovering av fram- och bakvagn
+                                        </li>
+                                        <li>
+                                            Kompletta åtgärder för att hålla bilen i toppskick
+                                        </li>
+                                    </ul>
+                                    <p id="context-question" style="font-weight: bold; margin: 0;">Kvalitet & trygghet</p>
+                                    <div class="underline-service-info" id="underline-2"></div>
+                                    <br>
+                                    <ul class="bmw-list-info">
+                                        <li>
+                                            Endast originaldelar eller delar av motsvarande OEM-standard
+                                        </li>
+                                        <li>
+                                            Motul som förstahandsval vid oljebyten
+                                        </li>
+                                    </ul>
+                                    <br>
+                                    <p id="context-ending">Vi ser till att din BMW behåller känslan av en ny bil och maximal körglädje.</p>
                                 </div>
                                 <div id="car-brand-title">
-                                    <h2>ALPINA Service</h2>
+                                    <h2 id="alpina-section" class="scroll-anchor">ALPINA Service</h2>
                                 </div>
                                 <div id="car-brand-content">
                                     <img src="assets/img/preview/nostalgi/52.jpg" class="car-brand-image-service" />
                                     <p>
-                                        Som fristående BMW-verkstad har Bo & Jimmy Bilservice lång erfarenhet av att serva och reparera exklusiva Alpina-bilar. Alpina som är en förädlad version av BMW, kräver också expertkunskap. Genom åren har vi på Bo & Jimmy Bilservice samlat på oss erfarenhet och kunskap! Med vår hjälp kan du känna dig trygg med att vi utför ett gediget arbete. Tveka inte att låta oss ta hand om din Alpina – vi vet hur man bevarar dess prestanda och exklusivitet!
+                                        Som fristående BMW-verkstad har vi mångårig erfarenhet av exklusiva Alpina-modeller – en förädlad version av BMW som kräver extra precision och kunskap.
                                     </p>
+                                    <p id="context-question" >Varför välja oss för Alpina-service?</p>
+                                    <div class="underline-service-info" id="underline-3"></div>
+                                    <br>
+                                    <ul class="bmw-list-info">
+                                        <li>
+                                            Djup expertis om Alpinas unika förädling av BMW
+                                        </li>
+                                        <li>
+                                            Specialverktyg och utbildning som matchar modellernas tekniska krav
+                                        </li>
+                                        <li>
+                                            Erfarenhet från många Alpina-projekt genom åren
+                                        </li>
+                                        <li>
+                                            Service och reparationer med OEM-/Alpina-standard
+                                        </li>
+                                    </ul>
+                                    <p id="context-ending">Vi bevarar din Alpinas prestanda, exklusivitet och känsla – precis som tillverkaren avsett.</p>
                                 </div>
                                 <div id="car-brand-title">
-                                    <h2>BMW-M Service</h2>
+                                    <h2 id="bmw-m-section" class="scroll-anchor">BMW-M Service</h2>
                                 </div>
                                 <div id="car-brand-content">
                                     <img src="assets/img/service-images/bmw-m-service-img.png" class="car-brand-image-service" id="bmw-m-service-img" />
                                     <p>
-                                        Bo & Jimmy Bilservice har expertis i att serva och reparera BMW M-bilar enligt tillverkarens noggrant angivna instruktioner. M-bilar som ofta benäms som tävlingsbilar för gatan, är tekniskt avancerade och fungerar som ett mekaniskt urverk. Eftersom M-bilar har en hög prestanda och ofta dessutom blir körda på bana, erbjuder vi extra service för att bevara dess prestanda. Vi servar växellåda, fördelningslåda, differentialer och utför tvättning och kontroll av kylkanaler för både motor och bromsar. Vi använder oss enbart av tillverkarens diagnos- och mjukvaruuppdateringar, samt elektronisk servicebok för både bilen och tillverkarens server. För oljor har vi valt – Motul eller original. Välj oss för expertservice och maximal prestanda!
+                                        BMW M-bilar är skapade för att leverera motorsportskänsla på vägen och därför kräver de också specialistkompetens.
                                     </p>
+                                    <p id="context-question" >Vår M-expertis omfattar:</p>
+                                    <div class="underline-service-info" id="underline-4"></div>
+                                    <br>
+                                    <ul class="bmw-list-info">
+                                        <li>
+                                            Djup kunskap om M-modellernas specifika prestanda
+                                        </li>
+                                        <li>
+                                            Extra service för bilar som körs på bana eller högpresterande körning
+                                        </li>
+                                        <li>
+                                            Service av växellåda, fördelningslåda, differentialer samt tvättning och kontroll av kylkanaler för motor och bromsar
+                                        </li>
+                                        <li>
+                                            Diagnos och uppdateringar med tillverkarens originalverktyg och elektronisk servicebok
+                                        </li>
+                                        <li>
+                                            Specialverktyg och utbildning för modellernas tekniska krav
+                                        </li>
+                                        <li>
+                                            Oljor: Motul eller original
+                                        </li>
+                                        <li>
+                                            Service och reparationer enligt BMW M-standard
+                                        </li>
+                                    </ul>
+                                    <p id="context-ending">Vi säkerställer att din BMW M behåller maximal prestanda, precision och körglädje.</p>
                                 </div>
                                 <div id="car-brand-title">
-                                    <h2>BMW i Service</h2>
+                                    <h2 id="bmw-i-section" class="scroll-anchor">BMW-i Service</h2>
                                 </div>
                                 <div id="car-brand-content" id="bmwIsection">
                                     <img src="assets/img/service-images/bmw-i-service-img.jpeg" class="car-brand-image-service" id="bmw-i-service-img" />
                                     <p>
-                                        På Bo-Jimmy Bilservice är vi stolta över att ha utbildad personal inom högvoltssystem och godkänd skyddsutrustning och servar din elbil. Vi följer enbart originaltillverkarens instruktioner och erbjuder alla typer av reparationer för elbilar, förutom cellbyten i HV-batterier. Eftersom elbilar sällan kräver service är det extra viktigt att genomföra regelbundna fordonskontroller. Med hög prestanda och vikt kan många komponenter slitas snabbare, vilket kan påverka bilens prestanda. Eftersom däckförbrukningen är högre på elbila ser vi dessutom till att kontrollera både hjulinställning och däckens skick. Välj oss för en noggrann kontroll och bibehållen toppprestanda!
+                                        Vi på Bo & Jimmy Bilservice har utbildad personal inom högvoltssystem och godkänd skyddsutrustning. Vi följer alltid tillverkarens instruktioner och erbjuder service och reparationer för alla elbilar förutom cellbyten i HV-batterier.
                                     </p>
+                                    <p id="context-question" >Varför välja oss?</p>
+                                    <div class="underline-service-info" id="underline-5"></div>
+                                    <br>
+
+                                    <ul class="bmw-list-info">
+                                        <li>
+                                            Djup expertis om BMW-i:s högvoltssystem och eldrivlinor
+                                        </li>
+                                        <li>
+                                            Specialverktyg och utbildning för modellernas tekniska krav
+                                        </li>
+                                        <li>
+                                            Full Service och reparationer enligt BMW-i standard
+                                        </li>
+                                          <li>
+                                            Regelbundna fordonskontroller för att förebygga slitage
+                                        </li>
+                                          <li>
+                                            Kontroll av däck och hjulinställning för säkerhet och räckvidd
+                                        </li>
+                                         <li>
+                                            Originaldelar eller delar av motsvarande kvalitet
+                                        </li>
+                                    </ul>
+                                    <p id="context-ending">Vi säkerställer att din BMW-i behåller tyst komfort, hög prestanda och maximal räckvidd.</p>                                
                                 </div>
                             </div>
                         </div>
-                        <div id="info2" class="info-box">
+                        <div id="info2" class="info-box active">
                             <div>
-                                <div id="car-tag">MINI</div>
+                                <a href="#mini-section">
+                                    <div id="car-tag">MINI</div>
+                                </a>
                             </div>
-                            <div class="read-more">fortsätt läsa...</div>
                             <div class="car-brand-wrapper">
                                 <div id="car-brand-title">
-                                    <h2>MINI</h2>
+                                    <h2 id="mini-section" class="scroll-anchor">MINI Service</h2>
                                 </div>
                                 <div id="car-brand-content">
                                     <img src="assets\img\preview\mini\fullsize\1_fs.jpg" class="car-brand-image-service" id="mini-service-img" />
                                     <p>
-                                        Vi är fristående Mini-specialister med över 40 års erfarenhet. Under årens gång har vi samlat på oss bred kunskap och specialverktyg för Mini-modeller. Utöver standardservice erbjuder vi även avancerad service för hela drivlinan, inklusive växellåda, fördelningslåda och differentialer, för att säkerställa att bilen håller i många mil. Vårt mål är att din MINI ska behålla känslan av en ny bil och ge dig "Gokart" känslan Mini är kända för. Hos oss på Bo & Jimmy Bilservice utför vi alla typer av arbeten på din MINI – från kamkedjebyte och topplocksrenoveringar till renovering av fram- och bakvagn, samt mindre service. Vi använder oss enbart av originaldelar eller delar som motsvarar originalkvalitet. När det gäller oljor erbjuder vi Motul. Välommen att serva din Mini hos oss!
+                                        Vi är fristående MINI-specialister med över 40 års erfarenhet. Genom åren har vi byggt upp både bred kunskap och rätt specialverktyg för alla typer av MINI-modeller. Vårt fokus är att bevara den unika ”gokart-känslan” som gör MINI så omtyckta och se till att din bil fortsätter leverera körglädje i många mil.
                                     </p>
+                                    <p id="context-question" >Vad vi erbjuder:</p>
+                                    <div class="underline-service-info" id="underline-6"></div>
+                                    <br>
+                                    <ul class="bmw-list-info">
+                                        <li>
+                                            Djup förståelse för MINIs unika konstruktion och körkänsla
+                                        </li>
+                                        <li>
+                                            Avancerad drivlinjeservice, inklusive växellåda, fördelningslåda och differentialer
+                                        </li>
+                                        <li>
+                                            Reparationer och renoveringar, exempelvis kamkedjebyte, topplocksrenovering och renovering av fram- och bakvagn
+                                        </li>
+                                        <li>
+                                            Service och reparationer enligt tillverkarens riktlinjer
+                                        </li>
+                                        <li>
+                                            Originaldelar eller delar av motsvarande kvalitet, med Motul som förstahandsval för oljor
+                                        </li>
+                                    </ul>
+                                    <p id="context-ending">Hos Bo & Jimmy Bilservice får din MINI den omsorg och precisionsservice den förtjänar – alltid med fokus på körglädje, hållbarhet och originalkänsla.</p>                                
+                                
                                 </div>
                             </div>
                         </div>
                         <div id="info3" class="info-box">
                             <div>
-                                <div id="car-tag">TESLA</div>
+                                <a href="#tesla-section">
+                                    <div id="car-tag">TESLA</div>
+                                </a>
                             </div>
-                            <div class="read-more">fortsätt läsa...</div>
                             <div class="car-brand-wrapper">
                                 <div id="car-brand-title">
-                                    <h2>TESLA</h2>
+                                    <h2 id="tesla-section" class="scroll-anchor">TESLA</h2>
                                 </div>
                                 <div id="car-brand-content">
                                     <img src="assets/img/Tjanster-bilder/3-steg/tjanster-banner/service-diagnos-fordon.jpg" class="car-brand-image-service" id="tesla-service-img" />
                                     <P>
-                                        På Bo & Jimmy Bilservice har vi lyssnat på våra kunder och har nu tagit steget att bli fristående Tesla-reparatörer! Med vår expertis och passion för innovation erbjuder vi nu dessutom service och reparation för Tesla modeller. Vi använder oss enbart av originaldelar och Teslas eget toolbox-verktyg. Vi följer noggrant tillverkarens exakta anvisningar för att säkerställa gedigen servie. Vi hjälper till att hålla din Tesla i toppform!
+                                        Vi på Bo & Jimmy Bilservice har tagit steget att bli fristående Tesla-reparatörer, med fokus på innovation, säkerhet och prestanda.
                                     </P>
+                                    <p id="context-question" >Vad vi erbjuder:</p>
+                                    <div class="underline-service-info" id="underline-7"></div>
+                                    <br>
+                                    <ul class="bmw-list-info">
+                                        <li>
+                                            God kännedom för Teslas eldrivlinor och system
+                                        </li>
+                                        <li>
+                                            Service och reparationer enligt Teslas riktlinjer
+                                        </li>
+                                        <li>
+                                            Diagnos och programmering med Teslas original-Toolbox
+                                        </li>
+                                        <li>
+                                            Kontroller och felsökning av både låg- och högvoltsystem
+                                        </li>
+                                        <li>
+                                            Mekaniska reparationer och komponentbyten
+                                        </li>
+                                        <li>
+                                            Vi använder enbart originaldelar och följer tillverkarens exakta anvisningar
+                                        </li>
+                                    </ul>
+                                    <p id="context-ending">Vi ser till att din Tesla behåller sin prestanda, säkerhet och komfort – precis som tillverkaren avsett.</p>                                
+                                
                                 </div>
                             </div>
                         </div>
                         <div id="info4" class="info-box">
                             <div>
-                                <div id="car-tag">VOLKSWAGEN</div>
-                                <div id="car-tag">AUDI RS</div>
+                                <a href="#vw-section">
+                                    <div id="car-tag">VOLKSWAGEN</div>
+                                </a>
+                                <a href="#audi-rs-section">
+                                    <div id="car-tag">AUDI RS</div>
+                                </a>
                             </div>
-                            <div class="read-more">fortsätt läsa...</div>
                             <div class="car-brand-wrapper">
                                 <div id="car-brand-title">
-                                    <h2>VAG</h2>
+                                    <h2 id="vw-section" class="scroll-anchor">VAG</h2>
                                 </div>
                                 <div id="car-brand-content">
                                     <img src="assets/img/service-images/bmw-vag-service-img.jpeg" class="car-brand-image-service" id="vag-service-img" />
                                     <p>
-                                        År 2012 beslutade grundarna av Bo & Jimmy Bilservice att bredda sin expertis och att utöka service för fler tyska bilmärken. I mer än 10 år har vi dessutom specialiserat oss på VAG-koncernernen VW och Audi. Som fristående verkstad utför vi all service och alla typer av reparationer – förutom lack och plåt inom VAG-koncernen. Vi digitaliserar alltid aktuell servicebok i tillverkarens originaldatabas för att säkerställa fullständig dokumentation. För bästa möjliga serice använder vi enbart originaldelar eller delar av motsvarande kvalitet, och vi använder oss av Motul för att ge din bil den olja av god kvalitet. Välj oss för pålitlig, högkvalitativ service som håller din Volkswagen eller Audi i toppskick!
+                                           År 2012 beslutade grundarna av Bo & Jimmy Bilservice att bredda sin expertis och erbjuda service för fler tyska bilmärken. Vi har sedan dess specialiserat oss på VAG-koncernen och utför all service och reparationer – förutom lack och plåt.
+                                    </P>
+                                    <p id="context-question">Vad vi erbjuder:</p>
+                                    <div class="underline-service-info" id="underline-8"></div>
+                                    <br>
+                                    <ul class="bmw-list-info">
+                                        <li>
+                                            Full service och reparationer med fokus på kvalitet och pålitlighet
+                                        </li>
+                                        <li>
+                                            Digital registrering i tillverkarens servicebok för fullständig dokumentation
+                                        </li>
+                                        <li>
+                                            Originaldelar eller delar av motsvarande kvalitet och Motul-oljor
+                                        </li>
+                                    </ul>
+                                    <p id="context-ending">Vi säkerställer att din Volkswagen håller prestanda, pålitlighet och körglädje.</p>                                
+                                
                                     </p>
                                 </div>
                                 <div id="car-brand-title">
-                                    <h2>AUDI RS</h2>
+                                    <h2 id="audi-rs-section" class="scroll-anchor">AUDI RS</h2>
                                 </div>
                                 <div id="car-brand-content">
                                     <P>
-                                        Kör du en Audi RS-modell? Då har du kommit rätt! På Bo & Jimmy Bilservice har vi lång erfarenhet av dessa prestandabilar och erbjuder service och reparationer enligt tillverkarens exakta specifikationer. Med gedigen bakgrund i att serva bilar av hög prestanda har vi god kunskap och känsla för sport- och tävlingsbilar där precision är allt! Vi säkerställer att alla service tillfällen registreras digitalt i tillverkarens original-serviceplan. Vi använder enbart originaldelar eller delar av motsvarande kvalitet. Välj oss för en expertvård som matchar Audins höga prestandakrav!
+                                        Kör du en Audi RS? Då har du kommit rätt! På Bo & Jimmy Bilservice har vi lång erfarenhet av dessa prestandabilar och erbjuder service och reparationer enligt tillverkarens specifikationer.
                                     </P>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                    <p id="context-question" >Varför välja oss?</p>
+                                    <div class="underline-service-info" id="underline-9"></div>
+                                    <br>
+                                    <ul class="bmw-list-info">
+                                        <li>
+                                            Gedigen kunskap om Audi RS och deras högprestandasystem
+                                        </li>
+                                        <li>
+                                            Alla serviceåtgärder registreras digitalt i Audis originalserviceplan
+                                        </li>
+                                        <li>
+                                            Originaldelar eller RS-godkända komponenter används alltid
+                                        </li>
+                                    </ul>
+                                    <p id="context-ending">Vi tar hand om din Audi RS så att den fortsätter leverera kraft, kontroll och körupplevelse på topp.</p>                                
+                                
 				</section>
+                <div id="to-top" class="to-top"><i class="fas fa-angle-up"></i></div>
+            </div>
+        </div>
+        <div id="booking-service-overlay" class="booking-service-overlay">
+            <div class="booking-service-popup">
+              <span class="booking-service-close">&times;</span>
+              <h2>Skicka serviceförfrågan</h2>
+              <p class="booking-service-info">
+                Observera: Detta formulär gör ingen direktbokning. Din förfrågan skickas till oss, 
+                och efter att vi har gått igenom uppgifterna kommer vi att kontakta dig med förslag på lediga tider för service på din bil.
+              </p>
+              <form id="booking-service-form">
+                <label>Namn</label>
+                <input type="text" name="user_name" id="bs-name" required>
 
-                
-                <footer class="footer" id="car-make-footer">
-                    <div class="footer-container">
-                        <div class="footer-logo">
-                                <a href="index.html"><img id="nyckel-footer" src="assets/img/boJimmyLoggaSVG.svg" alt="" /></a>
-                            <div class="approved-logo">
-                                <a href="index.html"><img src="assets/img/godkand-bilverkstad.jpg" alt="" /></a>
-                            </div>
-                        </div>
-                        <div class="footer-wrapper">
-                            <div class="about-box">
-                                <h4 class="about-title">Bo & Jimmy Bilservice AB</h4>
-                                <a href="https://www.google.com/maps/search/?api=1&query=Aminogatan+15E,+431+53+Mölndal">
-                                    <p class="gps-location" id="footer-text">Aminogatan 15E<br>431 53 Mölndal</p>
-                                </a>
-                                <!-- <div class="subscribe-container">
-                                    <h3 class="newsmail-title">Nyhetsbrev</h3>
-                                    <span id="your-email-text">Din email</span>
-                                    <br>
-                                    <input type="email" id="mail-input"></input>
-                                    <br>
-                                    <button id="subscribe-btn">Prenumerera</button>
-                                </div> -->
-                            </div>
-                            <div class="hours-box">
-                                <h4 class="hours-title">Våra öppettider</h4>
-                                <ul id="footer-text">
-                                    <li>Måndag-Torsdag: 07:00 - 17:00</li>
-                                    <li>Fredag: 07:00 - 12:00</li>
-                                    <li>Lunchstängt: 12:00 - 13:00</li>
-                                    <li>Lör-Sön: Stängt</li>
-                                </ul>
-                            </div>
-                            <div class="contact-box">
-                                <h4 class="contact-title">Kontakt</h4>
-                                <ul id="footer-text">
-                                    <li><a href="tel:031847529">Ring oss</a></li>
-                                    <li><a href="mailto:bayerische@telia.com">Maila oss</a></li>
-                                </ul>
+                <label>Telefon</label>
+                <input type="tel" name="user_phone" id="bs-phone" required>
+
+                <label>Email</label>
+                <input type="email" name="user_email" id="bs-email" required>
+
+                <label for="bs-reg">Registreringsnummer</label>
+                <input type="text" name="user_reg" id="bs-reg" placeholder="ABC123" required>
+
+                <div class="booking-service-dropdown">
+                  <button type="button" class="dropdown-toggle" data-target="service-options">
+                    Servicealternativ
+                  </button>
+                  <div class="dropdown-content" id="service-options">
+                    <label><input id="service-check" type="checkbox" name="service" value="Oljebyte"> Oljebyte</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="Däckbyte"> Däckbyte</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="Bromskontroll"> Bromskontroll</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="Motorcheck"> Motorcheck</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="AC-service"> AC-service</label>
+                    <label><input id="service-check" type="checkbox" name="service" value="Hydrive"> Hydrive 
+                      <a href="/tjanster-hydrive.html" target="_blank" class="info-link">Läs mer..</a>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="booking-service-dropdown">
+                  <button type="button" class="dropdown-toggle" data-target="extra-options">
+                    Övrigt
+                  </button>
+                  <div class="dropdown-content" id="extra-options">
+                    <label><input id="service-check" type="checkbox" name="extra" value="Torkarblad"> Torkarblad</label>
+                    <label><input id="service-check" type="checkbox" name="extra" value="Däckhotell"> Däckhotell</label>
+                    <label><input id="service-check" type="checkbox" name="extra" value="Motortvätt"> Motortvätt</label>
+                  </div>
+                </div>
+            
+                <label>Annan anledning</label>
+                <textarea id="bs-description" name="user_message" rows="3" placeholder="Beskriv varför du bokar service..."></textarea>
+            
+                <div class="booking-service-gdpr">
+                  <label>
+                    <input type="checkbox" id="bs-gdpr" name="gdpr_approved">
+                    Jag godkänner <a href="javascript:void(0);" id="bs-gdpr-link">GDPR-villkoren</a>
+                  </label>
+                </div>
+
+                <input type="hidden" name="service_selected" id="bs-service-selected">
+                <button type="submit" id="bs-submit" disabled>Skicka</button>
+              </form>
+            </div>
+        </div>
+
+        <div id="booking-service-gdpr-info" class="booking-service-gdpr-info-overlay">
+            <div class="booking-service-gdpr-info-popup">
+              <span class="booking-service-gdpr-info-close">&times;</span>
+              <h3>GDPR-information</h3>
+              <p>
+                När du skickar in detta formulär samlar vi in dina kontaktuppgifter för att kunna hantera din serviceförfrågan. 
+                Dina uppgifter sparas endast så länge det är nödvändigt för detta ändamål. 
+                Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt vår 
+                <a href="integritetspolicy.pdf" class="gdpr-link" target="_blank">
+                  Integritetspolicy
+                </a>.<br><br>
+                Formuläret skickas via 
+                <a href="https://www.emailjs.com/legal/terms-of-service/" class="gdpr-link" target="_blank">
+                  EmailJS
+                </a>, deras behandling styrs av deras Privacy Policy.<br><br>
+                Läs mer på 
+                <a href="https://www.imy.se/" class="gdpr-link" target="_blank">
+                  Integritetsskyddsmyndigheten
+                </a>.
+              </p>
+            </div>
+        </div>
+        <!-- CONFIRM CLOSE POPUP -->
+        <div id="booking-service-confirm" class="booking-service-confirm-overlay">
+          <div class="booking-service-confirm-popup">
+            <h3>Vill du stänga?</h3>
+            <p>Om du stänger nu försvinner all information du fyllt i.</p>
+            <div class="booking-service-confirm-buttons">
+              <button id="bs-confirm-yes">Ja, stäng</button>
+              <button id="bs-confirm-no">Nej, stanna</button>
+            </div>
+          </div>
+        </div>
+        <!-- /WRAPPER -->
+        <footer class="footer" id="car-make-footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                        <a href="index.html"><img id="nyckel-footer" src="assets/img/boJimmyLoggaSVG.svg" alt="" /></a>
+                    <div class="approved-logo">
+                        <a href="index.html"><img src="assets/img/godkand-bilverkstad.jpg" alt="" /></a>
+                    </div>
+                </div>
+                <div class="footer-wrapper">
+                    <div class="about-box">
+                        <h4 class="about-title">Bo & Jimmy Bilservice AB</h4>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Aminogatan+15E,+431+53+Mölndal">
+                            <p class="gps-location" id="footer-text">Aminogatan 15E<br>431 53 Mölndal</p>
+                        </a>
+                        <!-- <div class="subscribe-container">
+                            <h3 class="newsmail-title">Nyhetsbrev</h3>
+                            <span id="your-email-text">Din email</span>
+                            <br>
+                            <input type="email" id="mail-input"></input>
+                            <br>
+                            <button id="subscribe-btn">Prenumerera</button>
+                        </div> -->
+                    </div>
+                    <div class="hours-box">
+                        <h4 class="hours-title">Våra öppettider</h4>
+                        <ul id="footer-text">
+                            <li>Måndag-Torsdag: 07:00 - 17:00</li>
+                            <li>Fredag: 07:00 - 12:00</li>
+                            <li>Lunchstängt: 12:00 - 13:00</li>
+                            <li>Lör-Sön: Stängt</li>
+                        </ul>
+                    </div>
+                    <div class="contact-box">
+                        <h4 class="contact-title">Kontakt</h4>
+                        <ul id="footer-text">
+                            <li><a href="tel:031847529">Ring oss</a></li>
+                            <li><a href="mailto:bayerische@telia.com">Maila oss</a></li>
+                        </ul>
                         <div class="social-media-box">
                             <a target="_blank" href="https://www.instagram.com/bojimmybilservice/"><div><i class="fa-brands fa-instagram"></i></div></a>
                         </div>
                         <!-- <a href="https://www.facebook.com"><div><i class="fas fa-facebook-square"></i></div></a>
                         <a href="https://www.linkedin.com"><div><i class="fas fa-linkedin-square"></i></div></a> -->
-                            </div>
-                        </div>
                     </div>
-                </footer>
-                <!-- /FOOTER -->
-
-                <div id="to-top" class="to-top"><i class="fas fa-angle-up"></i></div>
+                </div>
             </div>
-        <!-- /WRAPPER -->
-
+        </footer>
+        <!-- /FOOTER -->
         <!-- JS Global -->
         <script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script>
         <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -316,6 +651,8 @@
 
         <!-- JS Page Level -->
         <script src="assets/js/theme.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="module" src="assets/js/email.js"></script>
 
         <!--[if (gte IE 9)|!(IE)]><!-->
         <script src="assets/plugins/jquery.cookie.js"></script>
