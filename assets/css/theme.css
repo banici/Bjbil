@@ -4607,6 +4607,74 @@ input[type=checkbox] {
   }
 }
 
+/* ----------------Däck Villkor------------------ */
+
+.villkor-ruta {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 190px;
+}
+
+.villkor-message {
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  max-width: 800px;
+  max-height: 700px;
+  margin: 50px auto;
+  position: relative; /* This acts as the anchor for the X */
+  overflow-y: auto;
+}
+
+.villkor-message ol {
+  margin-top: 40px;
+}
+
+.villkor-x {
+  position: absolute; /* Changed from relative */
+  top: 15px;         /* Distance from top of white box */
+  right: 15px;        /* Distance from right of white box */
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;      /* Optional: centers the icon in the 30x30 box */
+  align-items: center;
+  justify-content: center;
+  font-size: 29px;    /* Optional: size of the X */
+  z-index: 10;
+}
+
+.villkor-x:hover {
+  color: #929292; /* Change color on hover */
+}
+
+.villkor-title {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.villkor-info {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+@media (max-width: 991px) {
+  .villkor-ruta {
+    padding: 15px;
+  }
+
+  .villkor-message {
+    border-radius: 5px;
+    max-height: 90% 
+}
+}
+
 /* ----------------Tjänster------------------ */
 
 .kund-tjanster-wrapper {

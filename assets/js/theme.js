@@ -22,6 +22,8 @@ var section = document.getElementById('page-section');
 var sticky = document.querySelector('.sticky-dack');
 var btn2 = document.querySelector('.select-btn-2');
 var scrollCarSelect = document.querySelector('.car-scroll-link');
+var villkorBtn = document.querySelector('.villkor-btn');
+var villkorX = document.querySelector('.villkor-x');
 var mixCarmakeName = false;
 var mixVideoOrder = false;
 var selectedCustomerBox;
@@ -603,7 +605,6 @@ if (document.querySelector('.car-brand-container')) {
     });
 }
 
-
 /* ============ car selection for mobile ============== */
 if (isMobileView)
 if (document.querySelector('.car-brand-container')) {
@@ -740,6 +741,32 @@ document.querySelectorAll('.car-scroll-link').forEach(link => {
         requestAnimationFrame(smoothScroll);
     });
 });
+}
+
+if(villkorBtn) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const villkorRuta = document.querySelectorAll('.villkor-ruta');
+        let villkorRutaDisplay = villkorRuta[0].style.display;
+        villkorBtn.addEventListener('click', function() {
+            villkorRutaDisplay = villkorRuta[0].style.display === 'block' ? 'none' : 'block';
+            villkorRuta.forEach(ruta => {
+                ruta.style.display = villkorRutaDisplay;
+            });
+        });
+    });
+}
+
+if(villkorX) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const villkorRuta = document.querySelectorAll('.villkor-ruta');
+        let villkorRutaDisplay = villkorRuta[0].style.display;
+        villkorX.addEventListener('click', function() {
+            villkorRutaDisplay = villkorRuta[0].style.display === 'block' ? 'none' : 'block';
+            villkorRuta.forEach(ruta => {
+                ruta.style.display = villkorRutaDisplay;
+            });
+        });
+    });
 }
 
 
