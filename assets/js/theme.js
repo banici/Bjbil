@@ -45,50 +45,55 @@ window.addEventListener("resize", checkScreenSize);
 
 if(mainSlider) {
     document.addEventListener('DOMContentLoaded', function () {
-    
     // Video setup
-    var video = document.getElementById('video1');
-    var lastWordElement = document.getElementById('last-word');
-        
-    if (video) {
-        video.muted = true;
-        var playPromise = video.play();
-        
-        if (playPromise !== undefined) {
-            playPromise
-                .then(function() {
-                    console.log('✓ Video plays');
-                })
-                .catch(function(error) {
-                    console.log('⚠ Video autoplay blocked');
-                });
-        }
-        
-        video.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play().catch(function(e) {});
-        });
-    }
-    
-    // Word rotation
-    var words = ['BMW', 'MINI', 'TESLA', 'VAG'];
-    var wordIndex = 0;
-    
-    function updateWord() {
-        var word = words[wordIndex];
-        lastWordElement.innerHTML = word;
-        wordIndex = (wordIndex + 1) % words.length;
-    }
+        var video = document.getElementById('video1');
 
-    updateWord();
-    
-    var intervalId = setInterval(function() {
-        updateWord();
-    }, 3000);
-    
-});
+        if (video) {
+            video.muted = true;
+            var playPromise = video.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(function() {
+                        console.log('✓ Video plays');
+                    })
+                    .catch(function(error) {
+                        console.log('⚠ Video autoplay blocked');
+                    });
+            }
+
+            video.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play().catch(function(e) {});
+            });
+        }  
+    });
 }
 
+if(mainSlider) {
+    document.addEventListener('DOMContentLoaded', function () {
+        if(isMobileView) {
+            const dynamicSentence = document.getElementById('dynamic-sentence');
+            dynamicSentence.innerHTML = "Fristående specialister";
+        } else {
+            var lastWordElement = document.getElementById('last-word');
+            if (!lastWordElement) return;
+
+            var words = ['BMW', 'MINI', 'TESLA', 'VAG'];
+            var wordIndex = 0;
+
+            function updateWord() {
+                lastWordElement.textContent = words[wordIndex];
+                wordIndex = (wordIndex + 1) % words.length;
+            }
+
+            updateWord();
+            setInterval(function() {
+                updateWord();
+            }, 3000);
+        }
+    });
+}
 
 // These classes are looped through to get the current page the user is on. And when scrolling down on page the class element gets paddingTop value added to prevent the page to jump in a buggy behaviour.
 const elementsUnderNavigator = ['.content-area', '.car-brand-section'];
