@@ -24,6 +24,7 @@ var btn2 = document.querySelector('.select-btn-2');
 var scrollCarSelect = document.querySelector('.car-scroll-link');
 var villkorBtn = document.querySelector('.villkor-btn');
 var villkorX = document.querySelector('.villkor-x');
+var dynamicSentence = document.getElementById('dynamic-sentence');
 var mixCarmakeName = false;
 var mixVideoOrder = false;
 var selectedCustomerBox;
@@ -73,10 +74,10 @@ if(mainSlider) {
 if(mainSlider) {
     document.addEventListener('DOMContentLoaded', function () {
         if(isMobileView) {
-            const dynamicSentence = document.getElementById('dynamic-sentence');
             dynamicSentence.innerHTML = "Fristående specialister";
         } else {
             var lastWordElement = document.getElementById('last-word');
+            dynamicSentence.innerHTML = "Fristående specialister på";
             if (!lastWordElement) return;
 
             var words = ['BMW', 'MINI', 'TESLA', 'VAG'];
