@@ -1,7 +1,7 @@
 'use strict';
 // Cache
 var body = document.querySelector('body');
-var mainSlider = document.querySelector('#main-slider');
+var mainSlider = document.querySelector('.main-slider');
 var imageCarousel = document.querySelectorAll('.img-carousel');
 var partnersCarousel = document.querySelector('#partners');
 var testimonialsCarousel = document.querySelector('#testimonials');
@@ -43,68 +43,51 @@ checkScreenSize();
 // Add an event listener for resize events
 window.addEventListener("resize", checkScreenSize);
 
-document.addEventListener('DOMContentLoaded', function () {
-    var videos = document.querySelectorAll('.video-container video');
-    if (videos.length > 0) {
-        videos.forEach(function (video) {
-            video.load();
-            video.muted = true;
-        });
-    }
-
-    var mixVideoOrder = false;
-    var currentVideoIndex = 0;
-
-    function getRandomIndex() {
-        return Math.floor(Math.random() * videos.length);
-    }
-
-    if (videos.length > 0) {
-        if (mixVideoOrder === false) { 
-            currentVideoIndex = getRandomIndex();
-            mixVideoOrder = true;
-        }
-
-        function playNextVideo() {
-            videos[currentVideoIndex].classList.remove('active');
-            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-            videos[currentVideoIndex].classList.add('active');
-            videos[currentVideoIndex].play().catch(function (error) {
-                console.warn("Autoplay blockerat:", error);
-            });
-        }
-
-        videos.forEach(function (video, index) {
-            video.addEventListener('ended', function () {
-                playNextVideo();
-            });
-        });
-
-        // Spelar den första videon
-        videos[currentVideoIndex].classList.add('active');
-        videos[currentVideoIndex].play().catch(function (error) {
-            console.warn("Första autoplay blockerat:", error);
-        });
-    }
-
-    // Ordbyte på hemsidan
-    var words = ['BMW', 'MINI', 'TESLA', 'VAG'];
-    var currentIndex = 0;
-    var lastWord = document.getElementById('last-word');
-
-    function replaceLastWord() {
-        if (lastWord) {
-            lastWord.textContent = words[currentIndex];
-            currentIndex = (currentIndex + 1) % words.length;
-        }
-    }
-
-    // Byt ord var 3:e sekund
-    setInterval(replaceLastWord, 3000);
+if(mainSlider) {
+    document.addEventListener('DOMContentLoaded', function () {
     
-    // Initialt ordbyte när sidan laddas
-    replaceLastWord();
+    // Video setup
+    var video = document.getElementById('video1');
+    var lastWordElement = document.getElementById('last-word');
+        
+    if (video) {
+        video.muted = true;
+        var playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+            playPromise
+                .then(function() {
+                    console.log('✓ Video plays');
+                })
+                .catch(function(error) {
+                    console.log('⚠ Video autoplay blocked');
+                });
+        }
+        
+        video.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play().catch(function(e) {});
+        });
+    }
+    
+    // Word rotation
+    var words = ['BMW', 'MINI', 'TESLA', 'VAG'];
+    var wordIndex = 0;
+    
+    function updateWord() {
+        var word = words[wordIndex];
+        lastWordElement.innerHTML = word;
+        wordIndex = (wordIndex + 1) % words.length;
+    }
+
+    updateWord();
+    
+    var intervalId = setInterval(function() {
+        updateWord();
+    }, 3000);
+    
 });
+}
 
 
 // These classes are looped through to get the current page the user is on. And when scrolling down on page the class element gets paddingTop value added to prevent the page to jump in a buggy behaviour.

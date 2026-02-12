@@ -144,23 +144,23 @@
             </div>
         </header>
         <div class="content-area">
-            <section class="page-section no-padding slider ">
+            <section class="page-section no-padding slider">
                 <div class="container full-width">
                     <div class="main-slider">
                         <div class="video-container">
-                            <div class="intro-box">
-                                <p id="dynamic-sentence">Fristående specialister på</p>
-                                <span id="last-word"></span>
-                            </div>
                             <video 
                                 id="video1" 
                                 muted 
                                 autoplay
                                 playsinline
-                                preload="auto">
-                                    <source src="assets/videos/indexIntro.MP4" type="video/mp4"> <!-- Need to compress all videos-->
-                                Your browser does not support the video tag.
+                                loop
+                                preload="metadata">
+                                <source src="assets/videos/indexIntro.MP4" type="video/mp4">
                             </video>
+                            <div class="intro-box">
+                                <p id="dynamic-sentence">Fristående specialister på</p>
+                                <div id="last-word"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
