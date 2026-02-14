@@ -25,6 +25,7 @@ var scrollCarSelect = document.querySelector('.car-scroll-link');
 var villkorBtn = document.querySelector('.villkor-btn');
 var villkorX = document.querySelector('.villkor-x');
 var dynamicSentence = document.getElementById('dynamic-sentence');
+var lastWordElement = document.getElementById('last-word');
 var mixCarmakeName = false;
 var mixVideoOrder = false;
 var selectedCustomerBox;
@@ -72,27 +73,85 @@ if(mainSlider) {
 }
 
 if(mainSlider) {
-    document.addEventListener('DOMContentLoaded', function () {
-        if(isMobileView) {
-            dynamicSentence.innerHTML = "Fristående specialister";
-        } else {
-            var lastWordElement = document.getElementById('last-word');
-            dynamicSentence.innerHTML = "Fristående specialister på";
-            if (!lastWordElement) return;
+    // Function to initialize the slider text
+    function initializeSliderText() {
+        console.log('Initializing slider text...');
+        console.log('dynamicSentence:', dynamicSentence);
+        console.log('lastWordElement:', lastWordElement);
+        console.log('isMobileView:', isMobileView);
+        
+        // Ensure elements exist
+        if(!dynamicSentence) {
+            console.error('dynamicSentence element not found');
+            return;
+        }
+        
+        if(!lastWordElement) {
+            console.error('lastWordElement not found');
+            return;
+        }
+        
+        // Force reflow to ensure element is ready
+        dynamicSentence.offsetHeight;
+        lastWordElement.offsetHeight;
+        
 
+            // Desktop: show text with cycling words
+            dynamicSentence.innerHTML = "Fristående specialister på";
+            
             var words = ['BMW', 'MINI', 'TESLA', 'VAG'];
             var wordIndex = 0;
-
+            
             function updateWord() {
+                if(!lastWordElement) return;
                 lastWordElement.textContent = words[wordIndex];
                 wordIndex = (wordIndex + 1) % words.length;
+                console.log('Word updated to:', lastWordElement.textContent);
             }
-
+            
+            // Show first word immediately
             updateWord();
-            setInterval(function() {
+            
+            // Start cycling
+            var wordCycleInterval = setInterval(function() {
                 updateWord();
             }, 3000);
-        }
+            
+            console.log('Desktop view - word cycling started');
+            
+            // Pause when page loses focus, resume when back
+            document.addEventListener('visibilitychange', function() {
+                if(document.hidden) {
+                    clearInterval(wordCycleInterval);
+                    console.log('Page hidden - cycling paused');
+                } else {
+                    wordCycleInterval = setInterval(function() {
+                        updateWord();
+                    }, 3000);
+                    console.log('Page visible - cycling resumed');
+                }
+            });
+        
+    }
+    
+    // Try multiple methods to ensure initialization
+    // Method 1: DOMContentLoaded with delay
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(initializeSliderText, 200);
+    });
+    
+    // Method 2: If DOMContentLoaded already fired, run immediately
+    if(document.readyState === 'loading') {
+        // Still loading
+    } else {
+        // Already loaded
+        setTimeout(initializeSliderText, 200);
+    }
+    
+    // Method 3: Try on window load as backup
+    window.addEventListener('load', function() {
+        console.log('Window load event - running initialization again');
+        setTimeout(initializeSliderText, 200);
     });
 }
 
